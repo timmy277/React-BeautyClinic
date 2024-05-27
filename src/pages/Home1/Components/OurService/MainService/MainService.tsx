@@ -9,7 +9,7 @@ const MainService = () => {
     const ServiceContainer = tw.div`max-w-[71.25rem] pt-[8rem] mx-auto flex flex-col lg:max-w-full lg:px-[5%] md:px-[6%] sm:px-[6%]`
     const ServiceIntroduction = tw.div`text-center mx-auto max-w-[53rem] mb-[5.3rem]`
     const ServiceSpan = tw(TwSpan)``
-    const ServiceTitle = tw(TwTitle_MD)`max-w-[50%] mx-auto mt-[0.725rem]`
+    const ServiceTitle = tw(TwTitle_MD)`max-w-[50%] mx-auto mt-[0.725rem] xs:max-w-[80%]`
     const ServiceDescription = tw(GrayP)`mt-[1.1rem] font-normal tracking-widest mx-auto md:max-w-[80%] sm:max-w-[75%]`
     const BackGroundService = tw.div`absolute top-[40.2rem] right-0 2xl:w-full -z-10`
     const BackGroundServiceImg = tw.img`2xl:w-full`
