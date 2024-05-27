@@ -25,7 +25,7 @@ const Footer = () => {
     const SocialIcon = tw.img`mr-[1.5rem] `
     const ContactLi = tw.li`list-none 
     // list-image-vector
-    list-image-[url("./src/assets/website/Vector.png")] overflow-visible
+    list-image-[url("./Vector.png")] overflow-visible
     font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs text-dark_white pl-[0.313rem] mb-[0.7rem]`
     const ButtonToTop = tw.button`fixed border-none bottom-[10.6rem] right-16 cursor-pointer`
 
