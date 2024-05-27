@@ -13,7 +13,7 @@ const Footer = () => {
     bg-[url("./FooterBG.png"), url("./BottomBG.png")]
     bg-center-bottom bg-no-repeat mt-[4.3rem] pt-[14rem] 2xl:bg-top-bottom 2xl:bg-cover-contain xl:bg-top-bottom xl:bg-cover-contain md:pt-[10rem] sm:pt-[10rem] overflow-visible`
     const FooterContainer = tw.div`max-w-[71.25rem] w-full mx-auto flex flex-col text-dark_white font-poppins text-base leading-6 tracking-widest font-normal lg:px-[5%] md:text-sm sm:text-xs bg-full `
-    const FooterContent = tw.div`mx-auto w-full flex md:flex-col md:items-center sm:flex-col sm:items-center`
+    const FooterContent = tw.div`mx-auto w-full flex md:flex-col md:items-center sm:flex-col sm:items-center xs:text-center xs:m-0 `
     const CompanyInfo = tw.div`max-w-[30.75rem] flex flex-col w-1/2 mt-[1.1rem] md:w-full md:items-center sm:w-full sm:items-center`
     const CompanyContact = tw.div` flex w-1/2 flex-1 md:items-center md:w-[80%] sm:w-[80%]`
     const ListPage = tw.div`flex flex-col w-1/2 pt-[0.1rem] pl-[8.1rem] mb-[1.8rem] md:pl-0 md:items-center sm:pl-0 sm:items-center`
@@ -21,7 +21,7 @@ const Footer = () => {
     const PageSpan = tw.span`font-poppins font-medium text-lg leading-[1.688rem] tracking-widest text-white`
     const InfoSpan = tw(PageSpan)``
     const BottomFooter = tw.div`flex mt-[6.3rem] justify-between md:mt-0 md:flex-col md:items-center sm:mt-0 sm:flex-col sm:items-center `
-    const SocialContact = tw.div`flex gap-[1.3rem] md:mb-6 sm:mb-4`
+    const SocialContact = tw.div`flex gap-[1.3rem] md:mb-6 sm:mb-4 xs:gap-[3%]`
     const SocialIcon = tw.img`mr-[1.5rem] `
     const ContactLi = tw.li`list-none 
     // list-image-vector
@@ -38,9 +38,9 @@ const Footer = () => {
                             <img src={FooterLogo} alt="FooterLogo" tw='md:mb-1.5 sm:mb-1.5' />
                         </div>
                         <div tw="pl-[2rem] pt-[2.1rem] md:pt-0 md:pl-0 md:mb-6 sm:pl-0 sm:pt-0 sm:mb-6">
-                            <p tw=" mb-[1.3rem] tracking-[0.106em]"><b>Beautice</b> is a Beauty Clinic WordPress Theme.</p>
+                            <p tw=" mb-[1.3rem] tracking-[0.106em] xs:w-[100%] xs:text-center"><b>Beautice</b> is a Beauty Clinic WordPress Theme.</p>
                             <p tw="italic text-sm font-medium leading-[1.313rem] tracking-[0.101em]">Baker Steet 101, NY, United States.</p>
-                            <div tw="flex gap-[2.6rem] italic text-sm font-medium leading-[1.313rem] tracking-[0.101em] mt-[0.3rem]">
+                            <div tw="flex gap-[2.6rem] italic text-sm font-medium leading-[1.313rem] tracking-[0.101em] mt-[0.3rem] xs:flex-col xs:text-center xs:gap-0">
                                 <p>+521 569 8966.</p>
                                 <p>mail@company.com.</p>
                             </div>

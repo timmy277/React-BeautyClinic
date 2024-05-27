@@ -42,10 +42,11 @@ export default {
     },
 
     screens: {
-      'xs': {'min': '300px', 'max': '500px'},
+
       
       'sm': {'max': '767px'},
       // => @media (min-width: 440px and max-width: 767px) { ... }
+      'xs': { 'max': '500px'},
 
       'md': {'min': '768px', 'max': '1023px'},
       // => @media (min-width: 768px and max-width: 1023px) { ... }

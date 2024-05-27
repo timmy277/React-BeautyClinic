@@ -3,7 +3,7 @@ import 'twin.macro'
 import tw from 'twin.macro'
 
 
-export const TwButton = tw.button`text-white bg-[#FF64AE] py-[0.875rem] px-[2.563rem] border-none text-base font-semibold tracking-widest not-italic rounded-[3.125rem] font-poppins w-fit md:text-sm md:px-[10%] md:py-[2%] sm:text-xs sm:px-[6%] sm:py-[2%]`
+export const TwButton = tw.button`text-white bg-[#FF64AE] py-[0.875rem] px-[2.563rem] border-none text-base font-semibold tracking-widest not-italic rounded-[3.125rem] font-poppins w-fit md:text-sm md:px-[10%] md:py-[2%] sm:text-xs sm:px-[6%] sm:py-[2%] xs:px-[3%] xs:py-[1%]`
 
 export const TwSpan = tw.span`text-light_pink font-poppins text-base font-semibold leading-5 md:text-sm sm:text-xs`
 
