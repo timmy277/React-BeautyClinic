@@ -1,8 +1,8 @@
 
 import tw from 'twin.macro'
-import AboutUsBanner from '../../assets/banner/unsplash_LRXYS0tSyGc.png'
-import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../Material/Material'
-import PlayVideo from '../../assets/website/PlayButton.png'
+import AboutUsBanner from '../../../../assets/banner/unsplash_LRXYS0tSyGc.png'
+import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../../../../components/Material/Material'
+import PlayVideo from '../../../../assets/website/PlayButton.png'
 
 const AboutUs = () => {
     const AboutUsContainer = tw.div`flex flex-row justify-between max-w-[71.25rem] mx-auto pt-[8.5rem] lg:max-w-full lg:px-[5%] md:flex-col md:text-center sm:flex-col sm:text-center sm:max-w-full`
