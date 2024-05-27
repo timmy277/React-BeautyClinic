@@ -21,7 +21,10 @@ const Footer = () => {
     const BottomFooter = tw.div`flex mt-[6.3rem] justify-between md:mt-0 md:flex-col md:items-center sm:mt-0 sm:flex-col sm:items-center `
     const SocialContact = tw.div`flex gap-[1.3rem] md:mb-6 sm:mb-4`
     const SocialIcon = tw.img`mr-[1.5rem] `
-    const ContactLi = tw.li`list-none list-image-vector font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs text-dark_white pl-[0.313rem] mb-[0.7rem]`
+    const ContactLi = tw.li`list-none 
+    // list-image-vector
+    list-style-image: url(${('../../assets/website/Vector.png')});
+    font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs text-dark_white pl-[0.313rem] mb-[0.7rem]`
     const ButtonToTop = tw.button`fixed border-none bottom-[10.6rem] right-16 cursor-pointer`
 
     return (
