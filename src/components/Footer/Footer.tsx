@@ -9,7 +9,9 @@ import IconYoutube from '../../assets/iconSocial/youtube.png'
 import IconLinkedin from '../../assets/iconSocial/linkedin-in.png'
 import ButtonBackToTop from '../../assets/website/ToTopButton.png'
 const Footer = () => {
-    const FooterWrapper = tw.div`max-w-full h-[44.084rem] flex bg-[url("./src/assets/background/FooterBG.png"), url("./src/assets/background/BottomBG.png")] bg-center-bottom bg-no-repeat mt-[4.3rem] pt-[14rem] 2xl:bg-top-bottom 2xl:bg-cover-contain xl:bg-top-bottom xl:bg-cover-contain md:pt-[10rem] sm:pt-[10rem] overflow-visible`
+    const FooterWrapper = tw.div`max-w-full h-[44.084rem] flex 
+    bg-[url("./FooterBG.png"), url("./BottomBG.png")]
+    bg-center-bottom bg-no-repeat mt-[4.3rem] pt-[14rem] 2xl:bg-top-bottom 2xl:bg-cover-contain xl:bg-top-bottom xl:bg-cover-contain md:pt-[10rem] sm:pt-[10rem] overflow-visible`
     const FooterContainer = tw.div`max-w-[71.25rem] w-full mx-auto flex flex-col text-dark_white font-poppins text-base leading-6 tracking-widest font-normal lg:px-[5%] md:text-sm sm:text-xs bg-full `
     const FooterContent = tw.div`mx-auto w-full flex md:flex-col md:items-center sm:flex-col sm:items-center`
     const CompanyInfo = tw.div`max-w-[30.75rem] flex flex-col w-1/2 mt-[1.1rem] md:w-full md:items-center sm:w-full sm:items-center`
@@ -77,7 +79,7 @@ const Footer = () => {
                         <SocialIcon src={IconYoutube} alt="IconYoutube" />
                         <SocialIcon src={IconInstagram} alt="IconInstagram" />
                     </SocialContact>
-                    <p tw="text-base font-normal tracking-[0.105em]">© AltDesain Studio 2021 - All right reserved.</p>
+                    <p tw="text-base font-normal tracking-[0.105em] sm:text-xs xs:text-center">© AltDesain Studio 2021 - All right reserved.</p>
                 </BottomFooter>
             </FooterContainer>
         </FooterWrapper>
