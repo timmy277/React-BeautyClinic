@@ -36,7 +36,7 @@ export default {
         'custom-layout': '2fr 1fr 1fr',
       },
       listStyleImage: {
-        'vector': 'url("./src/assets/website/Vector.png")',
+        'vector': 'url("./Vector.png")',
       },
       
     },
