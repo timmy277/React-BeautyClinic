@@ -10,7 +10,7 @@ const Layout = () => {
         <>
             <NavigationBar />
                 <Routes>
-                    <Route path="/Home1" element={<Home1 />} />
+                    <Route index path="/Home1" element={<Home1 />} />
                     <Route path="/Home2" element={<Home2 />} />
                 </Routes>
             <Footer />
