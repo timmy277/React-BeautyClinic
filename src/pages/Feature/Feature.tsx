@@ -1,6 +1,6 @@
 import ContactUs from "../../components/ContactUs/ContactUs"
 
-const Home2 = () => {
+const Feature = () => {
     return (
         <>
             <ContactUs />
@@ -8,4 +8,4 @@ const Home2 = () => {
     )
 }
 
-export default Home2
+export default Feature

@@ -4,7 +4,7 @@ import ContactUs from "../../components/ContactUs/ContactUs";
 import MainService from "./Components/OurService/MainService/MainService";
 import Slider from "./Components/Slider/Slider";
 
-const Home1 = () => {
+const General = () => {
   return (
     <>
       <Slider />
@@ -16,4 +16,4 @@ const Home1 = () => {
   );
 };
 
-export default Home1;
+export default General;

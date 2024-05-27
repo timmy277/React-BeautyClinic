@@ -1,11 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import Layout from "./Layout/Layout";
+
+import RouteCustom from "./Route/Route";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Layout />
+        <RouteCustom />
       </BrowserRouter>
     </>
   );

@@ -1,13 +1,13 @@
 
 // import tw from 'twin.macro'
 import tw from 'twin.macro'
-import FooterLogo from '../../assets/website/FooterLogo.png'
-import IconFacebook from '../../assets/iconSocial/facebook-f.png'
-import IconTwitter from '../../assets/iconSocial/twitter2.png'
-import IconInstagram from '../../assets/iconSocial/instagram2.png'
-import IconYoutube from '../../assets/iconSocial/youtube.png'
-import IconLinkedin from '../../assets/iconSocial/linkedin-in.png'
-import ButtonBackToTop from '../../assets/website/ToTopButton.png'
+import FooterLogo from '../../../../assets/website/FooterLogo.png'
+import IconFacebook from '../../../../assets/iconSocial/facebook-f.png'
+import IconTwitter from '../../../../assets/iconSocial/twitter2.png'
+import IconInstagram from '../../../../assets/iconSocial/instagram2.png'
+import IconYoutube from '../../../../assets/iconSocial/youtube.png'
+import IconLinkedin from '../../../../assets/iconSocial/linkedin-in.png'
+import ButtonBackToTop from '../../../../assets/website/ToTopButton.png'
 const Footer = () => {
     const FooterWrapper = tw.div`max-w-full h-[44.084rem] flex 
     bg-[url("./FooterBG.png"), url("./BottomBG.png")]
@@ -20,7 +20,7 @@ const Footer = () => {
     const ListInfo = tw(ListPage)`pl-[6.85rem] md:pl-0 md:items-center sm:pl-0 sm:items-center`
     const PageSpan = tw.span`font-poppins font-medium text-lg leading-[1.688rem] tracking-widest text-white`
     const InfoSpan = tw(PageSpan)``
-    const BottomFooter = tw.div`flex mt-[6.3rem] justify-between md:mt-0 md:flex-col md:items-center sm:mt-0 sm:flex-col sm:items-center `
+    const BottomFooter = tw.div`flex mt-[6.2rem] justify-between md:mt-0 md:flex-col md:items-center sm:mt-0 sm:flex-col sm:items-center `
     const SocialContact = tw.div`flex gap-[1.3rem] md:mb-6 sm:mb-4 xs:gap-[3%]`
     const SocialIcon = tw.img`mr-[1.5rem] `
     const ContactLi = tw.li`list-none 
@@ -42,14 +42,14 @@ const Footer = () => {
                             <p tw="italic text-sm font-medium leading-[1.313rem] tracking-[0.101em]">Baker Steet 101, NY, United States.</p>
                             <div tw="flex gap-[2.6rem] italic text-sm font-medium leading-[1.313rem] tracking-[0.101em] mt-[0.3rem] xs:flex-col xs:text-center xs:gap-0">
                                 <p>+521 569 8966.</p>
-                                <p>mail@company.com.</p>
+                                <p tw="underline">mail@company.com.</p>
                             </div>
                         </div>
                     </CompanyInfo>
                     <CompanyContact>
                         <ListPage>
                             <PageSpan>Pages</PageSpan>
-                            <ul tw="ml-[1rem] mt-[1.7rem]">
+                            <ul tw="ml-[1rem] mt-[1.8rem]">
                                 <ContactLi>Home</ContactLi>
                                 <ContactLi>About</ContactLi>
                                 <ContactLi>Services</ContactLi>
@@ -59,7 +59,7 @@ const Footer = () => {
                         </ListPage>
                         <ListInfo>
                             <InfoSpan>Informations</InfoSpan>
-                            <ul tw="ml-[1rem] mt-[1.7rem]">
+                            <ul tw="ml-[1rem] mt-[1.8rem]">
                                 <ContactLi>Terms & conditions</ContactLi>
                                 <ContactLi>Privacy policy</ContactLi>
                                 <ContactLi>Blog</ContactLi>
