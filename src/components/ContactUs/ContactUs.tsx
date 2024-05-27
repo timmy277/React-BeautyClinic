@@ -1,4 +1,4 @@
-import React from 'react'
+
 import tw from 'twin.macro'
 import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../Material/Material'
 import ContactUsImg from '../../assets/banner/ContactAnimations.png'

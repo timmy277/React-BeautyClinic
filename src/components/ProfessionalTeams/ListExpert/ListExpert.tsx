@@ -1,4 +1,4 @@
-import React from 'react'
+
 import 'twin.macro'
 import tw from 'twin.macro'
 // import {ExpertsData} from "../../../assets/data"
@@ -36,7 +36,9 @@ const ListExpert = () => {
     return (
         <ExpertListWrapper>{
             ExpertsData.map((expert) =>(
-                <Expert key={expert.id} img={expert.img} name={expert.name} job={expert.job} description={expert.description} special={expert.id === 2}/>
+                <Expert 
+                // key={expert.id}
+                img={expert.img} name={expert.name} job={expert.job} description={expert.description} special={expert.id === 2}/>
             ))
         }
         </ExpertListWrapper>

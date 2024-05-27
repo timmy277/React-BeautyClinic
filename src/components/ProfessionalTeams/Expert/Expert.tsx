@@ -8,7 +8,7 @@ import { GrayP, TwSpan, TwTitle_SM } from '../../Material/Material'
 import styled from 'styled-components'
 
 const Expert = (props:{ name : string, img : string, job : string, description : string, special : boolean}) => {
-    const ExpertContainer = styled.div(({ special }) => [
+    const ExpertContainer = styled.div<{special: boolean}>(({ special }) => [
         tw`flex flex-col items-center max-w-[16.875rem] border-none rounded-[2.625rem] md:max-w-full md:w-[90%] md:mb-[7rem] sm:max-w-full sm:w-[90%] sm:mb-[7rem]`,
         special && tw`bg-white shadow-md max-w-[26.5rem] w-[26.5rem] pb-[4.7rem] pt-[5.8rem] mt-[-5.8rem] md:shadow-none sm:shadow-none`
     ]);

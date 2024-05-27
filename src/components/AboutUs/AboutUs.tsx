@@ -1,4 +1,4 @@
-import React from 'react'
+
 import tw from 'twin.macro'
 import AboutUsBanner from '../../assets/banner/unsplash_LRXYS0tSyGc.png'
 import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../Material/Material'

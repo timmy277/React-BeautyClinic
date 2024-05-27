@@ -33,7 +33,9 @@ const ServiceListItem = () => {
     return (
         <ServiceListWrapper>{
             ServicesData.map((service) =>(
-                <ServiceItem key={service.id} img={service.img} name={service.name} description={service.description}/>
+                <ServiceItem 
+                // key ={service.id} 
+                img={service.img} name={service.name} description={service.description}/>
             ))
         }
         </ServiceListWrapper>

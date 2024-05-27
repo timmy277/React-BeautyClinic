@@ -84,7 +84,7 @@ const Footer = () => {
 
 window.addEventListener('scroll', scrollFunction);
 function scrollFunction() {
-    const backToTopBtn = document.getElementById("btnBacktoTop");
+    const backToTopBtn = document.getElementById("btnBacktoTop")!;
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         backToTopBtn.style.display = "block";
     } else {
