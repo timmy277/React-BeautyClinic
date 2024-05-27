@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.sm-text {
+    @apply font-poppins text-light_gray text-base leading-6 tracking-widest font-medium md:text-sm sm:text-xs;
+}
