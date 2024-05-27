@@ -37,7 +37,7 @@ const NavigationBar = () => {
                 </button>
                 <NavBar>
                     <LogoContainer>
-                        <Link to="/Home1" >
+                        <Link to="/" >
                             <LogoImg src={MainLogo} alt="mainLogo" />
                         </Link>
                     </LogoContainer>

@@ -42,6 +42,8 @@ export default {
     },
 
     screens: {
+      'xs': {'max': '440px'},
+
       'sm': {'max': '767px'},
       // => @media (min-width: 440px and max-width: 767px) { ... }
 
