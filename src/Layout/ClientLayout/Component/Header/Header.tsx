@@ -24,14 +24,11 @@ const Header = () => {
   const LogoContainer = tw.div`object-cover my-auto mx-0`;
   const LogoImg = tw.img`m-auto ml-[-0.275rem] max-w-none`;
   const ListNavItem = tw.ul`flex justify-center items-center max-w-[30.063rem]`;
-  // const NavItem = tw.li`font-poppins font-medium text-base text-light_gray not-italic tracking-widest lg:ml-[7%]`;
   const HomeItem = tw(NavItem)`lg:ml-[7%] ml-[8.8rem]`;
   const NavAbout = tw(NavItem)`ml-[2.675rem] lg:ml-[10%]`;
   const NavService = tw(NavItem)`ml-[2.775rem] lg:ml-[10%]`;
   const NavGallery = tw(NavItem)`ml-[2.8rem] lg:ml-[10%]`;
   const NavBlog = tw(NavItem)`ml-[2.8rem] lg:ml-[10%]`;
-  // const ContactButton = tw(TwButton)`font-medium lg:ml-[2%]`;
-  // const NavLi = tw.li`w-[80%] mx-auto px-3 hover:scale-125`;
 
   const ContactButton = styled(TwButton)<{active: boolean}>(({active}) =>[
     tw`font-medium lg:ml-[2%]`, active && tw`font-semibold text-light_blue` 

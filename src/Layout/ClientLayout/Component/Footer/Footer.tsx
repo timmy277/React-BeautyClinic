@@ -24,10 +24,7 @@ const Footer = () => {
     const BottomFooter = tw.div`flex mt-[6.2rem] justify-between md:mt-0 md:flex-col md:items-center sm:mt-0 sm:flex-col sm:items-center `
     const SocialContact = tw.div`flex gap-[1.3rem] md:mb-6 sm:mb-4 xs:gap-[3%]`
     const SocialIcon = tw.img`mr-[1.5rem] `
-    const ContactLi = tw.li`list-none 
-    list-image-vector
-    // list-image-[url("./Vector.png")] 
-    font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs text-dark_white pl-[0.313rem] mb-[0.7rem]`
+    const ContactLi = tw.li`list-none list-image-vector font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs text-dark_white pl-[0.313rem] mb-[0.7rem]`
     const ButtonToTop = tw.button`fixed border-none bottom-[10.6rem] right-16 cursor-pointer`
 
     return (
@@ -36,7 +33,9 @@ const Footer = () => {
                 <FooterContent>
                     <CompanyInfo>
                         <div>
-                            <img src={FooterLogo} alt="FooterLogo" tw='md:mb-1.5 sm:mb-1.5' />
+                            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                                <img src={FooterLogo} alt="FooterLogo" tw='md:mb-1.5 sm:mb-1.5' />
+                            </Link>
                         </div>
                         <div tw="pl-[2rem] pt-[2.1rem] md:pt-0 md:pl-0 md:mb-6 sm:pl-0 sm:pt-0 sm:mb-6">
                             <p tw=" mb-[1.3rem] tracking-[0.106em] xs:w-[100%] xs:text-center"><b>Beautice</b> is a Beauty Clinic WordPress Theme.</p>
@@ -52,12 +51,20 @@ const Footer = () => {
                             <PageSpan>Pages</PageSpan>
                             <ul tw="ml-[1rem] mt-[1.8rem]">
                                 <ContactLi>
-                                    <Link to="/">Home</Link>
+                                    <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
                                 </ContactLi>
-                                <ContactLi>About</ContactLi>
-                                <ContactLi>Services</ContactLi>
-                                <ContactLi>Gallery</ContactLi>
-                                <ContactLi>Team</ContactLi>
+                                <ContactLi>
+                                    <Link to="/About" onClick={() => window.scrollTo(0, 0)}>About</Link>
+                                </ContactLi>
+                                <ContactLi>
+                                    <Link to="/Service" onClick={() => window.scrollTo(0, 0)}>Services</Link>
+                                </ContactLi>
+                                <ContactLi>
+                                    <Link to="/Gallery" onClick={() => window.scrollTo(0, 0)}>Gallery</Link>
+                                </ContactLi>
+                                <ContactLi>
+                                    <Link to="/" onClick={() => window.scrollTo(0, 0)}>Team</Link>
+                                </ContactLi>
                             </ul>
                         </ListPage>
                         <ListInfo>
@@ -65,8 +72,12 @@ const Footer = () => {
                             <ul tw="ml-[1rem] mt-[1.8rem]">
                                 <ContactLi>Terms & conditions</ContactLi>
                                 <ContactLi>Privacy policy</ContactLi>
-                                <ContactLi>Blog</ContactLi>
-                                <ContactLi>Contact</ContactLi>
+                                <ContactLi>
+                                    <Link to="/Blog" onClick={() => window.scrollTo(0, 0)}>Blog</Link>
+                                </ContactLi>
+                                <ContactLi>
+                                    <Link to="/Contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
+                                </ContactLi>
                             </ul>
                         </ListInfo>
                     </CompanyContact>
