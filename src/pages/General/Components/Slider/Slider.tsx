@@ -14,7 +14,7 @@ const Slider = () => {
   const WrapperSliderBG = tw.div`w-[37.594rem] lg:max-w-full  md:w-full md:max-w-full md:mx-auto md:px-[10%]  sm:w-full sm:max-w-full sm:mx-auto sm:px-[5%]`;
   const SliderBG = tw.img`max-w-full md:max-w-full md:w-full sm:max-w-full sm:w-full`;
   const BGTopWrapper = tw.div`absolute top-0 left-0 2xl:w-full -z-10`;
-  const BackGroundTop = tw.img`2xl:w-full`;
+  const BackGroundTop = tw.img`2xl:w-full` ;
   return (
     <SliderContainer>
       <MainSlider>

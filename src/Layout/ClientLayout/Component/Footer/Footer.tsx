@@ -8,6 +8,7 @@ import IconInstagram from '../../../../assets/iconSocial/instagram2.png'
 import IconYoutube from '../../../../assets/iconSocial/youtube.png'
 import IconLinkedin from '../../../../assets/iconSocial/linkedin-in.png'
 import ButtonBackToTop from '../../../../assets/website/ToTopButton.png'
+import { Link } from 'react-router-dom'
 const Footer = () => {
     const FooterWrapper = tw.div`max-w-full h-[44.084rem] flex 
     bg-[url("./FooterBG.png"), url("./BottomBG.png")]
@@ -50,7 +51,9 @@ const Footer = () => {
                         <ListPage>
                             <PageSpan>Pages</PageSpan>
                             <ul tw="ml-[1rem] mt-[1.8rem]">
-                                <ContactLi>Home</ContactLi>
+                                <ContactLi>
+                                    <Link to="/">Home</Link>
+                                </ContactLi>
                                 <ContactLi>About</ContactLi>
                                 <ContactLi>Services</ContactLi>
                                 <ContactLi>Gallery</ContactLi>
