@@ -1,6 +1,6 @@
 
 import tw from 'twin.macro'
-import AboutUsBanner from '../../../../assets/banner/unsplash_LRXYS0tSyGc.png'
+import AboutUsBanner from '../../image/banner/unsplash_LRXYS0tSyGc.png'
 import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../../../../components/Material/Material'
 import PlayVideo from '../../../../assets/website/PlayButton.png'
 

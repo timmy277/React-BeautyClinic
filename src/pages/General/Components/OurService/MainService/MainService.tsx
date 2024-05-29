@@ -3,7 +3,7 @@ import 'twin.macro'
 import tw from 'twin.macro'
 import ServiceListItem from '../ServiceListItem/ServiceListItem'
 import { TwTitle_MD, TwSpan, GrayP } from '../../../../../components/Material/Material'
-import BackGroundBubble from '../../../../../assets/background/BackgroundBubble.png'
+import BackGroundBubble from '../../../image/background/BackgroundBubble.png'
 const MainService = () => {
     const ServiceWrapper = tw.div`relative`
     const ServiceContainer = tw.div`max-w-[71.25rem] pt-[8rem] mx-auto flex flex-col lg:max-w-full lg:px-[5%] md:px-[6%] sm:px-[6%]`

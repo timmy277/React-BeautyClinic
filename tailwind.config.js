@@ -12,6 +12,7 @@ export default {
         light_pink: "#FF64AE",
         light_blue: "#414880",
         dark_blue: "#091156",
+        light_white: "#D8DCFF",
         dark_white: "#D7DBFF"
       },
       fontFamily: {

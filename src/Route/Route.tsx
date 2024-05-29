@@ -8,6 +8,7 @@ import Service from "../pages/Service/Service";
 import Gallery from "../pages/Gallery/Gallery";
 import Blog from "../pages/Blog/Blog";
 import Contact from "../pages/Contact/Contact";
+import Team from "../pages/Team/Team";
 
 const RouteCustom  = () => {
     return (
@@ -21,6 +22,7 @@ const RouteCustom  = () => {
                 <Route path="/Gallery" element={<Gallery />} />
                 <Route path="/Blog" element={<Blog />} />
                 <Route path="/Contact" element={<Contact />} />
+                <Route path="/Team" element={<Team />} />
             </Route>
         </Routes>
     </>

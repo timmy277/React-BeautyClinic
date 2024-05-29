@@ -1,9 +1,9 @@
 import "twin.macro";
 import tw from "twin.macro";
 import {TwButton, TwTitle_LG, BlueP} from "../../../../components/Material/Material";
-import SliderBackGround from "../../../../assets/banner/Frame1.png";
+import SliderBackGround from "../../image/banner/Frame1.png";
 import SliderButton from "../../../../assets/website/SlideButton.png";
-import BGTop from "../../../../assets/background/SlideBackground.png";
+import BGTop from "../../image/background/SlideBackground.png";
 const Slider = () => {
   const SliderContainer = tw.div`flex flex-col justify-center items-center max-w-[71.25rem] mx-auto pt-[9.938rem] md:pt-[6rem] sm:pt-[4rem]`;
   const MainSlider = tw.div`flex flex-row items-center lg:px-[5%] mb-[8.5rem] md:flex-col md:px-[3%] md:max-w-full md:w-full sm:flex-col sm:px-[2%] sm:max-w-full sm:w-full`;
