@@ -10,6 +10,7 @@ export default {
         lighter_gray: "#C5C5C5",
         light_gray: "#8B8B8B",
         light_pink: "#FF64AE",
+        highlight_pink: "#FF9ACB",
         light_blue: "#414880",
         dark_blue: "#091156",
         light_white: "#D8DCFF",

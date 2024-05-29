@@ -1,7 +1,7 @@
 import "twin.macro";
 import tw from "twin.macro";
 import {TwButton, TwTitle_LG, BlueP} from "../../../../components/Material/Material";
-import SliderBackGround from "../../image/banner/Frame1.png";
+import SliderBanner from "../../image/banner/Frame1.png";
 import SliderButton from "../../../../assets/website/SlideButton.png";
 import BGTop from "../../image/background/SlideBackground.png";
 const Slider = () => {
@@ -11,8 +11,8 @@ const Slider = () => {
   const SliderTitle = tw(TwTitle_LG)` mb-[0.5rem] mt-[-1.2rem] tracking-[0.018rem]`;
   const SliderDescription = tw(BlueP)`mb-[2rem]`;
   const DetailButton = tw(TwButton)`pt-[1.123rem] pr-[2.5rem] pb-[1.141rem] pl-[2.563rem] md:mx-auto md:px-[10%] md:py-[2%] sm:mx-auto sm:px-[6%] sm:py-[2%] tracking-[0.11rem]`;
-  const WrapperSliderBG = tw.div`w-[37.594rem] lg:max-w-full  md:w-full md:max-w-full md:mx-auto md:px-[10%]  sm:w-full sm:max-w-full sm:mx-auto sm:px-[5%]`;
-  const SliderBG = tw.img`max-w-full md:max-w-full md:w-full sm:max-w-full sm:w-full`;
+  const WrapperSliderBN = tw.div`w-[37.594rem] lg:max-w-full  md:w-full md:max-w-full md:mx-auto md:px-[10%]  sm:w-full sm:max-w-full sm:mx-auto sm:px-[5%]`;
+  const SliderBN = tw.img`max-w-full md:max-w-full md:w-full sm:max-w-full sm:w-full`;
   const BGTopWrapper = tw.div`absolute top-0 left-0 2xl:w-full -z-10`;
   const BackGroundTop = tw.img`2xl:w-full` ;
   return (
@@ -26,9 +26,9 @@ const Slider = () => {
           </SliderDescription>
           <DetailButton>More Details</DetailButton>
         </SliderContent>
-        <WrapperSliderBG>
-          <SliderBG src={SliderBackGround} alt="SliderBackGround" />
-        </WrapperSliderBG>
+        <WrapperSliderBN>
+          <SliderBN src={SliderBanner} alt="SliderBanner" />
+        </WrapperSliderBN>
       </MainSlider>
       <div>
         <img src={SliderButton} alt="SliderButton" />
