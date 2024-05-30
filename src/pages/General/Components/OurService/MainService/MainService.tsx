@@ -6,7 +6,7 @@ import { TwTitle_MD, TwSpan, GrayP } from '../../../../../components/Material/Ma
 import BackGroundBubble from '../../../image/background/BackgroundBubble.png'
 const MainService = () => {
     const ServiceWrapper = tw.div`relative`
-    const ServiceContainer = tw.div`max-w-[71.25rem] pt-[8rem] mx-auto flex flex-col lg:max-w-full lg:px-[5%] md:px-[6%] sm:px-[6%]`
+    const ServiceContainer = tw.div`max-w-[71.25rem] pt-[8rem] mx-auto flex flex-col lg:max-w-full 2lg:px-[5%] lg:px-[5%] md:px-[6%] sm:px-[6%]`
     const ServiceIntroduction = tw.div`text-center mx-auto max-w-[53rem] mb-[5.3rem]`
     const ServiceSpan = tw(TwSpan)`tracking-[0rem]`
     const ServiceTitle = tw(TwTitle_MD)`max-w-[50%] mx-auto mt-[0.725rem] xs:max-w-[80%]`

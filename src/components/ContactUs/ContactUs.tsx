@@ -5,7 +5,7 @@ import ContactUsImg from '../../assets/banner/ContactAnimations.png'
 import BackGroundContact from '../../assets/background/BackgroundBubble2.png'
 const ContactUs = () => {
     const ContactUsWrapper = tw.div`w-full relative`
-    const ContactUsContainer = tw.div`flex flex-row justify-between max-w-[71.25rem] mx-auto pt-[9.1rem] lg:max-w-full lg:px-[10%] md:pt-0 md:flex-col-reverse md:items-center sm:flex-col-reverse sm:items-center sm:pt-0`
+    const ContactUsContainer = tw.div`flex flex-row justify-between max-w-[71.25rem] mx-auto pt-[9.1rem] 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] md:pt-0 md:flex-col-reverse md:items-center sm:flex-col-reverse sm:items-center sm:pt-0`
     const ContactUsBanner = tw.div`max-w-full mt-[4.6rem] md:mt-0 md:w-full md:px-[10%]  sm:mt-0 sm:w-full sm:px-[10%]`
     const BannerImg = tw.img`mt-[5.2rem] md:w-full sm:w-full`
     const ContactUsContent = tw.div`flex flex-col ml-[6.2rem] max-w-[32.5rem] md:ml-0 md:text-center md:max-w-full md:px-[5%] md:w-full sm:ml-0 sm:text-center sm:max-w-full sm:w-full sm:px-[4%]`

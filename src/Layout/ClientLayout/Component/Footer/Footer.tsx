@@ -13,7 +13,7 @@ const Footer = () => {
     const FooterWrapper = tw.div`max-w-full h-[44.084rem] flex 
     bg-[url("./FooterBG.png"), url("./BottomBG.png")]
     bg-center-bottom bg-no-repeat mt-[4.3rem] pt-[14rem] 2xl:bg-top-bottom 2xl:bg-cover-contain xl:bg-top-bottom xl:bg-cover-contain md:pt-[10rem] sm:pt-[10rem] overflow-visible`
-    const FooterContainer = tw.div`max-w-[71.25rem] w-full mx-auto flex flex-col text-dark_white font-poppins text-base leading-6 tracking-widest font-normal lg:px-[5%] md:text-sm sm:text-xs bg-full `
+    const FooterContainer = tw.div`max-w-[71.25rem] w-full mx-auto flex flex-col text-dark_white font-poppins text-base leading-6 tracking-widest font-normal 2lg:px-[5%] lg:px-[5%] md:text-sm sm:text-xs bg-full `
     const FooterContent = tw.div`mx-auto w-full flex md:flex-col md:items-center sm:flex-col sm:items-center xs:text-center xs:m-0 `
     const CompanyInfo = tw.div`max-w-[30.75rem] flex flex-col w-1/2 mt-[1.1rem] md:w-full md:items-center sm:w-full sm:items-center`
     const CompanyContact = tw.div` flex w-1/2 flex-1 md:items-center md:w-[80%] sm:w-[80%]`

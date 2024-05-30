@@ -32,7 +32,7 @@ const ExpertsData = [
 ];
 
 const ListExpert = () => {
-    const ExpertListWrapper = tw.div`flex flex-row justify-between pt-[9.4rem] lg:max-w-full lg:gap-4 md:flex-col md:items-center sm:flex-col sm:items-center md:pt-0 sm:pt-0`
+    const ExpertListWrapper = tw.div`flex flex-row justify-between pt-[9.4rem] lg:max-w-full 2lg:gap-4 lg:gap-4 md:flex-col md:items-center sm:flex-col sm:items-center md:pt-0 sm:pt-0`
     return (
         <ExpertListWrapper>{
             ExpertsData.map((expert) =>(

@@ -3,7 +3,7 @@ import { BlueP, GrayP, TwButton, TwTitle_LG } from "../../../../components/Mater
 import TourVideoImg from "../../image/banner/Group4.png";
 import SliderBackGround from "../../image/background/BackgroundSlider.png";
 const FeatureSlider = () => {
-    const SliderContainer = tw.div`max-w-[71.25rem] mx-auto pt-[12.9rem] md:pt-[6rem] sm:pt-[4rem] flex items-center justify-between lg:px-[5%] mb-[8.5rem] md:flex-col md:px-[3%] md:max-w-full md:w-full sm:flex-col sm:px-[2%] sm:max-w-full sm:w-full`;
+    const SliderContainer = tw.div`max-w-[71.25rem] mx-auto pt-[12.9rem] 2lg:pt-[12%] lg:pt-[10%] md:pt-[8%] sm:pt-[6%] flex items-center justify-between 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] mb-[8.5rem] md:flex-col md:px-[3%] md:max-w-full md:w-full sm:flex-col sm:px-[2%] sm:max-w-full sm:w-full`;
     const SliderContent = tw.div`flex flex-col max-w-[45%] md:text-center md:max-w-full md:w-full md:mb-8 sm:text-center sm:max-w-full sm:w-full sm:mb-6 `;
 
     const SliderTitle = tw(TwTitle_LG)` mb-[0.8rem] tracking-[0.018rem] text-white`;
@@ -17,8 +17,8 @@ const FeatureSlider = () => {
     const PlayImg = tw.img`max-w-full mr-[1.8rem] md:max-w-full md:w-full sm:max-w-full sm:w-full`;
     const TourVideo = tw(GrayP)`text-white`
 
-    const BGTopWrapper = tw.div`absolute top-0 left-0 2xl:w-full -z-10`;
-    const BackGroundTop = tw.img`2xl:w-full` ;
+    const BGTopWrapper = tw.div`absolute top-0 left-0 xl:w-full 2xl:w-full -z-10`;
+    const BackGroundTop = tw.img`xl:w-full 2xl:w-full` ;
     return (
         <SliderContainer>
             <SliderContent>

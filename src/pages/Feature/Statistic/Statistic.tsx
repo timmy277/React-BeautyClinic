@@ -7,18 +7,25 @@ import StatisticBG from'../image/background/BackgroundStatistic.png'
 import { GrayP, TwTitle_MD } from '../../../components/Material/Material'
 
 const Statistic = () => {
-    const StatisticContainer = tw.div` mt-[8rem] pt-[7.4rem] mb-[40rem] relative`
-    const BGStatisticWrapper = tw.div`absolute top-0 left-0 2xl:w-full -z-10`;
-    const BGStatisticImg = tw.img`2xl:w-full` ;
+    const StatisticContainer = tw.div` mt-[8rem] pt-[7.4rem] mb-[21.9rem] relative`
+    const BGStatisticWrapper = tw.div`absolute top-0 left-0 xl:w-full 2xl:w-full -z-10`;
+    const BGStatisticImg = tw.img`xl:w-full 2xl:w-full` ;
     
-    const StatisticContent = tw.div`flex justify-between max-w-[71.25rem] mx-auto pt-[9.938rem] md:pt-[6rem] sm:pt-[4rem] pr-[1.75rem]`
-    const StatisticText = tw.div`max-w-[40%] pt-[0.9rem] pl-[0.25rem]`
-    const Question = tw(TwTitle_MD)`text-white mb-[1.2rem] tracking-[0.02rem]`
-    const Reason = tw(GrayP)`text-light_white font-normal`
-    const Evidence = tw.div`w-[30.188rem] grid grid-cols-2 grid-rows-2 gap-x-[4.5rem] gap-y-[2.688rem]`
-    const EvidenceItem = tw.div` flex items-center text-white `
-    const Data = tw(TwTitle_MD)`text-white`
-    const DataP = tw(GrayP)`text-light_white`
+    const StatisticContent = tw.div`flex justify-between max-w-[71.25rem] mx-auto pt-[9.938rem] md:pt-[6rem] sm:pt-[4rem] pr-[2.55rem]`
+    const StatisticText = tw.div`max-w-[43%] pt-[0.9rem] pl-[0.25rem]`
+    const Question = tw(TwTitle_MD)`text-white mb-[1.3rem] tracking-[0.02rem]`
+    const Reason = tw(GrayP)`text-light_white font-normal tracking-[0.104rem]`
+    const Evidence = tw.div` grid grid-cols-2 grid-rows-2 gap-x-[4.6rem] gap-y-[2.5rem] mt-[-0.2rem]`
+    const EvidenceItem = tw.div` flex items-center justify-center text-white `
+    const CustomLoveItem =tw(EvidenceItem)`ml-[-0.2rem] mt-[-0.2rem]`
+    const ItemImg = tw.img`max-w-full mr-[0.8rem]`
+    const DataContainer = tw.div`flex flex-col justify-between mt-[0.1rem]`
+    const TrustedClinicContainer = tw(DataContainer)``
+    const CustomLoveContainer = tw(DataContainer)`mt-[0.4rem] ml-[-0.1rem]`
+    const AsianBranchContainer = tw(DataContainer)`mt-[0.4rem]`
+    const WorkerContainer = tw(DataContainer)`mt-[0.4rem]`
+    const Data = tw(TwTitle_MD)`text-white mb-[-0.3rem]`
+    const DataP = tw(GrayP)`text-light_white tracking-[0.01rem]`
     const TrustCLinic = tw(DataP)`text-highlight_pink`
     return (
     <>
@@ -34,32 +41,32 @@ const Statistic = () => {
                 </StatisticText>
                 <Evidence>
                     <EvidenceItem>
-                        <img src={handshake} alt="" />
-                        <div>
+                        <ItemImg src={handshake} alt="" />
+                        <TrustedClinicContainer>
                             <Data>100%</Data>
                             <TrustCLinic >trusted clinic</TrustCLinic>
-                        </div>
+                        </TrustedClinicContainer>
                     </EvidenceItem>
-                    <EvidenceItem>
-                        <img src={brotherhood} alt="" />
-                        <div>
+                    <CustomLoveItem>
+                        <ItemImg src={brotherhood} alt="" />
+                        <CustomLoveContainer>
                             <Data>99%</Data>
                             <DataP>customer love</DataP>
-                        </div>
-                    </EvidenceItem>
+                        </CustomLoveContainer>
+                    </CustomLoveItem>
                     <EvidenceItem>
-                        <img src={earth} alt="" />
-                        <div>
+                        <ItemImg src={earth} alt="" />
+                        <AsianBranchContainer>
                             <Data>75+</Data>
                             <DataP>asian branch</DataP>
-                        </div>
+                        </AsianBranchContainer>
                     </EvidenceItem>
                     <EvidenceItem>
-                        <img src={doctor} alt="" />
-                        <div>
-                            <Data>1200+</Data>
+                        <ItemImg src={doctor} alt="" />
+                        <WorkerContainer>
+                            <Data>1.200+</Data>
                             <DataP>licensed worker</DataP>
-                        </div>
+                        </WorkerContainer>
                     </EvidenceItem>
                 </Evidence>
             </StatisticContent>

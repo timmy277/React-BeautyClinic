@@ -14,24 +14,24 @@ const Header = () => {
   ])
 
   const NavItem = styled.li<{active: boolean}>(({active}) =>[
-    tw`font-poppins font-medium text-base text-light_gray not-italic tracking-widest lg:ml-[7%]`, active && tw`font-semibold text-light_blue` 
+    tw`font-poppins font-medium text-base text-light_gray not-italic tracking-widest 2lg:ml-[7%] lg:ml-[7%]`, active && tw`font-semibold text-light_blue` 
   ])
 
   
   
-  const HeaderContainer = tw.div`max-w-[71.25rem] justify-center items-center pt-[2.563rem] mx-auto lg:max-w-full lg:px-[5%] md:px-[5%]`;
+  const HeaderContainer = tw.div`max-w-[71.25rem] justify-center items-center pt-[2.563rem] mx-auto 2lg:max-w-full lg:max-w-full  2lg:px-[9%] lg:px-[9%]   md:px-[5%]`;
   const NavBar = tw.div`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden `;
   const LogoContainer = tw.div`object-cover my-auto mx-0`;
   const LogoImg = tw.img`m-auto ml-[-0.275rem] max-w-none`;
   const ListNavItem = tw.ul`flex justify-center items-center max-w-[30.063rem] relative`;
-  const HomeItem = tw(NavItem)`lg:ml-[7%] ml-[8.8rem] `;
-  const NavAbout = tw(NavItem)`ml-[2.675rem] lg:ml-[10%]`;
-  const NavService = tw(NavItem)`ml-[2.775rem] lg:ml-[10%]`;
-  const NavGallery = tw(NavItem)`ml-[2.8rem] lg:ml-[10%]`;
-  const NavBlog = tw(NavItem)`ml-[2.8rem] lg:ml-[10%]`;
+  const HomeItem = tw(NavItem)`2lg:ml-[7%] lg:ml-[7%] ml-[8.8rem] `;
+  const NavAbout = tw(NavItem)`ml-[2.675rem] 2lg:ml-[10%] lg:ml-[10%]`;
+  const NavService = tw(NavItem)`ml-[2.775rem] 2lg:ml-[10%] lg:ml-[10%]`;
+  const NavGallery = tw(NavItem)`ml-[2.8rem] 2lg:ml-[10%] lg:ml-[10%]`;
+  const NavBlog = tw(NavItem)`ml-[2.8rem] 2lg:ml-[10%] lg:ml-[10%]`;
 
   const ContactButton = styled(TwButton)<{active: boolean}>(({active}) =>[
-    tw`font-medium lg:ml-[2%]`, active && tw`font-semibold text-light_blue` 
+    tw`font-medium 2lg:ml-[2%] lg:ml-[2%]`, active && tw`font-semibold text-light_blue` 
   ])
   
   const NavSpan = tw.span`mr-1`;
@@ -41,7 +41,7 @@ const Header = () => {
     hover && tw`hover:text-white hover:bg-light_pink `,
   ]);
 
-  const DropDownMenu = tw.ul`absolute top-[1.5rem] left-[4.375rem] z-50`
+  const DropDownMenu = tw.ul`absolute top-[1.5rem] left-[4.375rem] z-50 hidden`
   const DropDownMenuItem = tw(NavItem)`mb-1`
   
   return (
@@ -72,7 +72,7 @@ const Header = () => {
                 </DropDownMenuItem>
               </DropDownMenu>
             <NavAbout active = {location.pathname === "/About"}>
-              <Link to="/About">About</Link>
+              <Link to="/Feature">About</Link>
             </NavAbout>
             <NavService active = {location.pathname === "/Service"}>
               <Link to="/Service">Service</Link>
