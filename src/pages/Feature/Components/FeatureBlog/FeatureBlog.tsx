@@ -28,8 +28,7 @@ const NewsData = [
 ];
 
 const FeatureBlog = () => {
-    const BlogContainer = tw.div`max-w-[71.25rem] mx-auto flex flex-col 
-    lg:max-w-full lg:px-[5%] md:px-[6%] sm:px-[6%]`
+    const BlogContainer = tw.div`max-w-[71.25rem] mx-auto flex flex-col 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] md:px-[6%] sm:px-[6%]`
     const BLogIntroduction = tw.div`text-center mx-auto mb-[5.5rem]`
     const BlogSpan = tw(TwSpan)`tracking-[0rem]`
     const BlogTitle = tw(TwTitle_MD)`max-w-full mx-auto mt-[0.725rem] xs:max-w-[80%]`

@@ -3,19 +3,19 @@ import { BlueP, GrayP, TwButton, TwTitle_LG } from "../../../../components/Mater
 import TourVideoImg from "../../image/banner/Group4.png";
 import SliderBackGround from "../../image/background/BackgroundSlider.png";
 const FeatureSlider = () => {
-    const SliderContainer = tw.div`max-w-[71.25rem] mx-auto pt-[12.9rem] 2lg:pt-[12%] lg:pt-[10%] md:pt-[8%] sm:pt-[6%] flex items-center justify-between 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] mb-[8.5rem] md:flex-col md:px-[3%] md:max-w-full md:w-full sm:flex-col sm:px-[2%] sm:max-w-full sm:w-full`;
+    const SliderContainer = tw.div`max-w-[71.25rem] mx-auto pt-[12.9rem] 2lg:pt-[12%] lg:pt-[10%] md:pt-0 sm:pt-0 flex items-center justify-between 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] mb-[8.5rem] md:flex-col md:px-[6%] md:max-w-full md:w-full sm:flex-col sm:px-[2%] sm:max-w-full sm:w-full`;
     const SliderContent = tw.div`flex flex-col max-w-[45%] md:text-center md:max-w-full md:w-full md:mb-8 sm:text-center sm:max-w-full sm:w-full sm:mb-6 `;
 
     const SliderTitle = tw(TwTitle_LG)` mb-[0.8rem] tracking-[0.018rem] text-white`;
-    const SliderDescription = tw(BlueP)`mb-[2.5rem] text-dark_white`;
+    const SliderDescription = tw(BlueP)`mb-[2.5rem] text-dark_white md:mb-[1.5rem] sm:mb-[1rem]`;
     const DetailButton = tw(TwButton)`bg-transparent max-h-[3.25rem] border border-white border-solid rounded-[0.938rem] pt-[0.875rem] 
     pr-[1.938rem] pb-[0.875rem] pl-[1.813rem] md:mx-auto md:px-[10%] md:py-[2%] sm:mx-auto sm:px-[6%] 
     sm:py-[2%] tracking-[0.1rem] font-medium`;
 
-    const PlayButton = tw.div`flex items-center justify-between pr-[9rem]`
-    const PlayImgWrapper = tw.div`lg:max-w-full  md:w-full md:max-w-full md:mx-auto md:px-[10%]  sm:w-full sm:max-w-full sm:mx-auto sm:px-[5%]`;
+    const PlayButton = tw.div`flex items-center justify-between pr-[9rem] 2lg:pr-[12%] lg:pr-[10%] md:pr-[8%] sm:pr-[6%]`;
+    const PlayImgWrapper = tw.div`2lg:max-w-full lg:max-w-full  md:w-full md:max-w-full md:mx-auto md:px-[10%]  sm:w-full sm:max-w-full sm:mx-auto sm:px-[5%]`;
     const PlayImg = tw.img`max-w-full mr-[1.8rem] md:max-w-full md:w-full sm:max-w-full sm:w-full`;
-    const TourVideo = tw(GrayP)`text-white`
+    const TourVideo = tw(GrayP)`text-white text-nowrap`
 
     const BGTopWrapper = tw.div`absolute top-0 left-0 xl:w-full 2xl:w-full -z-10`;
     const BackGroundTop = tw.img`xl:w-full 2xl:w-full` ;

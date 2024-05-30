@@ -29,7 +29,7 @@ const ServicesData = [
 ];
 
 const ServiceList = () => {
-    const ServiceListWrapper = tw.div`flex flex-row gap-[4.125rem] justify-between mx-[7rem] md:flex-col md:mx-auto md:w-[90%] sm:flex-col sm:mx-auto sm:w-[85%]`
+    const ServiceListWrapper = tw.div`flex flex-row gap-[4.125rem] justify-between mx-[7rem] 2lg:gap-[5%] lg:gap-[3%]  md:flex-col md:mx-auto md:w-[90%] sm:flex-col sm:mx-auto sm:w-[85%]`
     return (
         <ServiceListWrapper>{
             ServicesData.map((service) =>(
