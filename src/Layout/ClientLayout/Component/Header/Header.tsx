@@ -42,7 +42,7 @@ const Header = () => {
   const NavA = styled.div<{ hover: boolean, active: boolean }>(({ hover, active }) => [
     tw`flex items-center text-[0.6rem] text-light_pink font-semibold py-2.5 pl-3 uppercase rounded-[0.5rem] font-poppins md:text-base`,
     hover && tw`hover:text-white hover:bg-light_pink `,
-    active && tw`text-white scale-125 bg-light_pink`,
+    active && tw`text-white scale-105 bg-light_pink`,
   ]);
 
   // const NavBar = tw.div`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden `;
@@ -52,8 +52,13 @@ const Header = () => {
     tw`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden`,
     feature && tw`pl-[0.2rem]`
   ])
-  const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[3.2rem] bg-light_white z-50 rounded-xl`
-  const DropDownMenuItem = tw(NavItem)` pb-2 pl-4 pt-2 text-light_pink pr-4 hover:bg-light_pink hover:text-light_white`
+  const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[3.2rem] 2lg:left-[-4.8rem] lg:left-[-4.8rem] bg-light_white z-50 rounded-xl`
+  // const DropDownMenuItem = tw(NavItem)` pb-2 pl-4 pt-2 text-light_pink pr-4 hover:bg-light_pink hover:text-light_white`
+  const DropDownMenuItem = styled.li<{active: boolean}>(({active}) =>[
+    tw`pt-2 pb-2 pl-4 pr-4 text-light_pink hover:bg-light_pink hover:text-light_white`,
+    active && tw`bg-light_pink text-light_white`
+  ])
+  
   const General = tw(DropDownMenuItem)`rounded-t-xl`
   const Team = tw(DropDownMenuItem)`rounded-b-xl`
   
