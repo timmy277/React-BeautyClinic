@@ -7,6 +7,7 @@ import { IoIosListBox, IoIosContacts } from "react-icons/io";
 import { RiGalleryFill } from "react-icons/ri";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 const Header = () => {
   const location = useLocation();
   const NavLi = styled.li<{active: boolean}>(({active}) =>[
@@ -41,9 +42,19 @@ const Header = () => {
     hover && tw`hover:text-white hover:bg-light_pink `,
   ]);
 
-  const DropDownMenu = tw.ul`absolute top-[1.5rem] left-[4.375rem] z-50 hidden`
+  const DropDownMenu = tw.ul`absolute top-[1.5rem] left-[4.375rem] z-50`
   const DropDownMenuItem = tw(NavItem)`mb-1`
-  
+  const [isOpen, setIsOpen] = useState(false);
+
+  const showDropdown = () => {
+    setIsOpen(true);
+  };
+
+  const hideDropdown = () => {
+    setTimeout(() => { 
+      setIsOpen(false);
+    }, 1000);
+  };
   return (
     <header>
       <HeaderContainer>
@@ -57,10 +68,10 @@ const Header = () => {
             </Link>
           </LogoContainer>
           <ListNavItem>
-            <HomeItem active = {location.pathname === "/"} >
+            <HomeItem active = {location.pathname === "/"} onMouseEnter={showDropdown} onMouseLeave={hideDropdown}>
               <Link to="/">Home+</Link>
             </HomeItem>
-              <DropDownMenu>
+              {isOpen &&(<DropDownMenu>
                 <DropDownMenuItem active = {location.pathname === "/"}>
                   <Link to="/">General</Link>
                 </DropDownMenuItem>
@@ -70,7 +81,8 @@ const Header = () => {
                 <DropDownMenuItem active = {location.pathname === "/Team"}>
                   <Link to="/Team">Team</Link>
                 </DropDownMenuItem>
-              </DropDownMenu>
+              </DropDownMenu>)
+              }
             <NavAbout active = {location.pathname === "/About"}>
               <Link to="/Feature">About</Link>
             </NavAbout>
