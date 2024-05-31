@@ -121,7 +121,7 @@ const Header = () => {
               </DropDownMenu>)
               }
             <NavAbout active = {location.pathname === "/About"} feature = {location.pathname === "/Feature"}>
-              <Link to="/Feature">About</Link>
+              <Link to="/About">About</Link>
             </NavAbout>
             <NavService active = {location.pathname === "/Service"} feature = {location.pathname === "/Feature"}>
               <Link to="/Service">Service</Link>
