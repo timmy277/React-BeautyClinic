@@ -12,7 +12,7 @@ const FeatureSlider = () => {
     pr-[1.938rem] pb-[0.875rem] pl-[1.813rem] md:mx-auto md:px-[10%] md:py-[2%] sm:mx-auto sm:px-[6%] 
     sm:py-[2%] tracking-[0.1rem] font-medium`;
 
-    const PlayButton = tw.div`flex items-center justify-between pr-[9rem] 2lg:pr-[12%] lg:pr-[10%] md:pr-[8%] md:pt-[6%] sm:pr-[6%]  sm:pt-[6%]`
+    const PlayButton = tw.div`flex items-center justify-between pr-[9rem] 2lg:pr-[12%] lg:pr-[10%] md:pr-[8%] md:pt-[6%] md:w-full md:max-w-[60%] sm:pr-[6%]  sm:pt-[6%] sm:w-full sm:max-w-[50%]`
     const PlayImgWrapper = tw.div`2lg:max-w-full lg:max-w-full  md:w-full md:max-w-full md:mx-auto md:px-[10%]  sm:w-full sm:max-w-full sm:mx-auto sm:px-[5%]`;
     const PlayImg = tw.img`max-w-full mr-[1.8rem] md:max-w-full md:w-full sm:max-w-full sm:w-full`;
     const TourVideo = tw(GrayP)`text-white text-nowrap`
