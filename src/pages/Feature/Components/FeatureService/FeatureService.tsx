@@ -8,7 +8,7 @@ const FeatureService = () => {
     const ServiceIntroduction = tw.div`text-center mx-auto mb-[4.8rem]`
     const ServiceSpan = tw(TwSpan)`tracking-[0rem]`
     const ServiceTitle = tw(TwTitle_MD)`max-w-full mx-auto mt-[0.725rem] xs:max-w-[80%]`
-    const ServiceDescription = tw(GrayP)`mt-[1.2rem] font-normal tracking-widest mx-auto md:max-w-[80%] sm:max-w-[75%]`
+    const ServiceDescription = tw(GrayP)`mt-[1.2rem] font-normal text-nowrap tracking-widest mx-auto md:max-w-[80%] sm:max-w-[75%]`
     return (
         <ServiceContainer>
             <ServiceIntroduction>

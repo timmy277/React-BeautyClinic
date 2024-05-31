@@ -4,7 +4,7 @@ import AboutUsBanner from '../../image/banner/Illustration-1.png'
 import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../../../../components/Material/Material'
 
 const FeatureAboutUs = () => {
-    const AboutUsContainer = tw.div`flex flex-row justify-between max-w-[71.25rem] mx-auto pt-[21rem] 2lg:pt-[24%] 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:pt-[24%] lg:px-[8%] md:flex-col-reverse md:text-center md:pt-[14%] sm:flex-col-reverse sm:text-center sm:max-w-full sm:pt-[10%]`
+    const AboutUsContainer = tw.div`flex flex-row justify-between max-w-[71.25rem] mx-auto mt-[40rem] pt-[21rem] 2lg:pt-[24%] 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:pt-[24%] lg:px-[8%] md:flex-col-reverse md:text-center md:pt-[20rem] sm:flex-col-reverse sm:text-center sm:max-w-full sm:pt-[20rem]`
     const AboutUsImageWrapper = tw.div`w-[30.625rem] h-[18.917rem] max-w-[55%] lg:max-w-[50%] lg:w-full lg:h-full  md:max-w-full md:w-full md:mx-auto md:px-[10%]  md:mb-[7%] sm:max-w-full sm:w-full sm:mx-auto sm:px-[8%] sm:mb-[6%]`
     const AboutUsImage = tw.img`max-w-none lg:w-full lg:m-0 md:w-full md:max-w-full md:mx-auto  sm:w-full sm:max-w-full sm:mx-auto`
     const AboutUsContent = tw.div`max-w-[45%] flex flex-col pl-[1.9rem] md:max-w-full md:px-[5%] md:mb-[8%] md:items-center md:mx-auto sm:max-w-full  sm:px-[4%] sm:mb-[6%] sm:items-center sm:mx-auto xs:px-0`

@@ -31,7 +31,7 @@ const FeatureBlog = () => {
     const BlogContainer = tw.div`max-w-[71.25rem] mx-auto flex flex-col 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] md:px-[6%] sm:px-[6%]`
     const BLogIntroduction = tw.div`text-center mx-auto mb-[5.5rem]`
     const BlogSpan = tw(TwSpan)`tracking-[0rem]`
-    const BlogTitle = tw(TwTitle_MD)`max-w-full mx-auto mt-[0.725rem] xs:max-w-[80%]`
+    const BlogTitle = tw(TwTitle_MD)`max-w-full mx-auto mt-[0.625rem] xs:max-w-[80%]`
     const BLogDescription = tw(GrayP)`mt-[1.1rem] font-normal tracking-widest mx-auto md:max-w-[80%] sm:max-w-[75%]`
 
     const BlogListWrapper = tw.div`flex flex-row gap-[3.063rem] justify-between md:flex-col md:mx-auto md:w-[90%] sm:flex-col sm:mx-auto sm:w-[85%]`

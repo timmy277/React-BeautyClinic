@@ -3,18 +3,16 @@ import handshake from '../image/icon/handshake.png'
 import brotherhood from '../image/icon/brotherhood.png'
 import earth from '../image/icon/earth.png'
 import doctor from '../image/icon/doctor.png'
-import StatisticBG from'../image/background/BackgroundStatistic.png'
+// import StatisticBG from'../image/background/BackgroundStatistic.png'
 import { GrayP, TwTitle_MD } from '../../../components/Material/Material'
 
 const Statistic = () => {
-    const StatisticContainer = tw.div` mt-[8rem] pt-[7.4rem] mb-[21.9rem] relative 2lg:pt-[8%] lg:pt-[4%] md:pt-[3%] sm:pt-[2%]`
-    const BGStatisticWrapper = tw.div`absolute top-0 left-0 xl:w-full 2xl:w-full -z-10`;
-    const BGStatisticImg = tw.img`xl:w-full 2xl:w-full` ;
-    
-    const StatisticContent = tw.div`flex justify-between max-w-[71.25rem] mx-auto pt-[9.938rem] pr-[2.55rem] 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] md:flex-col md:pt-0 md:items-center md:pr-0 sm:flex-col sm:pt-0  sm:items-center sm:pr-0`
+    const StatisticContainer = tw.div` bg-[url("./BackgroundStatistic.png")] h-[43.594rem] bg-top bg-cover bg-no-repeat mt-[8rem] pt-[7.4rem] mb-[6.8rem] relative 2lg:pt-[8%] lg:pt-[8%] md:pt-[25%] sm:pt-[30%] 2xl:bg-cover xl:bg-cover xl:w-full 2xl:w-full  xl:max-h-full 2xl:max-h-full`
+
+    const StatisticContent = tw.div`flex justify-between max-w-[71.25rem] mx-auto pt-[9.838rem] pr-[2.55rem] 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] md:flex-col md:pt-0 md:items-center md:pr-0 sm:flex-col sm:pt-0  sm:items-center sm:pr-0`
     const StatisticText = tw.div`max-w-[43%] pt-[0.9rem] pl-[0.25rem] md:text-center md:max-w-full md:mx-[3%] md:mb-[4%] sm:text-center sm:mb-[4%] sm:max-w-full `
     const Question = tw(TwTitle_MD)`text-white mb-[1.3rem] tracking-[0.02rem]`
-    const Reason = tw(GrayP)`text-light_white font-normal tracking-[0.104rem]`
+    const Reason = tw(GrayP)`text-light_white font-normal tracking-[0.104rem]  md:max-w-[60%] md:mx-auto  sm:max-w-[60%] sm:mx-auto `
     const Evidence = tw.div` grid grid-cols-2 grid-rows-2 gap-x-[4.6rem] gap-y-[2.5rem] mt-[-0.2rem] md:max-w-full md:gap-x-[5%] md:gap-y-[5%] sm:max-w-full sm:gap-x-[5%] sm:gap-y-[5%]`
     const EvidenceItem = tw.div` flex items-center justify-center text-white `
     const CustomLoveItem =tw(EvidenceItem)`ml-[-0.2rem] mt-[-0.2rem]`
@@ -31,9 +29,9 @@ const Statistic = () => {
     <>
         <StatisticContainer>
             <StatisticContent>
-                <BGStatisticWrapper>
+                {/* <BGStatisticWrapper>
                     <BGStatisticImg src={StatisticBG} alt="Statistic" />
-                </BGStatisticWrapper>
+                </BGStatisticWrapper> */}
                 <StatisticText>
                     <Question>Why choosing us?</Question>
                     <Reason>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, 
