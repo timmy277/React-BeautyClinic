@@ -4,7 +4,7 @@ import { GrayP, TwTitle_MD } from '../../../../components/Material/Material'
 
 
 const RequestCall = () => {
-    const CallContainer = tw.div`max-w-[71.25rem] pt-[10.6rem] mb-[8.2rem] mx-auto flex justify-between items-center 2lg:max-w-full 2lg:px-[10%] 2lg:gap-12 lg:max-w-full lg:w-full lg:px-[10%] lg:flex-col lg:items-center lg:text-center md:flex-col md:items-center md:text-center md:max-w-full md:w-full md:px-[10%] sm:flex-col sm:items-center sm:text-center sm:max-w-full sm:w-full sm:px-[10%]`
+    const CallContainer = tw.div`max-w-[71.25rem] pt-[10.6rem] mb-[8.1rem] mx-auto flex justify-between items-center 2lg:max-w-full 2lg:px-[10%] 2lg:gap-12 lg:max-w-full lg:w-full lg:px-[10%] lg:flex-col lg:items-center lg:text-center md:flex-col md:items-center md:text-center md:max-w-full md:w-full md:px-[10%] sm:flex-col sm:items-center sm:text-center sm:max-w-full sm:w-full sm:px-[10%]`
     const CallTitle = tw(TwTitle_MD)`mb-[1rem] text-nowrap`
     const CallDescription = tw(GrayP)``
     const DescriptionSpan = tw.span`font-semibold text-dark_blue`
