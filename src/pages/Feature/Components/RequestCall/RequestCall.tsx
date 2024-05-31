@@ -9,7 +9,7 @@ const RequestCall = () => {
     const CallDescription = tw(GrayP)``
     const DescriptionSpan = tw.span`font-semibold text-dark_blue`
 
-    const CallInput = tw.input`relative w-full h-[4.563rem] border border-solid border-[#D9DDFE] rounded-[1.563rem] font-poppins text-light_gray text-base leading-6 tracking-widest font-medium md:text-sm sm:text-xs pt-[1.438rem] pb-[1.375rem] pl-[2.313rem] sm:pl-[2%]`
+    const CallInput = tw.input`relative w-full h-[4.563rem] border border-solid border-[#D9DDFE] rounded-[1.563rem] font-poppins text-light_gray text-base leading-6 tracking-[0.09rem] font-medium md:text-sm sm:text-xs pt-[1.238rem] pb-[1.375rem] pl-[2.313rem] sm:pl-[2%]`
     const CallButton = tw.button`z-10 h-[4.563rem] w-[7.063rem] bg-light_pink  absolute right-[0] rounded-e-[1.563rem] sm:max-w-full sm:w-[15%]`
     return (
         <>
@@ -18,7 +18,7 @@ const RequestCall = () => {
                     <CallTitle>Request call services</CallTitle>
                     <CallDescription>Lorem ipsum dolor sit amet, consect adipiscing elit <DescriptionSpan>Contact Us.</DescriptionSpan></CallDescription>
                 </div>
-                <div tw="max-w-[41.125rem] w-full pt-[0.9rem] relative lg:max-w-full lg:w-full lg:px-[10%] md:max-w-full md:w-full md:px-[10%] sm:max-w-full sm:w-full sm:px-[3%]">
+                <div tw="max-w-[41.125rem] w-full pt-[1rem] relative lg:max-w-full lg:w-full lg:px-[10%] md:max-w-full md:w-full md:px-[10%] sm:max-w-full sm:w-full sm:px-[3%]">
                     <CallInput type="text" placeholder='Insert your phone number here ...'/>
                     <CallButton>
                         <img src={Phone} alt="" tw="ml-[2.1rem] sm:ml-[4%]"/>
