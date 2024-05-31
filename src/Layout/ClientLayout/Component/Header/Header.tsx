@@ -18,7 +18,7 @@ const Header = () => {
   ])
   
   const HeaderContainer = tw.div`max-w-[71.25rem] justify-center items-center pt-[2.563rem] mx-auto 2lg:max-w-full lg:max-w-full  2lg:px-[9%] lg:px-[7%]  md:px-[5%]`;
-  const NavBar = tw.div`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden `;
+  // const NavBar = tw.div`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden `;
   const LogoContainer = tw.div`object-cover my-auto mx-0`;
   const LogoImg = tw.img`m-auto ml-[-0.275rem] max-w-none`;
   const ListNavItem = tw.ul`flex justify-center items-center max-w-[30.063rem] relative`;
@@ -45,6 +45,13 @@ const Header = () => {
     active && tw`text-white scale-125 bg-light_pink`,
   ]);
 
+  // const NavBar = tw.div`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden `;
+
+  
+  const NavBar = styled.div<{feature: boolean}>(({feature}) =>[
+    tw`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden`,
+    feature && tw`pl-[0.2rem]`
+  ])
   const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[3.2rem] bg-light_white z-50 rounded-xl`
   const DropDownMenuItem = tw(NavItem)` pb-2 pl-4 pt-2 text-light_pink pr-4 hover:bg-light_pink hover:text-light_white`
   const General = tw(DropDownMenuItem)`rounded-t-xl`
@@ -86,7 +93,7 @@ const Header = () => {
         <button onClick={openMenu} tw="cursor-pointer  absolute w-14  hidden top-8 left-8 md:block sm:block z-40 scale-[2]">
           <IoIosListBox />
         </button>
-        <NavBar>
+        <NavBar feature = {location.pathname === "/Feature"}>
           <LogoContainer>
             <Link to="/">
               <LogoImg src={logo} alt="mainLogo" />
