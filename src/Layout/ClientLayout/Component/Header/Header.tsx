@@ -11,14 +11,11 @@ import { useState } from "react";
 const Header = () => {
   const location = useLocation();
 
-
-
   const NavItem = styled.li<{active: boolean, feature: boolean}>(({active, feature}) =>[
     tw`font-poppins font-medium text-base text-light_gray not-italic tracking-widest 2lg:ml-[7%] lg:ml-[7%]`,
     active && tw`font-semibold text-light_blue`,
     feature && tw`text-light_white`
   ])
-
   
   const HeaderContainer = tw.div`max-w-[71.25rem] justify-center items-center pt-[2.563rem] mx-auto 2lg:max-w-full lg:max-w-full  2lg:px-[9%] lg:px-[7%]  md:px-[5%]`;
   const NavBar = tw.div`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden `;
@@ -75,6 +72,14 @@ const Header = () => {
       setIsOpen(false);
     }, 0);
   };
+
+  const logo = location.pathname === "/Feature" ? "src/pages/Feature/image/others/FeatureLogo.png" : "src/assets/website/MainLogo.png";
+  console.log(logo);
+  // const [src, setSrc] = useState({MainLogo});
+  // const changeLogo = () => {
+  //   setSrc('{FeatureLogo}');
+  // };
+  
   return (
     <header>
       <HeaderContainer>
@@ -84,7 +89,7 @@ const Header = () => {
         <NavBar>
           <LogoContainer>
             <Link to="/">
-              <LogoImg src={MainLogo} alt="mainLogo" />
+              <LogoImg src={logo} alt="mainLogo" />
             </Link>
           </LogoContainer>
           <ListNavItem >
