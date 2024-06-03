@@ -1,13 +1,13 @@
 import ProfessionalTeams from '../../components/ProfessionalTeams/ProfessionalTeams'
-import AboutUs from '../General/Components/AboutUs/AboutUs'
 import Introduction from './Components/Introduction/Introduction'
+import Slogan from './Components/Slogan/Slogan'
 
 const About = () => {
     return (
         <>
             <Introduction/>
-            <AboutUs />
             <ProfessionalTeams />
+            <Slogan />
         </>
     )
 }

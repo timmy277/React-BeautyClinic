@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        sink_gray: "#CACACA",
         lighter_gray: "#C5C5C5",
         light_gray: "#8B8B8B",
         light_pink: "#FF64AE",

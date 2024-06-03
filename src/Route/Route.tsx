@@ -1,7 +1,7 @@
 
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/ClientLayout";
-import Feature from "../pages/Feature/Feature";
+import Feature from "../pages/Feature";
 import General from "../pages/General/General";
 import About from "../pages/About/About";
 import Service from "../pages/Service/Service";

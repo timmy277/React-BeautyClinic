@@ -1,10 +1,10 @@
 import tw from 'twin.macro'
-import handshake from '../image/icon/handshake.png'
-import brotherhood from '../image/icon/brotherhood.png'
-import earth from '../image/icon/earth.png'
-import doctor from '../image/icon/doctor.png'
+import handshake from '../../image/icon/handshake.png'
+import brotherhood from '../../image/icon/brotherhood.png'
+import earth from '../../image/icon/earth.png'
+import doctor from '../../image/icon/doctor.png'
 // import StatisticBG from'../image/background/BackgroundStatistic.png'
-import { GrayP, TwTitle_MD } from '../../../components/Material/Material'
+import { GrayP, TwTitle_MD } from '../../../../components/Material/Material'
 
 const Statistic = () => {
     const StatisticContainer = tw.div` bg-[url("./BackgroundStatistic.png")] h-[43.594rem] bg-top bg-cover bg-no-repeat mt-[8rem] pt-[7.4rem] mb-[6.8rem] relative 2lg:pt-[8%] lg:pt-[8%] md:pt-[25%] sm:pt-[30%] 2xl:bg-cover xl:bg-cover xl:w-full 2xl:w-full  xl:max-h-full 2xl:max-h-full`
