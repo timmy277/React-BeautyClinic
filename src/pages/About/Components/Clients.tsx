@@ -14,11 +14,13 @@ const Clients = () => {
     const ClientTitle = tw(TwTitle_MD)`mb-[1.3rem] tracking-[0.01rem] sm:max-w-[80%]`
     const ClientDescription = tw(GrayP)`font-normal tracking-[0.1039rem] mb-[3rem] md:max-w-[70%] md:mx-auto sm:max-w-[70%] sm:mx-auto`
 
-    const ListAgency = tw.div`flex justify-between items-center lg:max-w-full w-full lg:gap-[4%]`
-    const Agency = tw.div``
-    const Agency1st = tw.div`mr-[-0.206rem]`
-    const Agency4th = tw.div`mt-[-0.1rem]`
-    const AgencyImg = tw.img``
+    const ListAgency = tw.div`flex justify-between items-center lg:max-w-full w-full lg:gap-[4%] md:px-[10%] md:flex-wrap sm:px-[10%] sm:flex-wrap`
+    const Agency1st = tw.div`mr-[-0.206rem] md:w-[33%] sm:w-[33%]`
+    const Agency2nd = tw.div`md:w-[33%] sm:w-[33%]`
+    const Agency3rd = tw.div`md:w-[33%] sm:w-[33%]`
+    const Agency4th = tw.div`mt-[-0.1rem] md:w-[33%] md:ml-[15%] sm:w-[33%] sm:ml-[15%]`
+    const Agency5th = tw.div`md:w-[33%] md:mr-[15%] sm:w-[33%] sm:mr-[15%]`
+    const AgencyImg = tw.img`md:w-[50%] md:mx-auto`
     return (
         <>
             <ClientContainer>
@@ -31,18 +33,18 @@ const Clients = () => {
                     <Agency1st>
                         <AgencyImg src={Agency1} alt="" />
                     </Agency1st>
-                    <Agency>
+                    <Agency2nd>
                         <AgencyImg src={Agency2} alt="" />
-                    </Agency>
-                    <Agency>
+                    </Agency2nd>
+                    <Agency3rd>
                         <AgencyImg src={Agency3} alt="" />
-                    </Agency>
+                    </Agency3rd>
                     <Agency4th>
                         <AgencyImg src={Agency4} alt="" />
                     </Agency4th>
-                    <Agency>
+                    <Agency5th>
                         <AgencyImg src={Agency5} alt="" />
-                    </Agency>
+                    </Agency5th>
                 </ListAgency>
             </ClientContainer>
         </>

@@ -2,8 +2,9 @@ import tw from "twin.macro";
 import { GrayP, TwSpan, TwTitle_MD } from "../../../components/Material";
 import IntroBanner from "../image/banner/unsplash_DE6rYp1nAho.png";
 import PlayButton from "../../../assets/website/PlayButton.png";
+import IntroBG from '../image/background/BubbleBG.png'
 const Introduction = () => {
-  const IntroductionContainer = tw.div`max-w-full pt-[8.1rem] mb-[-6.6rem] 2lg:max-w-full lg:max-w-full md:pt-[2rem] sm:pt-[2rem]`;
+  const IntroductionContainer = tw.div`relative max-w-full pt-[8.1rem] mb-[-6.6rem] 2lg:max-w-full lg:max-w-full md:pt-[2rem] md:mb-[-16rem] sm:pt-[2rem] sm:mb-[-16rem]`;
   const IntroText = tw.div`max-w-[71.25rem] flex flex-col mx-auto 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[11%]  md:text-center sm:text-center`;
   const AboutSpan = tw(TwSpan)`mb-[0.7rem]`;
   const AboutTitle = tw(
@@ -15,6 +16,7 @@ const Introduction = () => {
   const BannerImgWrapper = tw.div``;
   const AboutBanner = tw.div`max-w-none w-full relative 2lg:px-[5%] lg:px-[5%]`;
   const AboutBannerImg = tw.img`max-w-full mx-auto mt-[1rem] `;
+
   return (
     <>
       <IntroductionContainer>
@@ -40,6 +42,9 @@ const Introduction = () => {
             </div>
           </AboutBanner>
         </BannerImgWrapper>
+        <div tw="absolute top-[33.5rem] right-0 -z-10 2xl:w-full xl:w-full">
+          <img src={IntroBG} alt="" tw='2xl:w-full xl:w-full' />
+        </div>
       </IntroductionContainer>
     </>
   );

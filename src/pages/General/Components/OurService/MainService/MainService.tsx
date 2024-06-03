@@ -14,8 +14,8 @@ const MainService = () => {
   const ServiceDescription = tw(
     GrayP
   )`mt-[1.1rem] font-normal tracking-widest mx-auto md:max-w-[80%] sm:max-w-[75%]`;
-  const BackGroundService = tw.div`absolute top-[40.2rem] right-0 2xl:w-full -z-10`;
-  const BackGroundServiceImg = tw.img`2xl:w-full`;
+  const BackGroundService = tw.div`absolute top-[40.2rem] right-0 2xl:w-full xl:w-full -z-10`;
+  const BackGroundServiceImg = tw.img`2xl:w-full xl:w-full`;
   return (
     <ServiceWrapper>
       <ServiceContainer>
