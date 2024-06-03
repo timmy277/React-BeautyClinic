@@ -21,7 +21,7 @@ const Footer = () => {
     const ListInfo = tw(ListPage)`pl-[6.85rem] md:pl-0 md:items-center sm:pl-0 sm:items-center`
     const PageSpan = tw.span`font-poppins font-medium text-lg leading-[1.688rem] tracking-widest text-white`
     const InfoSpan = tw(PageSpan)``
-    const BottomFooter = tw.div`flex mt-[6.2rem] justify-between md:mt-0 md:flex-col md:items-center sm:mt-0 sm:flex-col sm:items-center `
+    const BottomFooter = tw.div`flex mt-[6.3rem] justify-between md:mt-0 md:flex-col md:items-center sm:mt-0 sm:flex-col sm:items-center `
     const SocialContact = tw.div`flex gap-[1.3rem] md:mb-6 sm:mb-4 xs:gap-[3%]`
     const SocialIcon = tw.img`mr-[1.5rem] `
     const ContactLi = tw.li`list-none list-image-vector font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs text-dark_white pl-[0.313rem] mb-[0.7rem]`
@@ -37,8 +37,8 @@ const Footer = () => {
                                 <img src={FooterLogo} alt="FooterLogo" tw='md:mb-1.5 sm:mb-1.5' />
                             </Link>
                         </div>
-                        <div tw="pl-[2rem] pt-[2.1rem] md:pt-0 md:pl-0 md:mb-6 sm:pl-0 sm:pt-0 sm:mb-6">
-                            <p tw=" mb-[1.3rem] tracking-[0.106em] xs:w-[100%] xs:text-center"><b>Beautice</b> is a Beauty Clinic WordPress Theme.</p>
+                        <div tw="pl-[2rem] pt-[2rem] md:pt-0 md:pl-0 md:mb-6 sm:pl-0 sm:pt-0 sm:mb-6">
+                            <p tw=" mb-[1.4rem] tracking-[0.106em] xs:w-[100%] xs:text-center"><b>Beautice</b> is a Beauty Clinic WordPress Theme.</p>
                             <p tw="italic text-sm font-medium leading-[1.313rem] tracking-[0.101em]">Baker Steet 101, NY, United States.</p>
                             <div tw="flex gap-[2.6rem] italic text-sm font-medium leading-[1.313rem] tracking-[0.101em] mt-[0.3rem] xs:flex-col xs:text-center xs:gap-0">
                                 <p>+521 569 8966.</p>
@@ -49,7 +49,7 @@ const Footer = () => {
                     <CompanyContact>
                         <ListPage>
                             <PageSpan>Pages</PageSpan>
-                            <ul tw="ml-[1rem] mt-[1.8rem]">
+                            <ul tw="ml-[1rem] mt-[1.7rem]">
                                 <ContactLi>
                                     <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
                                 </ContactLi>
@@ -69,7 +69,7 @@ const Footer = () => {
                         </ListPage>
                         <ListInfo>
                             <InfoSpan>Informations</InfoSpan>
-                            <ul tw="ml-[1rem] mt-[1.8rem]">
+                            <ul tw="ml-[1rem] mt-[1.7rem]">
                                 <ContactLi>Terms & conditions</ContactLi>
                                 <ContactLi>Privacy policy</ContactLi>
                                 <ContactLi>
@@ -93,7 +93,7 @@ const Footer = () => {
                         <SocialIcon src={IconYoutube} alt="IconYoutube" />
                         <SocialIcon src={IconInstagram} alt="IconInstagram" />
                     </SocialContact>
-                    <p tw="text-base font-normal tracking-[0.105em] sm:text-xs xs:text-center">© AltDesain Studio 2021 - All right reserved.</p>
+                    <p tw="text-base font-normal tracking-[0.102rem] mt-[-0.1rem] sm:text-xs xs:text-center">© AltDesain Studio 2021 - All right reserved.</p>
                 </BottomFooter>
             </FooterContainer>
         </FooterWrapper>

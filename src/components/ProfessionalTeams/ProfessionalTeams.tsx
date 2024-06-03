@@ -7,9 +7,7 @@ const ProfessionalTeams = () => {
   const TeamsIntroduction = tw.div`text-center`;
   const TeamsSpan = tw(TwSpan)`mb-[0.8rem] `;
   const TeamTitle = tw(TwTitle_MD)`mb-[1.3rem] mt-[0.6rem] tracking-[0.02rem]`;
-  const TeamsDescription = tw(
-    GrayP
-  )`font-normal tracking-[0.1039rem] mb-[3.4rem] md:max-w-[90%] md:mx-auto sm:max-w-[90%] sm:mx-auto`;
+  const TeamsDescription = tw(GrayP)`font-normal tracking-[0.1039rem] mb-[3.4rem] md:max-w-[90%] md:mx-auto sm:max-w-[90%] sm:mx-auto`;
   return (
     <TeamsContainer>
       <TeamsIntroduction>
