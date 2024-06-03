@@ -10,7 +10,7 @@ const Vision = () => {
     const VisionImage = tw.img`w-[23.344rem] h-[14.691rem] md:w-[75%] md:max-w-[75%] md:h-auto md:mx-auto  sm:w-[75%] sm:max-w-[75%] sm:mx-auto sm:h-auto`
     const VisionContent = tw.div`max-w-[45%] flex flex-col pl-[2.2rem] md:max-w-full md:px-[5%] md:mb-[8%] md:items-center md:mx-auto sm:max-w-full  sm:px-[4%] sm:mb-[6%] sm:items-center sm:mx-auto xs:px-0`
     const VisionSpan = tw(TwSpan)`mb-[0.7rem]`
-    const VisionTitle = tw(TwTitle_MD)`mb-[0.8rem] tracking-[0.01rem] sm:max-w-[80%]`
+    const VisionTitle = tw(TwTitle_MD)`mb-[0.8rem] tracking-[0.009rem] sm:max-w-[80%]`
     const VisionDescription = tw(GrayP)`font-normal max-w-[30.188rem] tracking-[0.1039rem] mb-[3rem] md:max-w-[70%] md:mx-auto sm:max-w-[70%] sm:mx-auto`
 
     return (

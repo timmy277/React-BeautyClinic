@@ -10,7 +10,7 @@ const Slogan = () => {
 
   const SloganText = tw.div`text-center z-10 absolute inset-0 flex flex-col items-center justify-center mt-[-0.7rem]`;
   const SloganSpan = tw(TwSpan)`text-[#ABB4FF] mb-[0.7rem] xs:mb-0`;
-  const SloganTitle = tw(TwTitle_MD)`text-white max-w-[40%] mb-[1.2rem] lg:max-w-[50%] md:max-w-[70%] sm:max-w-[70%] xs:text-base xs:max-w-[90%] xs:mb-0`;
+  const SloganTitle = tw(TwTitle_MD)`text-white max-w-[40%] tracking-[0.009rem] mb-[1.2rem] lg:max-w-[50%] md:max-w-[70%] sm:max-w-[70%] xs:text-base xs:max-w-[90%] xs:mb-0`;
   const SloganDescription = tw(GrayP)`text-sink_gray max-w-[48%] lg:max-w-[60%] md:max-w-[70%] sm:max-w-[70%] xs:max-w-[90%]`;
   return (
     <>
