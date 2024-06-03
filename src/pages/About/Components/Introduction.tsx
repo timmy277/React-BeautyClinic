@@ -6,10 +6,8 @@ import IntroBG from '../image/background/BubbleBG.png'
 const Introduction = () => {
   const IntroductionContainer = tw.div`relative max-w-full pt-[8.1rem] mb-[-6.6rem] 2lg:max-w-full lg:max-w-full md:pt-[2rem] md:mb-[-16rem] sm:pt-[2rem] sm:mb-[-16rem]`;
   const IntroText = tw.div`max-w-[71.25rem] flex flex-col mx-auto 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[11%]  md:text-center sm:text-center`;
-  const AboutSpan = tw(TwSpan)`mb-[0.7rem]`;
-  const AboutTitle = tw(
-    TwTitle_MD
-  )`max-w-[65%] mb-[1.1rem] md:mx-auto sm:mx-auto 2lg:max-w-[70%] lg:max-w-[75%]`;
+  const AboutSpan = tw(TwSpan)`mb-[0.7rem] tracking-[0.008rem]`;
+  const AboutTitle = tw(TwTitle_MD)`max-w-[65%] mb-[1.1rem] md:mx-auto sm:mx-auto 2lg:max-w-[70%] lg:max-w-[75%] tracking-[0.005rem]`;
   const AboutDescription = tw(
     GrayP
   )`max-w-[60%] tracking-[0.095rem] md:mx-auto sm:mx-auto lg:max-w-[70%]`;
