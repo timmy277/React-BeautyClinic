@@ -1,12 +1,11 @@
-
-import ContactUs from '../../components/ContactUs/ContactUs'
+import ContactUs from "../../components/ContactUs";
 
 const Gallery = () => {
-    return (
-        <>
-            <ContactUs />
-        </>
-    )
-}
+  return (
+    <>
+      <ContactUs />
+    </>
+  );
+};
 
-export default Gallery
+export default Gallery;

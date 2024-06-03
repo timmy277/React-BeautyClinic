@@ -1,8 +1,8 @@
 
 import tw from 'twin.macro'
-import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../Material/Material'
-import ContactUsImg from '../../assets/banner/ContactAnimations.png'
-import BackGroundContact from '../../assets/background/BackgroundBubble2.png'
+import { GrayP, TwButton, TwSpan, TwTitle_MD } from './Material'
+import ContactUsImg from '../assets/banner/ContactAnimations.png'
+import BackGroundContact from '../assets/background/BackgroundBubble2.png'
 const ContactUs = () => {
     const ContactUsWrapper = tw.div`w-full relative`
     const ContactUsContainer = tw.div`flex flex-row justify-between max-w-[71.25rem] mx-auto pt-[9.1rem] 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:px-[10%] md:pt-0 md:flex-col-reverse md:items-center sm:flex-col-reverse sm:items-center sm:pt-0`

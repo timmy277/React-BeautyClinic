@@ -1,7 +1,7 @@
 
 import tw from 'twin.macro'
-import AboutUsBanner from '../../image/banner/Illustration-1.png'
-import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../../../../components/Material/Material'
+import AboutUsBanner from '../../../assets/banner/Illustration-1.png'
+import { GrayP, TwButton, TwSpan, TwTitle_MD } from '../../../components/Material'
 
 const FeatureAboutUs = () => {
     const AboutUsContainer = tw.div`flex flex-row justify-between max-w-[71.25rem] mx-auto mt-[40rem] pt-[21rem] 2lg:pt-[24%] 2lg:max-w-full 2lg:px-[10%] lg:max-w-full lg:pt-[24%] lg:px-[8%] md:flex-col-reverse md:text-center md:pt-[20rem] sm:flex-col-reverse sm:text-center sm:max-w-full sm:pt-[20rem]`
