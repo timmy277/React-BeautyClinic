@@ -10,7 +10,8 @@ const Vision = () => {
     const VisionImage = tw.img`w-[23.344rem] h-[14.691rem] md:w-[75%] md:max-w-[75%] md:h-auto md:mx-auto  sm:w-[75%] sm:max-w-[75%] sm:mx-auto sm:h-auto`
     const VisionContent = tw.div`max-w-[45%] flex flex-col pl-[2.2rem] md:max-w-full md:px-[5%] md:mb-[8%] md:items-center md:mx-auto sm:max-w-full  sm:px-[4%] sm:mb-[6%] sm:items-center sm:mx-auto xs:px-0`
     const VisionSpan = tw(TwSpan)`mb-[0.7rem] tracking-[0.01rem]`
-    const VisionTitle = tw(TwTitle_MD)`mb-[0.8rem] tracking-[0.009rem] sm:max-w-[80%]`
+    const VisionTitle = tw(TwTitle_MD)` tracking-[0.001rem] sm:max-w-[80%]`
+    const VisionTitle2 = tw(VisionTitle)`mb-[0.8rem] tracking-[0.019rem]`
     const VisionDescription = tw(GrayP)`font-normal max-w-[30.188rem] tracking-[0.1039rem] mb-[3rem] md:max-w-[70%] md:mx-auto sm:max-w-[70%] sm:mx-auto`
 
     return (
@@ -21,7 +22,8 @@ const Vision = () => {
                 </VisionImageWrapper>
                 <VisionContent>
                     <VisionSpan>Our Vision</VisionSpan>
-                    <VisionTitle>Be the best and go international</VisionTitle>
+                    <VisionTitle>Be the best and go</VisionTitle>
+                    <VisionTitle2>international</VisionTitle2>
                     <VisionDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet.   Egestas volutpat facilisi eu libero.
                     <br />
                     <br />

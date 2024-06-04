@@ -1,9 +1,14 @@
-import MainService from '../General/Components/OurService/MainService/MainService'
+import Consultation from "./Components/Consultation"
+import OurService from "./Components/OurService"
+import Treatment from "./Components/Treatment"
+
 
 const Service = () => {
     return (
         <>
-            <MainService />
+            <OurService />
+            <Consultation />
+            <Treatment />
         </>
     )
 }

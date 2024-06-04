@@ -70,7 +70,7 @@ const Footer = () => {
                         <ListInfo>
                             <InfoSpan>Informations</InfoSpan>
                             <ul tw="ml-[1rem] mt-[1.7rem]">
-                                <ContactLi>Terms & conditions</ContactLi>
+                                <ContactLi>Terms &amp; conditions</ContactLi>
                                 <ContactLi>Privacy policy</ContactLi>
                                 <ContactLi>
                                     <Link to="/Blog" onClick={() => window.scrollTo(0, 0)}>Blog</Link>
