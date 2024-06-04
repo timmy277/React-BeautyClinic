@@ -9,10 +9,10 @@ import ServiceBackground from '../image/background/BubbleBG.png'
 const OurService = () => {
 
     const ServiceBG = tw.div`relative max-w-full`
-    const ServiceContainer = tw.div`max-w-[68.75rem] mx-auto flex flex-col pt-[8.1rem] mb-[7.7rem] 2lg:max-w-full 2lg:px-[12%] lg:max-w-full lg:px-[12%] md:px-[10%] sm:px-[10%]`
-    const ServiceContent = tw.div`max-w-full flex flex-col mb-[1.6rem] text-center md:max-w-full md:px-[5%] md:mb-[6%] md:items-center md:mx-auto sm:max-w-full  sm:px-[4%] sm:mb-[6%] sm:items-center sm:mx-auto xs:px-0`
+    const ServiceContainer = tw.div`max-w-[68.75rem] mx-auto flex flex-col pt-[8.1rem] mb-[7.7rem] 2lg:max-w-full 2lg:px-[12%] lg:max-w-full lg:px-[12%] md:px-[10%] md:pt-[3%] sm:px-[10%] sm:pt-[3%]`
+    const ServiceContent = tw.div`max-w-full flex flex-col mb-[1.6rem] text-center md:max-w-full md:w-full md:px-[5%] md:mb-[6%] md:items-center md:mx-auto sm:max-w-full sm:w-full sm:mb-[6%] sm:items-center sm:mx-auto xs:px-0`
     const ServiceSpan = tw(TwSpan)`mb-[0.7rem] tracking-[0.01rem]`
-    const ServiceTitle = tw(TwTitle_MD)`mb-[1.5rem] tracking-[0.01rem] sm:max-w-[80%]`
+    const ServiceTitle = tw(TwTitle_MD)`mb-[1.5rem] tracking-[0.01rem] sm:max-w-[90%]`
     const ServiceDescription = tw(GrayP)`font-normal tracking-[0.1039rem] mb-[3rem] md:max-w-[70%] md:mx-auto sm:max-w-[70%] sm:mx-auto`
     const GridImg = tw.div`flex flex-col justify-between gap-[4.25rem] md:gap-[3.25rem] sm:gap-[2rem] xs:gap-[1.25rem]`
     const GroupImg = tw.div`flex justify-between gap-[5.25rem] md:gap-[4.25rem] sm:gap-[3rem] xs:gap-[1.75rem]` 

@@ -9,7 +9,7 @@ export const TwSpan = tw.span`text-light_pink font-poppins text-base font-semibo
 
 export const TwTitle_LG = tw.h1`text-dark_blue text-5xl leading-[3.75rem] font-semibold font-poppins tracking-[0.004rem] md:text-4xl sm:text-3xl `
 
-export const TwTitle_MD = tw.h1`text-dark_blue text-4xl leading-[2.813rem] font-semibold font-poppins tracking-[0.002rem] md:text-3xl sm:text-2xl `
+export const TwTitle_MD = tw.h1`text-dark_blue text-4xl leading-[2.813rem] font-semibold font-poppins tracking-[0.002rem] md:text-2xl sm:text-xl xs:text-base`
 
 export const TwTitle_SM = tw.h1`text-dark_blue text-lg leading-[1.406rem] font-semibold font-poppins tracking-[0.004rem] md:text-base sm:text-sm `
 
