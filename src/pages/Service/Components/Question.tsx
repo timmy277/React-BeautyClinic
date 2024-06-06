@@ -28,8 +28,8 @@ const Question = () => {
 
     const getArrow = (isOpen: boolean) => {
         return isOpen
-            ? '/src/pages/Service/image/others/angle-down.png'
-            : '/src/pages/Service/image/others/angle-up.png';
+            ? './angle-down.png'
+            : './angle-up.png';
     };
 
 
