@@ -23,7 +23,7 @@ const Consultation = () => {
             <ConsultationContent>
                 <ConsultationSpan>Beauty Consultation</ConsultationSpan>
                 <ConsultationTitle>We services beauty consultation</ConsultationTitle>
-                <ConsultationDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purusdonec amet. Egestas volutpat facilisi eu libero.</ConsultationDescription>
+                <ConsultationDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit, quam suscipit purus donec amet. Egestas volutpat facilisi eu libero.</ConsultationDescription>
                 <div tw='flex items-center '>
                     <Appointment>Make an Appointment</Appointment>
                     <div tw=' w-[1.563rem] ml-[0.9rem]'>

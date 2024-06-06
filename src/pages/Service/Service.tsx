@@ -1,4 +1,4 @@
-import Question from "../About/Components/Question"
+import Question from "./Components/Question"
 import Consultation from "./Components/Consultation"
 import OurService from "./Components/OurService"
 import Product from "./Components/Product"
