@@ -3,6 +3,7 @@ import ArrowUp from '../image/others/angle-up.png'
 import ArrowDown from '../image/others/angle-down.png'
 import LitterLine from '../image/others/LineTittle.png'
 import { GrayP, TwTitle_MD } from '../../../components/Material'
+import { useState } from 'react'
 
 
 const Question = () => {
@@ -12,14 +13,31 @@ const Question = () => {
     const Question1 = tw(Question)`mb-[0.9rem]`
     const Question2 = tw(Question)`mb-[2rem]`
     const Question3 = tw(Question)`mb-[1.9rem]`
+    const Question4 = tw(Question)`mb-[1.9rem]`
     
 
-    const Answer1 = tw.p`font-poppins text-light_gray font-normal italic text-sm leading-[1.313rem] md:text-xs sm:text-xs max-w-[90%] tracking-[0.093rem]`
+    const Answer1 = tw.p`font-poppins text-light_gray font-normal italic text-sm leading-[1.313rem] md:text-xs sm:text-xs max-w-[90%] tracking-[0.093rem] `
     const Answer2 = tw(Answer1)` mb-[2.2rem] tracking-[0.091rem]`
     const QuestionP =tw(GrayP)`text-dark_blue ml-[2.2rem] tracking-[0.105rem]` 
     const QuestionP2 = tw(QuestionP)`tracking-[0.102rem]`
     const QuestionP3 = tw(QuestionP)`tracking-[0.104rem]`
     const ArrowWrapper = tw.div`mr-[1.2rem] pl-4`
+
+    const [openAnswer, setOpenAnswer] = useState([false, false, false, false]);
+    const toggleAnswer = (index) => {
+        setOpenAnswer(openAnswer.map((open, i) => (i === index ? !open : open)));
+    };
+
+    // const arrow = openAnswer === true
+    // ? '/src/pages/Service/image/others/angle-down.png'
+    // : '/src/pages/Service/image/others/angle-up.png'
+    const getArrow = (isOpen) => {
+        return isOpen
+            ? '/src/pages/Service/image/others/angle-down.png'
+            : '/src/pages/Service/image/others/angle-up.png';
+    };
+
+
     return (        
         <>
             <QuestionContainer>
@@ -30,41 +48,73 @@ const Question = () => {
                     </div>
                 </div>
                 <div>
-                    <Question1>
+                    <Question1 onClick={() => toggleAnswer(0)}>
                         <QuestionP>Is beauty consultation handled thoroughly?</QuestionP>
                         <ArrowWrapper>
-                            <img src={ArrowUp} alt="" tw='max-w-none' />
+                            <img src={getArrow(openAnswer[0])} alt="" tw='max-w-none' />
                         </ArrowWrapper>
                     </Question1>
-                    <div tw='bg-[#F6F7FF] w-full border-t-[0.063rem] border-solid border-[#091156] rounded-b-[1.25rem] pt-[3.25rem] pr-[3.938rem] pb-[1.513rem] pl-[4.75rem] mb-[1.7rem]'>
+                    { openAnswer[0] && (<div tw='bg-[#F6F7FF] w-full border-t-[0.063rem] border-solid border-[#091156] rounded-b-[1.25rem] pt-[3.25rem] pr-[3.938rem] pb-[1.513rem] pl-[4.75rem] mb-[1.7rem]'>
                         <Answer1>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna 
                         <br />
                         <br />
                         </Answer1>
                         <Answer2>porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla</Answer2>
-                    </div>
-                    <Question2>
+                    </div>)
+                    }
+                    <Question2 onClick={() => toggleAnswer(1)}>
                         <QuestionP2>Can I be beautiful in an instant time?</QuestionP2>
                         <ArrowWrapper>
-                            <img src={ArrowDown} alt="" tw='max-w-none' />
+                            <img src={getArrow(openAnswer[1])} alt="" tw='max-w-none' />
                         </ArrowWrapper>
                     </Question2>
-                    <Question3>
+                    {openAnswer[1] &&(<div tw='bg-[#F6F7FF] w-full border-t-[0.063rem] border-solid border-[#091156] rounded-b-[1.25rem] pt-[3.25rem] pr-[3.938rem] pb-[1.513rem] pl-[4.75rem] mb-[1.7rem] md:pl-[2rem] md:pr-[2rem]'>
+                        <Answer1>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna 
+                        <br />
+                        <br />
+                        </Answer1>
+                        <Answer2>porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla</Answer2>
+                    </div>)}
+                    <Question3 onClick={() => toggleAnswer(2)}>
                         <QuestionP3>Are there any side effects to the treatment methods or treatments at this clinic?</QuestionP3>
                         <ArrowWrapper>
-                            <img src={ArrowDown} alt="" tw='max-w-none' />
+                            <img src={getArrow(openAnswer[2])} alt="" tw='max-w-none' />
                         </ArrowWrapper>
                     </Question3>
-                    <Question>
+                    {openAnswer[2] &&(<div tw='bg-[#F6F7FF] w-full border-t-[0.063rem] border-solid border-[#091156] rounded-b-[1.25rem] pt-[3.25rem] pr-[3.938rem] pb-[1.513rem] pl-[4.75rem] mb-[1.7rem] md:pl-[2rem] md:pr-[2rem]'>
+                        <Answer1>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna 
+                        <br />
+                        <br />
+                        </Answer1>
+                        <Answer2>porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla</Answer2>
+                    </div>)}
+                    <Question4 onClick={() => toggleAnswer(3)}>
                         <QuestionP>Do professionals have accreditation in their respective fields?</QuestionP>
                         <ArrowWrapper>
-                            <img src={ArrowDown} alt="" tw='max-w-none' />
+                            <img src={getArrow(openAnswer[3])} alt="" tw='max-w-none' />
                         </ArrowWrapper>
-                    </Question>
+                    </Question4>
+                    {openAnswer[3] &&(<div tw='bg-[#F6F7FF] w-full border-t-[0.063rem] border-solid border-[#091156] rounded-b-[1.25rem] pt-[3.25rem] pr-[3.938rem] pb-[1.513rem] pl-[4.75rem] mb-[1.7rem] md:pl-[2rem] md:pr-[2rem]'>
+                        <Answer1>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna 
+                        <br />
+                        <br />
+                        </Answer1>
+                        <Answer2>porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla</Answer2>
+                    </div>)}
                 </div>
             </QuestionContainer>
         </>
     )
 }
+
+// function openText() {
+//     const Answ = document.getElementById("answer")!;
+//     Menu.style.transform = "translateX(0)";
+// }
+    
+// function closeText() {
+//     const Answ = document.getElementById("menu")!;
+//     Menu.style.transform = "translateX(-100%)";
+// }
 
 export default Question
