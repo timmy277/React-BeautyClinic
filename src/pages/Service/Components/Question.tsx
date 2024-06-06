@@ -7,8 +7,8 @@ import { useState } from 'react'
 const Question = () => {
     const QuestionContainer = tw.div`max-w-[60.75rem] mx-auto pt-[7.3rem] mb-[7.3rem] 2lg:max-w-full 2lg:px-[16%] lg:max-w-full lg:px-[15%] md:max-w-full md:px-[15%] sm:max-w-full sm:px-[15%]`
     const QuestionTitle = tw(TwTitle_MD)`ml-[0.7rem] mb-4 text-center tracking-[0.019rem]`
-    const Question = tw.div`flex justify-between`
-    const Question1 = tw(Question)`mb-[0.9rem]`
+    const Question = tw.div`flex justify-between cursor-pointer`
+    const Question1 = tw(Question)`mb-[1.9rem]`
     const Question2 = tw(Question)`mb-[2rem]`
     const Question3 = tw(Question)`mb-[1.9rem]`
     const Question4 = tw(Question)`mb-[1.9rem]`
