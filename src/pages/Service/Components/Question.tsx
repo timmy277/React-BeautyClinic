@@ -22,7 +22,7 @@ const Question = () => {
     const ArrowWrapper = tw.div`mr-[1.2rem] pl-4`
 
     const [openAnswer, setOpenAnswer] = useState([false, false, false, false]);
-    const toggleAnswer = (index) => {
+    const toggleAnswer = (index: number ) => {
         setOpenAnswer(openAnswer.map((open, i) => (i === index ? !open : open)));
     };
 
