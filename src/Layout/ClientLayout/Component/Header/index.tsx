@@ -185,10 +185,7 @@ const Header = () => {
         </NavBar>
       </HeaderContainer>
       <nav>
-        <div
-          tw="fixed top-0 right-0 bottom-0 left-0 hidden z-10 bg-transparent md:block sm:block"
-          onClick={closeMenu}
-        ></div>
+        <div id='overlay' tw="fixed top-0 right-0 bottom-0 left-0 hidden z-10 bg-transparent" onClick={closeMenu}></div>
         <div
           tw="h-full fixed top-0 left-0 bg-white w-[16rem] transition-all ease-in-out duration-500 translate-x-[-100%] z-50 transform md:w-[25rem] "
           id="menu"
@@ -308,12 +305,16 @@ const Header = () => {
 
 function openMenu() {
   const Menu = document.getElementById("menu")!;
+  const Overlay = document.getElementById("overlay")!;
   Menu.style.transform = "translateX(0)";
+  Overlay.style.display = "block";
 }
-
+  
 function closeMenu() {
   const Menu = document.getElementById("menu")!;
+  const Overlay = document.getElementById("overlay")!;
   Menu.style.transform = "translateX(-100%)";
+  Overlay.style.display = "none";
 }
 
 export default Header;

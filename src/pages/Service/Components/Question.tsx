@@ -9,7 +9,7 @@ const Question = () => {
     const QuestionTitle = tw(TwTitle_MD)`ml-[0.7rem] mb-4 text-center tracking-[0.019rem]`
     const Question = tw.div`flex justify-between cursor-pointer`
     const Question1 = tw(Question)`mb-[1.9rem]`
-    const Question2 = tw(Question)`mb-[2rem]`
+    const Question2 = tw(Question)`mb-[1.9rem]`
     const Question3 = tw(Question)`mb-[1.9rem]`
     const Question4 = tw(Question)`mb-[1.9rem]`
     
