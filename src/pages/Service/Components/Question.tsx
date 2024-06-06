@@ -1,6 +1,4 @@
 import tw from 'twin.macro'
-import ArrowUp from '../image/others/angle-up.png'
-import ArrowDown from '../image/others/angle-down.png'
 import LitterLine from '../image/others/LineTittle.png'
 import { GrayP, TwTitle_MD } from '../../../components/Material'
 import { useState } from 'react'
@@ -28,10 +26,7 @@ const Question = () => {
         setOpenAnswer(openAnswer.map((open, i) => (i === index ? !open : open)));
     };
 
-    // const arrow = openAnswer === true
-    // ? '/src/pages/Service/image/others/angle-down.png'
-    // : '/src/pages/Service/image/others/angle-up.png'
-    const getArrow = (isOpen) => {
+    const getArrow = (isOpen: boolean) => {
         return isOpen
             ? '/src/pages/Service/image/others/angle-down.png'
             : '/src/pages/Service/image/others/angle-up.png';
