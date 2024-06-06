@@ -11,7 +11,7 @@ const Product = () => {
     const ProductContent = tw.div`max-w-[45%]  flex flex-col pl-[2.2rem] lg:max-w-[50%] md:max-w-full md:px-[5%] md:mb-[8%] md:items-center md:mx-auto sm:max-w-full sm:mb-[8%] sm:items-center sm:mx-auto xs:px-0`
     const ProductSpan = tw(TwSpan)`mb-[0.8rem] tracking-[0.01rem]`
     const ProductTitle = tw(TwTitle_MD)` tracking-[0.014rem] mb-[0.8rem] sm:max-w-full `
-    const ProductDescription = tw(GrayP)`font-normal max-w-[30.188rem] tracking-[0.103rem] mb-[1.4rem] md:max-w-[70%] md:mx-auto sm:max-w-[70%] sm:mx-auto`
+    const ProductDescription = tw(GrayP)`font-normal max-w-[30.188rem] tracking-[0.104rem] mb-[1.4rem] md:max-w-[70%] md:mx-auto sm:max-w-[70%] sm:mx-auto`
 
     const Appointment = tw(GrayP)`text-dark_blue font-semibold tracking-[0.104rem]`
 
