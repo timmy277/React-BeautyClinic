@@ -15,7 +15,7 @@ const Testimonial = () => {
     const AssistanceTitle = tw(TwTitle_MD)`mb-[1.5rem] mt-[0.66rem] tracking-[0.015rem]`;
     const AssistanceDescription = tw(GrayP)`font-normal tracking-[0.1039rem] mb-[2.3rem] md:max-w-[90%] md:mx-auto sm:mx-auto sm:max-w-[90%] `
 
-    const Desc = tw(GrayP)`max-w-[48%] text-center mx-auto text-sm font-normal leading-[1.313rem] tracking-[0.088rem] mb-[2.1rem]`
+    const Desc = tw(GrayP)`max-w-[48%] text-center mx-auto text-sm font-normal leading-[1.313rem] tracking-[0.088rem] mb-[2.1rem] md:max-w-[60%] sm:max-w-[55%]`
     const StarImgWrapper = tw.div``
     const StarImg = tw.img`mx-auto mb-[5.4rem]`
 
