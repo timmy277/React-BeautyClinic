@@ -6,8 +6,8 @@ const VideoTour = () => {
     const TourBackground = tw.div`relative mt-[7.8rem] `
     const Overlay = tw.div`top-0 bottom-0 left-0 right-0 absolute z-0 bg-[#09115699] opacity-[1.6]`;
 
-    const TourContainer = tw.div`max-w-[34.688rem] items-center mx-auto flex flex-col z-10 absolute inset-0 pt-[10.73rem] 2xl:pt-[15%] xl:pt-[10%]  2lg:max-w-[60%] 2lg:px-[6%] 2lg:pt-[12%] lg:max-w-[60%] lg:px-[6%] lg:pt-[10%] md:max-w-[80%] md:px-[4%] md:pt-[8%] sm:max-w-full sm:px-[2%] sm:pt-[4%]`    
-    const TourTitle = tw(TwTitle_MD)`text-white mb-[1.2rem] md:mb-[0.8rem] sm:mb-[0.4rem]`
+    const TourContainer = tw.div`max-w-[34.688rem] items-center mx-auto flex flex-col z-10 absolute inset-0 pt-[10.66rem] 2xl:pt-[15%] xl:pt-[10%]  2lg:max-w-[60%] 2lg:px-[6%] 2lg:pt-[12%] lg:max-w-[60%] lg:px-[6%] lg:pt-[10%] md:max-w-[80%] md:px-[4%] md:pt-[8%] sm:max-w-full sm:px-[2%] sm:pt-[4%] xs:pt-0.5`    
+    const TourTitle = tw(TwTitle_MD)`text-white mb-[1.2rem] md:mb-[0.8rem] sm:mb-[0.4rem] xs:mb-0.5`
     const TourDescription = tw(GrayP)`text-sink_gray tracking-[0.094rem] mb-[1.9rem] md:mb-[1rem] sm:mb-0`
     return (
         <>
