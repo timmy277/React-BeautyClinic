@@ -22,12 +22,12 @@ const Testimonial = () => {
     return (
         <>
             <div  tw='relative max-w-full'>
-                <div tw="absolute top-[0.188rem] left-0 -z-10 2xl:w-full xl:w-full">
-                    <img src={TestimonialBG1} alt=""  tw='2xl:w-[50%] xl:w-[50%]' />
+                <div tw="absolute top-[0.188rem] left-0 -z-10 2xl:w-[50%]  xl:w-[50%]">
+                    <img src={TestimonialBG1} alt="" tw='2xl:w-[50%] xl:w-[50%]'/>
                 </div>
-                <div tw="absolute bottom-[-7.5rem] right-0 -z-10 2xl:w-full xl:w-full">
-                    <img src={TestimonialBG2} alt=""  tw='2xl:w-full xl:w-full' />
-                </div>
+                <div tw="absolute bottom-[-7.5rem] right-0 -z-10 2xl:w-[50%] 2xl:bottom-[-12rem] xl:w-[60%]">
+                    <img src={TestimonialBG2} alt="" tw='2xl:w-[50%] xl:w-[60%] ml-auto' />
+                </div>  
                 <TestimonialContainer>
                     <AssistanceIntroduction>
                         <AssistanceSpan>Our Testimonials</AssistanceSpan>
