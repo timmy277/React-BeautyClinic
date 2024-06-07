@@ -30,7 +30,7 @@ const Header = () => {
   const LogoContainer = tw.div`object-cover my-auto mx-0`;
   const LogoImg = tw.img`m-auto ml-[-0.275rem] max-w-none`;
   const ListNavItem = tw.ul`flex justify-center items-center max-w-[30.063rem] relative`;
-  const HomeItem = tw(NavItem)`2lg:ml-[7%] lg:ml-[7%] ml-[8.8rem] relative after:absolute after:content-[""] after:w-20 after:h-6 after:right-0 after:top-5`;
+  const HomeItem = tw(NavItem)`2lg:ml-[7%] lg:ml-[7%] ml-[8.8rem] relative after:absolute after:content-[""] after:w-28 after:h-10 after:right-[-1.4rem] after:top-5`;
   const NavAbout = tw(NavItem)`ml-[2.675rem] 2lg:ml-[10%] lg:ml-[10%]`;
   const NavService = tw(NavItem)`ml-[2.775rem] 2lg:ml-[10%] lg:ml-[10%]`;
   const NavGallery = tw(NavItem)`ml-[2.8rem] 2lg:ml-[10%] lg:ml-[10%]`;
