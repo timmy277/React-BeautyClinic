@@ -28,7 +28,7 @@ const Testimonial = () => {
                 <div tw="absolute bottom-[-7.5rem] right-0 -z-10 2xl:w-[50%] 2xl:bottom-[-12rem] xl:w-[60%]">
                     <img src={TestimonialBG2} alt="" tw='2xl:w-[50%] xl:w-[60%] ml-auto' />
                 </div>  
-                <TestimonialContainer>
+                <TestimonialContainer> 
                     <AssistanceIntroduction>
                         <AssistanceSpan>Our Testimonials</AssistanceSpan>
                         <AssistanceTitle>What our customer says</AssistanceTitle>
