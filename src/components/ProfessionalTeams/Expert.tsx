@@ -1,9 +1,9 @@
 import "twin.macro";
 import tw from "twin.macro";
-import TwitterImg from "../../../assets/website/Twitter.png";
-import FacebookImg from "../../../assets/website/Facebook.png";
-import InstagramImg from "../../../assets/website/Instagram.png";
-import { GrayP, TwSpan, TwTitle_SM } from "../../Material";
+import TwitterImg from "../../assets/website/Twitter.png";
+import FacebookImg from "../../assets/website/Facebook.png";
+import InstagramImg from "../../assets/website/Instagram.png";
+import { GrayP, TwSpan, TwTitle_SM } from "../Material";
 import styled from "styled-components";
 
 const Expert = (props: {

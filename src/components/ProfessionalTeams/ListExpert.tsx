@@ -2,10 +2,10 @@
 import 'twin.macro'
 import tw from 'twin.macro'
 // import {ExpertsData} from "../../../assets/data"
-import Expert from '../Expert/Expert'
-import Expert1 from "../../../assets/avatar/unsplash_pTrhfmj2jDA.png"
-import Expert2 from "../../../assets/avatar/unsplash_FVh_yqLR9eA.png"
-import Expert3 from "../../../assets/avatar/unsplash_mEZ3PoFGs_k.png"
+import Expert from './Expert'
+import Expert1 from "../../assets/avatar/unsplash_pTrhfmj2jDA.png"
+import Expert2 from "../../assets/avatar/unsplash_FVh_yqLR9eA.png"
+import Expert3 from "../../assets/avatar/unsplash_mEZ3PoFGs_k.png"
 
 const ExpertsData = [
     {

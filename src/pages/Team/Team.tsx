@@ -1,11 +1,17 @@
-import ProfessionalTeams from '../../components/ProfessionalTeams/ProfessionalTeams'
+import Assistance from "./Components/Assistance";
+import MainGoal from "./Components/MainGoal";
+import OurTeam from "./Components/OurTeam";
+import Testimonial from "./Components/Testimonial";
 
 const Team = () => {
     return (
         <>
-            <ProfessionalTeams />
+            <OurTeam />
+            <Assistance />
+            <MainGoal />
+            <Testimonial />
         </>
-    )
-}
+    );
+};
 
-export default Team
+export default Team;
