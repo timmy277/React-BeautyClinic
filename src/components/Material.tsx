@@ -12,7 +12,7 @@ export const TwTitle_LG = tw.h1`text-dark_blue text-5xl leading-[3.75rem] font-s
 export const TwTitle_MD = tw.h1`text-dark_blue text-4xl leading-[2.813rem] font-semibold font-poppins tracking-[0.002rem] md:text-2xl sm:text-xl xs:text-base`
 
 export const TwTitle_SM = tw.h1`text-dark_blue text-lg leading-[1.406rem] font-semibold font-poppins tracking-[0.004rem] md:text-base sm:text-sm `
-
+    
 export const BlueP = tw.p`font-poppins text-dark_blue text-base leading-6 tracking-widest font-medium md:text-sm sm:text-xs`
 
 export const GrayP = tw.p`font-poppins text-light_gray text-base leading-6 tracking-widest font-medium md:text-sm sm:text-xs`

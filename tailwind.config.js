@@ -23,6 +23,11 @@ export default {
       boxShadow: {
         'md': '0rem 1.563rem 3.125rem 1.563rem #F6F7FF',
         'sm': '0rem 1.063rem 1.375rem 0rem #FFEDF6',
+        'blog-side': '-2px 4px 31px 9px #F2F4FF',
+        'blog-item': '10px 13px 80px 14px #F2F4FF',
+        'tag':' 0px 4px 17px 0px #EEF0FF',
+        'social-circle': '0px 4px 19px 11px #F6F7FF',
+
       },
       backgroundImage: {
         'FooterBG': "url('./src/assets/background/FooterBG.png'), url('./src/assets/background/BottomBG.png')",
