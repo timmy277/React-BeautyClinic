@@ -15,7 +15,7 @@ import InstagramIcon from '../image/others/Instagram.png'
 import LinkedInIcon from '../image/others/LinkedIn.png'
 import { FaSearch, FaTimes } from "react-icons/fa";
 const BlogContent = () => {
-    const BlogContainer = tw.div`max-w-[71.25rem] flex mx-auto justify-between pt-[6.8rem] 2lg:max-w-full 2lg:px-[11%] lg:max-w-full lg:px-[11%] md:max-w-full md:px-[12%] sm:max-w-full sm:px-[12%]`
+    const BlogContainer = tw.div`max-w-[71.25rem] flex mx-auto justify-between pt-[6.8rem] 2lg:max-w-full 2lg:px-[11%] lg:max-w-full lg:px-[9%] md:max-w-full md:px-[12%] sm:max-w-full sm:px-[12%]`
     const BlogList = tw.div`max-w-[65%] md:max-w-full sm:max-w-full`
     const BlogItem = tw.div`w-full mb-[8.25rem]`
     const ItemContent = tw.div`pl-[4.75rem] max-w-[45.625rem] pr-[4.175rem] pt-[3.55rem] shadow-blog-item pb-[6.25rem] rounded-b-[3.125rem] md:px-[8%] sm:px-[8%]`
