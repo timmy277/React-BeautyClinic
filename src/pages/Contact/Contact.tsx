@@ -1,9 +1,14 @@
-import ContactUs from "../../components/ContactUs";
+import ContactForm from "./Conponents/ContactForm";
+import GetInTouch from "./Conponents/GetInTouch";
+import Map from "./Conponents/Map";
+
 
 const Contact = () => {
   return (
     <>
-      <ContactUs />
+      <ContactForm />
+      <Map />
+      <GetInTouch />
     </>
   );
 };

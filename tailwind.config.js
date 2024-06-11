@@ -27,6 +27,8 @@ export default {
         'blog-item': '10px 13px 80px 14px #F2F4FF',
         'tag':' 0px 4px 17px 0px #EEF0FF',
         'social-circle': '0px 4px 19px 11px #F6F7FF',
+        'contact': '0px 25px 50px 25px #F6F7FF',
+
 
       },
       backgroundImage: {

@@ -40,7 +40,7 @@ const Footer = () => {
                         <div tw="pl-[2rem] pt-[2rem] md:pt-0 md:pl-0 md:mb-6 sm:pl-0 sm:pt-0 sm:mb-6">
                             <p tw=" mb-[1.4rem] tracking-[0.106em] xs:w-[100%] xs:text-center"><b>Beautice</b> is a Beauty Clinic WordPress Theme.</p>
                             <p tw="italic text-sm font-medium leading-[1.313rem] tracking-[0.101em]">Baker Steet 101, NY, United States.</p>
-                            <div tw="flex gap-[2.6rem] italic text-sm font-medium leading-[1.313rem] tracking-[0.101em] mt-[0.3rem] xs:flex-col xs:text-center xs:gap-0">
+                            <div tw="flex gap-[2.6rem] ml-[-0.1rem] italic text-sm font-medium leading-[1.313rem] tracking-[0.101em] mt-[0.3rem] xs:flex-col xs:text-center xs:gap-0">
                                 <p>+521 569 8966.</p>
                                 <p tw="underline">mail@company.com.</p>
                             </div>

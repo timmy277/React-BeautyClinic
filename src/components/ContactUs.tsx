@@ -20,8 +20,8 @@ const ContactUs = () => {
     const InputName = tw.div`flex flex-row gap-8 md:flex-col md:gap-0 sm:flex-col sm:gap-0`
     const InputEmail = tw.div``
     const ButtonSendMessage = tw(TwButton)`px-[3.5rem] pb-[1.275rem] font-medium md:mx-auto sm:mx-auto`
-    const BackgroundContact = tw.div`absolute top-[-4rem] left-0 2xl:w-full -z-10`
-    const BackgroundContactImg = tw.img`2xl:w-full md:max-w-full sm:max-w-full`
+    const BackgroundContact = tw.div`absolute top-[-4rem] left-0 2xl:w-full -z-10 2xl:max-w-full xl:max-w-full xl:w-full`
+    const BackgroundContactImg = tw.img`2xl:w-full xl:w-full md:max-w-full sm:max-w-full`
     return (
         <ContactUsWrapper>
             <BackgroundContact>
