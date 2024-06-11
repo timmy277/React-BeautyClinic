@@ -2,15 +2,10 @@ import "twin.macro";
 import tw from "twin.macro";
 import { TwButton } from "../../../../components/Material";
 import MainLogo from "../../../../assets/website/MainLogo.png";
-import {
-  FaTimes,
-  FaHome,
-  FaAddressBook,
-  FaAddressCard,
-  FaBlogger,
-} from "react-icons/fa";
+import {FaTimes, FaHome, FaAddressBook, FaAddressCard, FaBlogger} from "react-icons/fa";
 import { IoIosListBox, IoIosContacts } from "react-icons/io";
 import { RiGalleryFill } from "react-icons/ri";
+import { GoPersonFill } from "react-icons/go";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -33,6 +28,7 @@ const Header = () => {
   const HomeItem = tw(NavItem)`2lg:ml-[7%] lg:ml-[7%] ml-[8.8rem] relative after:absolute after:content-[""] after:w-40 after:h-10 after:right-[-2.5rem] after:top-5 after:cursor-pointer`;
   const NavAbout = tw(NavItem)`ml-[2.675rem] 2lg:ml-[10%] lg:ml-[10%]`;
   const NavService = tw(NavItem)`ml-[2.775rem] 2lg:ml-[10%] lg:ml-[10%]`;
+    
   const NavGallery = tw(NavItem)`ml-[2.8rem] 2lg:ml-[10%] lg:ml-[10%]`;
   const NavBlog = tw(NavItem)`ml-[2.8rem] 2lg:ml-[10%] lg:ml-[10%]`;
 
@@ -62,7 +58,8 @@ const Header = () => {
     tw`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden`,
     feature && tw`pl-[0.2rem]`,
   ]);
-  const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[3.2rem] 2lg:left-[-4.8rem] lg:left-[-4.8rem] bg-light_white z-50 rounded-xl`;
+  const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[-1rem] 2lg:left-[-4.8rem] lg:left-[-4.8rem] bg-light_white z-50 rounded-xl`;
+  const AccountManager = tw(DropDownMenu)`left-[-3rem]`
   // const DropDownMenuItem = tw(NavItem)` pb-2 pl-4 pt-2 text-light_pink pr-4 hover:bg-light_pink hover:text-light_white`
   const DropDownMenuItem = styled.li<{ active: boolean; feature: boolean }>(
     ({ active, feature }) => [
@@ -76,19 +73,18 @@ const Header = () => {
   const Team = tw(DropDownMenuItem)`rounded-b-xl`;
 
   const NavDropDown = tw.ul`ml-[3.2rem] pr-6`;
-  const NavGeneral = tw(
-    General
-  )` rounded-[0.5rem] text-base py-2.5 pl-3 uppercase font-poppins pb-0`;
-  const NavFeature = tw(
-    General
-  )`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
-  const NavTeam = tw(
-    Team
-  )`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavGeneral = tw(General)` rounded-[0.5rem] text-base py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavFeature = tw(General)`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavTeam = tw(Team)`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
 
   const [isOpen, setIsOpen] = useState(false);
   const [openNavDropDown, setOpenNavDropDown] = useState(false);
+  const [openAccountManager, setOpenAccountManager] = useState(false);
 
+  const toggleAccountManager = () => {
+    setOpenAccountManager(!openAccountManager);
+  };
+  
   const openDropDownMenu = () => {
     setOpenNavDropDown(!openNavDropDown);
   };
@@ -106,15 +102,11 @@ const Header = () => {
   const logo = location.pathname === "/Feature"
       ? "./FeatureLogo.png"
       : "./MainLogo.png";
-  console.log(logo);
 
   return (
     <header>
       <HeaderContainer>
-        <button
-          onClick={openMenu}
-          tw="cursor-pointer  absolute w-14  hidden top-8 left-8 md:block sm:block z-40 scale-[2]"
-        >
+        <button onClick={openMenu} tw="cursor-pointer  absolute w-14  hidden top-8 left-8 md:block sm:block z-40 scale-[2]">
           <IoIosListBox />
         </button>
         <NavBar feature={location.pathname === "/Feature"}>
@@ -124,20 +116,12 @@ const Header = () => {
             </Link>
           </LogoContainer>
           <ListNavItem>
-            <HomeItem
-              active={location.pathname === "/"}
-              feature={location.pathname === "/Feature"}
-              onMouseEnter={showDropdown}
-              onMouseLeave={hideDropdown}
-            >
+            <HomeItem active={location.pathname === "/"} feature={location.pathname === "/Feature"} onMouseEnter={showDropdown}
+              onMouseLeave={hideDropdown}>  
               <Link to="/">Home+</Link>
-            </HomeItem>
             {isOpen && (
               <DropDownMenu>
-                <General
-                  active={location.pathname === "/"}
-                  feature={location.pathname === "/"}
-                >
+                <General active={location.pathname === "/"} feature={location.pathname === "/"}>
                   <Link to="/">General</Link>
                 </General>
                 <DropDownMenuItem
@@ -154,16 +138,14 @@ const Header = () => {
                 </Team>
               </DropDownMenu>
             )}
+            </HomeItem>
             <NavAbout
               active={location.pathname === "/About"}
               feature={location.pathname === "/Feature"}
             >
               <Link to="/About">About</Link>
             </NavAbout>
-            <NavService
-              active={location.pathname === "/Service"}
-              feature={location.pathname === "/Feature"}
-            >
+            <NavService active={location.pathname === "/Service"} feature={location.pathname === "/Feature"}>
               <Link to="/Service">Service</Link>
             </NavService>
             <NavGallery
@@ -182,8 +164,34 @@ const Header = () => {
           <ContactButton active={location.pathname === "/Contact"}>
             <Link to="/Contact">Contact</Link>
           </ContactButton>
+          <div tw='mr-[-4rem] relative' >
+            <GoPersonFill tw='scale-[3]' onClick={toggleAccountManager} />
+            {openAccountManager && (
+              <AccountManager>
+                <General active={location.pathname === "/"} feature={location.pathname === "/"}>
+                  <Link to="/Profile">Profile</Link>
+                </General>
+                <DropDownMenuItem active={location.pathname === "/Feature"} feature={location.pathname === "/Feature"} >
+                  <Link to="/Bill">Bill</Link>
+                </DropDownMenuItem>
+                <Team active={location.pathname === "/Team"} feature={location.pathname === "/Team"}>
+                  <Link to="/Login">Team</Link>
+                </Team>
+              </AccountManager>
+            )}
+          </div>
         </NavBar>
       </HeaderContainer>
+
+
+
+
+
+
+
+
+
+      
       <nav>
         <div id='overlay' tw="fixed top-0 right-0 bottom-0 left-0 hidden z-10 bg-transparent" onClick={closeMenu}></div>
         <div

@@ -12,7 +12,7 @@ const Quota = () => {
         <>
             <div tw='relative max-w-full'>
                 <QuotaContainer>
-                    <div tw="absolute top-[8rem] right-0 -z-10 2xl:w-full xl:w-full">
+                    <div tw="absolute top-0 right-0 -z-10 2xl:w-full xl:w-full">
                         <img src={QuotaBG} alt="" tw='2xl:w-full xl:w-full'/>
                     </div>
                     <QuotaText>

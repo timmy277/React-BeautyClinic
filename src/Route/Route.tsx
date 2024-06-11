@@ -9,6 +9,7 @@ import Gallery from "../pages/Gallery/Gallery";
 import Blog from "../pages/Blog/Blog";
 import Contact from "../pages/Contact/Contact";
 import Team from "../pages/Team/Team";
+import Login from "../pages/Login";
 
 const RouteCustom  = () => {
     return (
@@ -24,6 +25,7 @@ const RouteCustom  = () => {
                 <Route path="/Contact" element={<Contact />} />
                 <Route path="/Team" element={<Team />} />
             </Route>
+                <Route path="/Login" element={<Login />} />
         </Routes>
     </>
     )
