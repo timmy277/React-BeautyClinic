@@ -8,8 +8,8 @@ const GetInTouch = () => {
     const Container = tw.div`max-w-[64.875rem] mx-auto pt-[6.95rem] mb-[7.9rem] 2lg:w-full 2lg:max-w-full 2lg:px-[7%] lg:w-full lg:max-w-full lg:px-[2%]`
     const Introduction = tw.div`text-center md:ml-0 sm:ml-0`;
     const Span = tw(TwSpan)``;
-    const Title = tw(TwTitle_MD)`mb-[1.5rem] mt-[0.6rem] tracking-[0.01rem]`;
-    const Description = tw(GrayP)`font-normal tracking-[0.1039rem] mb-[2.3rem] md:max-w-[90%] md:mx-auto sm:max-w-[90%] `
+    const Title = tw(TwTitle_MD)`mb-[1.5rem] mt-[0.6rem] tracking-[0.01rem] md:mb-2 sm:mb-2`;
+    const Description = tw(GrayP)`font-normal tracking-[0.1039rem] mb-[2.3rem] md:max-w-[90%] md:mx-auto sm:max-w-[90%] sm:mx-auto`
 
     const ListApproach = tw.div`flex items-center justify-between mt-[5.95rem] md:flex-col sm:flex-col`
     const Approach = tw.div`text-center w-full`
