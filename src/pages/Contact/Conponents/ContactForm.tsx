@@ -10,8 +10,8 @@ const ContactForm = () => {
     const BannerImg = tw.img`md:w-full sm:w-full`
     const ContactUsContent = tw.div`flex flex-col pt-[1.4rem] max-w-[32.5rem] md:ml-0 md:text-center md:max-w-full md:px-[5%] md:w-full sm:ml-0 sm:text-center sm:max-w-full sm:w-full sm:px-[4%]`
     const ContactUsSpan = tw(TwSpan)`md:mx-auto sm:mx-auto`
-    const ContactUsTitle = tw(TwTitle_MD)`mb-[1.2rem] mt-[0.2rem] tracking-[0.012rem] max-w-[38.438rem] md:max-w-none sm:max-w-none`
-    const ContactUsDescription = tw(GrayP)`max-w-[25.438rem] font-normal tracking-[0.1056em] mt-[0.6rem] mr-[1.3rem] mb-[2.9rem] md:text-center sm:text-center`
+    const ContactUsTitle = tw(TwTitle_MD)`mb-[1.2rem] mt-[0.2rem] tracking-[0.012rem] max-w-[38.438rem] md:max-w-none md:mb-0 sm:max-w-none sm:mb-0`
+    const ContactUsDescription = tw(GrayP)`max-w-[25.438rem] font-normal tracking-[0.1056em] mt-[0.6rem] mr-[1.3rem] mb-[2.9rem] md:text-center md:mr-0 sm:text-center sm:mr-0`
     const ContactUsForm = tw.form`flex flex-col max-w-full `    
     const FormInput = tw.input`border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-lighter_gray font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full w-full mb-[2.395rem] items-center`
     const Email = tw(FormInput)`pt-[0.869rem] pb-[1.029rem]`
