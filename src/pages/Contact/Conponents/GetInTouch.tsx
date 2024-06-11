@@ -13,9 +13,9 @@ const GetInTouch = () => {
 
     const ListApproach = tw.div`flex items-center justify-between mt-[5.95rem] md:flex-col sm:flex-col`
     const Approach = tw.div`text-center w-full`
-    const Address = tw(Approach)`max-w-[16.875rem] mt-[0.7rem]  2lg:max-w-[25%] md:max-w-full sm:max-w-full`
+    const Address = tw(Approach)`max-w-[16.875rem] mt-[0.7rem]  2lg:max-w-[25%] lg:max-w-[25%] md:max-w-full sm:max-w-full`
     const Mail = tw(Address)``
-    const Phone = tw(Approach)`max-w-[26.5rem] h-[25.125rem] pt-[4.938rem] shadow-contact rounded-[2.625rem] 2lg:max-w-[40%] md:shadow-none md:mb-4 md:max-w-full sm:shadow-none sm:mb-4 sm:max-w-full`
+    const Phone = tw(Approach)`max-w-[26.5rem] h-[25.125rem] pt-[4.938rem] shadow-contact rounded-[2.625rem] 2lg:max-w-[40%] lg:max-w-[40%] md:shadow-none md:mb-4 md:max-w-full sm:shadow-none sm:mb-4 sm:max-w-full`
 
     const ApproachImgWrapper = tw.div`mb-[2.8rem]`
     const ApproachImg = tw.img`mx-auto`
