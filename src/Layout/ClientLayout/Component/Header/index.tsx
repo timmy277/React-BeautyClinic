@@ -174,8 +174,8 @@ const Header = () => {
                 <DropDownMenuItem active={location.pathname === "/Feature"} feature={location.pathname === "/Feature"} >
                   <Link to="/Bill">Bill</Link>
                 </DropDownMenuItem>
-                <Team active={location.pathname === "/Team"} feature={location.pathname === "/Team"}>
-                  <Link to="/Login">Team</Link>
+                <Team active={location.pathname === "/Login"} feature={location.pathname === "/Team"}>
+                  <Link to="/Login">Logout</Link>
                 </Team>
               </AccountManager>
             )}
