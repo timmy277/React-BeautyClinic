@@ -9,7 +9,7 @@ const Login = () => {
     const LoginContainer = tw.div`max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem]`
     const LoginTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
     const LoginInput = tw.input`border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-lighter_gray font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full w-full mb-[2.395rem] items-center`
-    // const Password = tw(LoginInput)``
+
     const LoginP = tw(GrayP)`text-center mb-4`
     const LoginSpan = tw.span`text-dark_blue`
     const LoginButton = tw(TwButton)`block mx-auto px-[45%]`
@@ -24,12 +24,10 @@ const Login = () => {
 
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    // const inputRef = useRef<HTMLInputElement>(null);
 
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
     };
-
     return (
         <LoginContainer>
             <form action="">
@@ -46,12 +44,15 @@ const Login = () => {
                         </Icon>
                     </div>
                 </div>
-                <LoginP>You don't have an account?<LoginSpan>
+                <LoginP>You don't have an account?
+                    <LoginSpan>
                         <Link to="/Register"> Register</Link>
-                    </LoginSpan></LoginP>
+                    </LoginSpan>
+                </LoginP>
                 <div tw= 'w-full'>
                     <LoginButton type="submit">Login</LoginButton>
                 </div>
+
             </form>
         </LoginContainer>
     )
