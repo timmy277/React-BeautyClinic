@@ -2,7 +2,13 @@ import "twin.macro";
 import tw from "twin.macro";
 import { TwButton } from "../../../../components/Material";
 import MainLogo from "../../../../assets/website/MainLogo.png";
-import {FaTimes, FaHome, FaAddressBook, FaAddressCard, FaBlogger} from "react-icons/fa";
+import {
+  FaTimes,
+  FaHome,
+  FaAddressBook,
+  FaAddressCard,
+  FaBlogger,
+} from "react-icons/fa";
 import { IoIosListBox, IoIosContacts } from "react-icons/io";
 import { RiGalleryFill } from "react-icons/ri";
 import { GoPersonFill } from "react-icons/go";
@@ -25,10 +31,12 @@ const Header = () => {
   const LogoContainer = tw.div`object-cover my-auto mx-0`;
   const LogoImg = tw.img`m-auto ml-[-0.275rem] max-w-none`;
   const ListNavItem = tw.ul`flex justify-center items-center max-w-[30.063rem] relative`;
-  const HomeItem = tw(NavItem)`2lg:ml-[7%] lg:ml-[7%] ml-[8.8rem] relative after:absolute after:content-[""] after:w-40 after:h-10 after:right-[-2.5rem] after:top-5 after:cursor-pointer`;
+  const HomeItem = tw(
+    NavItem
+  )`2lg:ml-[7%] lg:ml-[7%] ml-[8.8rem] relative after:absolute after:content-[""] after:w-40 after:h-10 after:right-[-2.5rem] after:top-5 after:cursor-pointer`;
   const NavAbout = tw(NavItem)`ml-[2.675rem] 2lg:ml-[10%] lg:ml-[10%]`;
   const NavService = tw(NavItem)`ml-[2.775rem] 2lg:ml-[10%] lg:ml-[10%]`;
-    
+
   const NavGallery = tw(NavItem)`ml-[2.8rem] 2lg:ml-[10%] lg:ml-[10%]`;
   const NavBlog = tw(NavItem)`ml-[2.8rem] 2lg:ml-[10%] lg:ml-[10%]`;
 
@@ -59,7 +67,7 @@ const Header = () => {
     feature && tw`pl-[0.2rem]`,
   ]);
   const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[-1rem] 2lg:left-[-4.8rem] lg:left-[-4.8rem] bg-light_white z-50 rounded-xl`;
-  const AccountManager = tw(DropDownMenu)`left-[-3rem]`
+  const AccountManager = tw(DropDownMenu)`left-[-3rem]`;
   // const DropDownMenuItem = tw(NavItem)` pb-2 pl-4 pt-2 text-light_pink pr-4 hover:bg-light_pink hover:text-light_white`
   const DropDownMenuItem = styled.li<{ active: boolean; feature: boolean }>(
     ({ active, feature }) => [
@@ -73,9 +81,15 @@ const Header = () => {
   const Team = tw(DropDownMenuItem)`rounded-b-xl`;
 
   const NavDropDown = tw.ul`ml-[3.2rem] pr-6`;
-  const NavGeneral = tw(General)` rounded-[0.5rem] text-base py-2.5 pl-3 uppercase font-poppins pb-0`;
-  const NavFeature = tw(General)`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
-  const NavTeam = tw(Team)`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavGeneral = tw(
+    General
+  )` rounded-[0.5rem] text-base py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavFeature = tw(
+    General
+  )`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavTeam = tw(
+    Team
+  )`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
 
   const [isOpen, setIsOpen] = useState(false);
   const [openNavDropDown, setOpenNavDropDown] = useState(false);
@@ -84,7 +98,7 @@ const Header = () => {
   const toggleAccountManager = () => {
     setOpenAccountManager(!openAccountManager);
   };
-  
+
   const openDropDownMenu = () => {
     setOpenNavDropDown(!openNavDropDown);
   };
@@ -99,14 +113,20 @@ const Header = () => {
     }, 0);
   };
 
-  const logo = location.pathname === "/Feature"
-      ? "./FeatureLogo.png"
-      : "./MainLogo.png";
+  const logo =
+    location.pathname === "/Feature" ? "./FeatureLogo.png" : "./MainLogo.png";
 
+  // const navigate = useNavigate();
+  // const { userLoggedIn } = useAuth();
+  // const { currentUser } = useAuth();
+  
   return (
     <header>
       <HeaderContainer>
-        <button onClick={openMenu} tw="cursor-pointer  absolute w-14  hidden top-8 left-8 md:block sm:block z-40 scale-[2]">
+        <button
+          onClick={openMenu}
+          tw="cursor-pointer  absolute w-14  hidden top-8 left-8 md:block sm:block z-40 scale-[2]"
+        >
           <IoIosListBox />
         </button>
         <NavBar feature={location.pathname === "/Feature"}>
@@ -116,28 +136,35 @@ const Header = () => {
             </Link>
           </LogoContainer>
           <ListNavItem>
-            <HomeItem active={location.pathname === "/"} feature={location.pathname === "/Feature"} onMouseEnter={showDropdown}
-              onMouseLeave={hideDropdown}>  
+            <HomeItem
+              active={location.pathname === "/"}
+              feature={location.pathname === "/Feature"}
+              onMouseEnter={showDropdown}
+              onMouseLeave={hideDropdown}
+            >
               <Link to="/">Home+</Link>
-            {isOpen && (
-              <DropDownMenu>
-                <General active={location.pathname === "/"} feature={location.pathname === "/"}>
-                  <Link to="/">General</Link>
-                </General>
-                <DropDownMenuItem
-                  active={location.pathname === "/Feature"}
-                  feature={location.pathname === "/Feature"}
-                >
-                  <Link to="/Feature">Feature</Link>
-                </DropDownMenuItem>
-                <Team
-                  active={location.pathname === "/Team"}
-                  feature={location.pathname === "/Team"}
-                >
-                  <Link to="/Team">Team</Link>
-                </Team>
-              </DropDownMenu>
-            )}
+              {isOpen && (
+                <DropDownMenu>
+                  <General
+                    active={location.pathname === "/"}
+                    feature={location.pathname === "/"}
+                  >
+                    <Link to="/">General</Link>
+                  </General>
+                  <DropDownMenuItem
+                    active={location.pathname === "/Feature"}
+                    feature={location.pathname === "/Feature"}
+                  >
+                    <Link to="/Feature">Feature</Link>
+                  </DropDownMenuItem>
+                  <Team
+                    active={location.pathname === "/Team"}
+                    feature={location.pathname === "/Team"}
+                  >
+                    <Link to="/Team">Team</Link>
+                  </Team>
+                </DropDownMenu>
+              )}
             </HomeItem>
             <NavAbout
               active={location.pathname === "/About"}
@@ -145,7 +172,10 @@ const Header = () => {
             >
               <Link to="/About">About</Link>
             </NavAbout>
-            <NavService active={location.pathname === "/Service"} feature={location.pathname === "/Feature"}>
+            <NavService
+              active={location.pathname === "/Service"}
+              feature={location.pathname === "/Feature"}
+            >
               <Link to="/Service">Service</Link>
             </NavService>
             <NavGallery
@@ -164,36 +194,71 @@ const Header = () => {
           <ContactButton active={location.pathname === "/Contact"}>
             <Link to="/Contact">Contact</Link>
           </ContactButton>
-          <div tw='mr-[-4rem] relative' >
-            <GoPersonFill tw='scale-[3]' onClick={toggleAccountManager} />
+          <div tw="mr-[-4rem] relative">
+            <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
             {openAccountManager && (
               <AccountManager>
-                <General active={location.pathname === "/"} feature={location.pathname === "/"}>
+                <General
+                  active={location.pathname === "/"}
+                  feature={location.pathname === "/"}
+                >
                   <Link to="/Profile">Profile</Link>
                 </General>
-                <DropDownMenuItem active={location.pathname === "/Feature"} feature={location.pathname === "/Feature"} >
+                <DropDownMenuItem
+                  active={location.pathname === "/Feature"}
+                  feature={location.pathname === "/Feature"}
+                >
                   <Link to="/Bill">Bill</Link>
                 </DropDownMenuItem>
+                {/*
+                {userLoggedIn ? (
+                  <>
+                    <div>
+                      Hello
+                      {currentUser.displayName
+                        ? currentUser.displayName
+                        : currentUser.email}
+                    </div>  
+                    <Team
+                      active={location.pathname === "/Login"}
+                      feature={location.pathname === "/Team"}
+                      onClick={() => {
+                        doSignOut().then(() => {
+                          navigate("/Login");
+                        });
+                      }}
+                    >
+                      Logout
+                    </Team>
+                  </>
+                ) : (
+                  <Team
+                    active={location.pathname === "/Login"}
+                    feature={location.pathname === "/Team"}
+                    onClick={() => {
+                      doSignOut().then(() => {
+                        navigate("/Login");
+                      });
+                    }}
+                  >
+                    Login
+                  </Team>
+                )} */}
                 <Team active={location.pathname === "/Login"} feature={location.pathname === "/Team"}>
-                  <Link to="/Login">Logout</Link>
-                </Team>
+                    <Link to="/Login">Login</Link>
+                  </Team>
               </AccountManager>
             )}
           </div>
         </NavBar>
       </HeaderContainer>
 
-
-
-
-
-
-
-
-
-      
       <nav>
-        <div id='overlay' tw="fixed top-0 right-0 bottom-0 left-0 hidden z-10 bg-transparent" onClick={closeMenu}></div>
+        <div
+          id="overlay"
+          tw="fixed top-0 right-0 bottom-0 left-0 hidden z-10 bg-transparent"
+          onClick={closeMenu}
+        ></div>
         <div
           tw="h-full fixed top-0 left-0 bg-white w-[16rem] transition-all ease-in-out duration-500 translate-x-[-100%] z-50 transform md:w-[25rem] "
           id="menu"
@@ -317,7 +382,7 @@ function openMenu() {
   Menu.style.transform = "translateX(0)";
   Overlay.style.display = "block";
 }
-  
+
 function closeMenu() {
   const Menu = document.getElementById("menu")!;
   const Overlay = document.getElementById("overlay")!;

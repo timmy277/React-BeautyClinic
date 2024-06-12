@@ -11,13 +11,16 @@ import Contact from "../pages/Contact/Contact";
 import Team from "../pages/Team/Team";
 import Register from "../pages/Authentication/Register";
 import Login from "../pages/Authentication/Login";
+import AuthRoute from '../components/AuthRoute';
 
 const RouteCustom  = () => {
     return (
     <>
         <Routes>
             <Route path="/" element={<Layout/>}>
-                <Route index path="/" element={<General />} />
+                <Route index path="/" element={
+                    <AuthRoute><General /></AuthRoute>
+                } />
                 <Route path="/Feature" element={<Feature />} />
                 <Route path="/About" element={<About />} />
                 <Route path="/Service" element={<Service />} />

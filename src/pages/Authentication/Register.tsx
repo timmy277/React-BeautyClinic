@@ -3,8 +3,9 @@ import { GrayP, TwButton, TwTitle_LG } from "../../components/Material"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import styled from "styled-components";
 import {useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 const Register = () => {
     const RegisterContainer = tw.div`max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem]`
     const RegisterTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
@@ -26,25 +27,44 @@ const Register = () => {
         showPassword && tw``,
         ]
     );
-
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPass, setShowConfirmPassword] = useState(false);
+    const auth = getAuth();
+    const navigate = useNavigate();
+    // const [authing, setAuthing] = useState(false);
+
+    const handleSignUp = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            alert('User created successfully!');
+            navigate('/Login');
+        } catch (error) {
+            console.error(error);
+            alert('Error creating user');
+        }
+    };
+
     return (
         <RegisterContainer>
-            <form action="">
+            {/* {userLoggedIn && <Navigate to="/" replace={true} /> }  */}
+            <form onSubmit={handleSignUp}>
                 <RegisterTitle>Register</RegisterTitle>
                 <div tw='flex flex-col gap-8 mb-4'>
-                    <RegisterInput type="text" name="" id="" placeholder="Please enter your email" />
+                    <RegisterInput type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="" id="" placeholder="Please enter your email" />
                     <div tw='relative'>
                         <PasswordIp 
-                        showPassword={showPassword}
+                        showPassword={showPassword} value={password} onChange={(e) => setPassword(e.target.value)}
                         type={showPassword ? 'text' : 'password'} name="" id="p" placeholder="Please enter your password" />
                         <Icon onClick={() => setShowPassword(!showPassword) }>
                             {showPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
                         </Icon>
                     </div>
                     <div tw='relative'>
-                        <ConfirmPassword showConfirmPassword={showConfirmPass}
+                        <ConfirmPassword 
+                        showConfirmPassword={showConfirmPass}
                         type={showPassword ? 'text' : 'password'} name="" id="" placeholder="Confirm your password" />
                         <Icon onClick={() => setShowConfirmPassword(!showConfirmPass) }>
                             {showConfirmPass ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
