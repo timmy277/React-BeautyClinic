@@ -1,39 +1,26 @@
 import tw from "twin.macro"
 import { GrayP, TwButton, TwTitle_LG } from "../../components/Material"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import styled from "styled-components";
 import {useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 const Register = () => {
-    const RegisterContainer = tw.div`max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem]`
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState("");
+    const [cfPassword, setCfPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+    const [showCfPassword, setShowCfPassword] = useState(false);
+    const auth = getAuth();
+    const navigate = useNavigate();
+
     const RegisterTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
-    const RegisterInput = tw.input`border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-lighter_gray font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full w-full mb-[2.395rem] items-center`
+    const Icon = tw.div`absolute right-[3.6rem] top-[45%] transform -translate-y-1/2 cursor-pointer`;
 
     const RegisterP = tw(GrayP)`text-center mb-4`
     const RegisterSpan = tw.span`text-dark_blue`
-    const RegisterButton = tw(TwButton)`block mx-auto px-[45%]`
+    const RegisterButton = tw(TwButton)`block mx-auto px-[45%] mb-8`
 
-    const Icon = tw.div`absolute right-[3.6rem] bottom-[3.6rem] top-[25%] transform -translate-y-1/2 cursor-pointer`;
-
-    const PasswordIp = styled.input<{ showPassword: boolean }>(({ showPassword }) => [
-        tw`w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-lighter_gray font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full mb-[2.395rem] items-center`,
-        showPassword && tw``,
-        ]
-    );
-    const ConfirmPassword =  styled.input<{ showConfirmPassword: boolean }>(({ showConfirmPassword }) => [
-        tw`w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-lighter_gray font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full mb-[2.395rem] items-center`,
-        showPassword && tw``,
-        ]
-    );
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
-    const [showConfirmPass, setShowConfirmPassword] = useState(false);
-    const auth = getAuth();
-    const navigate = useNavigate();
-    // const [authing, setAuthing] = useState(false);
 
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -48,37 +35,46 @@ const Register = () => {
     };
 
     return (
-        <RegisterContainer>
+        <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem]'>
             {/* {userLoggedIn && <Navigate to="/" replace={true} /> }  */}
-            <form onSubmit={handleSignUp}>
-                <RegisterTitle>Register</RegisterTitle>
-                <div tw='flex flex-col gap-8 mb-4'>
-                    <RegisterInput type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="" id="" placeholder="Please enter your email" />
-                    <div tw='relative'>
-                        <PasswordIp 
-                        showPassword={showPassword} value={password} onChange={(e) => setPassword(e.target.value)}
-                        type={showPassword ? 'text' : 'password'} name="" id="p" placeholder="Please enter your password" />
-                        <Icon onClick={() => setShowPassword(!showPassword) }>
-                            {showPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
-                        </Icon>
-                    </div>
-                    <div tw='relative'>
-                        <ConfirmPassword 
-                        showConfirmPassword={showConfirmPass}
-                        type={showPassword ? 'text' : 'password'} name="" id="" placeholder="Confirm your password" />
-                        <Icon onClick={() => setShowConfirmPassword(!showConfirmPass) }>
-                            {showConfirmPass ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
-                        </Icon>
-                    </div>
+            <form onSubmit={handleSignUp}  autoComplete="off">
+            <RegisterTitle>Register</RegisterTitle>
+                <label tw='mb-[-2rem] ml-[1.5rem]'>Email</label>
+                <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem]    text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full w-full mb-[2. 395rem] items-center' autoComplete="off"
+                type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                name="" id="" placeholder="Please enter your email" />
+                {/* {errors.email && <p>{errors.email.message}</p>} */}
+
+                <div tw='relative mt-8'>
+                    <label tw='ml-[1.5rem]' htmlFor="pass" >Password</label>
+
+                    <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full mb-[2.395rem] items-center' 
+                    id="pass" type={showPassword ? "text" : "password"} placeholder="Please enter your password" 
+                    value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <Icon onClick={() => setShowPassword((prev) => !prev) }>
+                        {showPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
+                    </Icon>
                 </div>
-                <RegisterP>Already have an account?<RegisterSpan>
-                        <Link to="/Login"> Login</Link>
-                    </RegisterSpan></RegisterP>
+                <div tw='relative mt-0'>
+                    <label tw='ml-[1.5rem]' htmlFor="confirmPass">Password</label>
+
+                    <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full mb-[2.395rem] items-center' 
+                    id="confirmPass" type={showCfPassword ? "text" : "password"} placeholder="Please confirm your password" 
+                    value={cfPassword} onChange={(e) => setCfPassword(e.target.value)}/> 
+                    <Icon onClick={() => setShowCfPassword((prev) => !prev) }>
+                        {showCfPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
+                    </Icon>
+                </div>
+                <RegisterP>Already have an account?
+                    <RegisterSpan>
+                        <Link to="/Login">Login</Link>
+                    </RegisterSpan>
+                </RegisterP>
                 <div tw= 'w-full'>
                     <RegisterButton type="submit">Register</RegisterButton>
                 </div>
             </form>
-        </RegisterContainer>
+        </div>
     )
 }
 
