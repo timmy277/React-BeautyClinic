@@ -15,7 +15,7 @@ const Login = () => {
     const [errors, setErrors] = useState<{ email?: string, password?: string }>({});
 
     const LoginTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
-    const Icon = tw.div`absolute right-[3.6rem] top-[45%] transform -translate-y-1/2 cursor-pointer`;
+    const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
 
     const LoginP = tw(GrayP)`text-center mb-4`
     const LoginSpan = tw.span`text-dark_blue`
@@ -88,7 +88,6 @@ const Login = () => {
                     // {...register("password",{ required: true, minLength: 8})}
                     id="pass" type={showPassword ? "text" : "password"} placeholder="Please enter your password" 
                     value={password} onChange={(e) => setPassword(e.target.value)}/>
-                    {/* {errors.password && <p>{errors.password.message}</p>} */}
                     {errors.password && <p tw='text-red-500'>{errors.password}</p>}
                     <Icon onClick={() => setShowPassword((prev) => !prev) }>
                         {showPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}

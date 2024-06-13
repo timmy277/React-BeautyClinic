@@ -18,7 +18,7 @@ const Register = () => {
     const navigate = useNavigate();
 
     const RegisterTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
-    const Icon = tw.div`absolute right-[3.6rem] top-[45%] transform -translate-y-1/2 cursor-pointer`;
+    const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
 
     const RegisterP = tw(GrayP)`text-center mb-4`
     const RegisterSpan = tw.span`text-dark_blue`
@@ -30,10 +30,7 @@ const Register = () => {
 
         const formErrors: { email?: string, password?: string,  cfPassword?: string } = {};
 
-        const signInMethods = await fetchSignInMethodsForEmail(auth, email);
-        if (signInMethods.length > 0) {
-            formErrors.email = 'This email is already registered';
-        }
+
         if (!email) {
             formErrors.email = 'Email is required';
         } else if (!/^\S+@\S+$/i.test(email)) {
@@ -63,6 +60,10 @@ const Register = () => {
         setErrors(formErrors);
         if (Object.keys(formErrors).length === 0) {
             try {
+                const signInMethods = await fetchSignInMethodsForEmail(auth, email);
+                if (signInMethods.length > 0) {
+                    formErrors.email = 'This email is already registered';
+                }
                 await createUserWithEmailAndPassword(auth, email, password);
                 alert('User created successfully!');
                 navigate('/Login');
