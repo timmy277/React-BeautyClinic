@@ -77,7 +77,9 @@ const Header = () => {
 
   const General = tw(DropDownMenuItem)`rounded-t-xl`;
   const Team = tw(DropDownMenuItem)`rounded-b-xl`;
-
+  const Profile = tw(DropDownMenuItem)`rounded-t-xl`;
+  const Bill = tw(DropDownMenuItem)``;
+  const Logout = tw(DropDownMenuItem)`rounded-b-xl`;
   const NavDropDown = tw.ul`ml-[3.2rem] pr-6`;
   const NavGeneral = tw(
     General
@@ -194,29 +196,29 @@ const Header = () => {
           <div tw="-top-4 relative right-[2rem]">
             <div tw='absolute flex items-center gap-4'>
               <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
-              <div tw='text-xs font-bold'>{currentUser!.displayName ? currentUser!.displayName : currentUser!.email}</div>
+              <div tw='text-xs text-light_pink font-bold'>{currentUser!.displayName ? currentUser!.displayName : currentUser!.email}</div>
             </div>
             
             {openAccountManager && (
               <AccountManager>
-                <General
+                <Profile
                   active={location.pathname === "/"}
                   feature={location.pathname === "/"}
                 >
                   <Link to="/Profile">Profile</Link>
-                </General>
+                </Profile>
                 <DropDownMenuItem
-                  active={location.pathname === "/Feature"}
-                  feature={location.pathname === "/Feature"}
+                  active={location.pathname === "/Profile"}
+                  feature={location.pathname === "/Profile"}
                 >
                   <Link to="/TestForm">Bill</Link>
                 </DropDownMenuItem>
                 
                 {userLoggedIn ? (
                   <>
-                    <Team
-                      active={location.pathname === "/Login"}
-                      feature={location.pathname === "/Team"}
+                    <Logout
+                      active={location.pathname === "/Logout"}
+                      feature={location.pathname === "/Logout"}
                       onClick={() => {
                         doSignOut().then(() => {
                           navigate("/Login");
@@ -224,20 +226,18 @@ const Header = () => {
                       }}
                     >
                       Logout
-                    </Team>
+                    </Logout>
                   </>
                 ) : (
-                  <Team
+                  <Logout
                     active={location.pathname === "/Login"}
-                    feature={location.pathname === "/Team"}
+                    feature={location.pathname === "/Login"}
                     onClick={() => {
-                      doSignOut().then(() => {
-                        navigate("/Login");
-                      });
+                      navigate("/Login");
                     }}
                   >
                     Login
-                  </Team>
+                  </Logout>
                 )}
               </AccountManager>
             )}
