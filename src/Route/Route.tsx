@@ -12,10 +12,12 @@ import Team from "../pages/Team/Team";
 import Register from "../pages/Authentication/Register";
 import Login from "../pages/Authentication/Login";
 import AuthRoute from '../components/AuthRoute';
+import { AuthProvider } from "../Context/AuthContext";
 
 const RouteCustom  = () => {
     return (
     <>
+    <AuthProvider>
         <Routes>
             <Route path="/" element={<Layout/>}>
                 <Route index path="/" element={
@@ -32,6 +34,7 @@ const RouteCustom  = () => {
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Register" element={<Register />} />
         </Routes>
+    </AuthProvider>
     </>
     )
 }

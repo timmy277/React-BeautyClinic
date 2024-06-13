@@ -2,22 +2,20 @@ import "twin.macro";
 import tw from "twin.macro";
 import { TwButton } from "../../../../components/Material";
 import MainLogo from "../../../../assets/website/MainLogo.png";
-import {
-  FaTimes,
-  FaHome,
-  FaAddressBook,
-  FaAddressCard,
-  FaBlogger,
-} from "react-icons/fa";
+import { FaTimes, FaHome, FaAddressBook, FaAddressCard, FaBlogger} from "react-icons/fa";
 import { IoIosListBox, IoIosContacts } from "react-icons/io";
 import { RiGalleryFill } from "react-icons/ri";
 import { GoPersonFill } from "react-icons/go";
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "../../../../Context/AuthContext";
+import { getAuth } from "firebase/auth";
 const Header = () => {
   const location = useLocation();
-
+  const { currentUser } = useAuth()!;
+  const {userLoggedIn} = useAuth()!;
+  const navigate = useNavigate();
   const NavItem = styled.li<{ active: boolean; feature: boolean }>(
     ({ active, feature }) => [
       tw`font-poppins font-medium text-base text-light_gray not-italic tracking-widest 2lg:ml-[7%] lg:ml-[7%]`,
@@ -113,20 +111,19 @@ const Header = () => {
     }, 0);
   };
 
+  const auth = getAuth();
+  const doSignOut = () => {
+    return auth.signOut();
+  };
+
   const logo =
     location.pathname === "/Feature" ? "./FeatureLogo.png" : "./MainLogo.png";
 
-  // const navigate = useNavigate();
-  // const { userLoggedIn } = useAuth();
-  // const { currentUser } = useAuth();
   
   return (
     <header>
       <HeaderContainer>
-        <button
-          onClick={openMenu}
-          tw="cursor-pointer  absolute w-14  hidden top-8 left-8 md:block sm:block z-40 scale-[2]"
-        >
+        <button onClick={openMenu} tw="cursor-pointer  absolute w-14  hidden top-8 left-8 md:block sm:block z-40 scale-[2]">
           <IoIosListBox />
         </button>
         <NavBar feature={location.pathname === "/Feature"}>
@@ -194,8 +191,12 @@ const Header = () => {
           <ContactButton active={location.pathname === "/Contact"}>
             <Link to="/Contact">Contact</Link>
           </ContactButton>
-          <div tw="mr-[-4rem] relative">
-            <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
+          <div tw="-top-4 relative right-[2rem]">
+            <div tw='absolute flex items-center gap-4'>
+              <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
+              <div tw='text-xs font-bold'>{currentUser!.displayName ? currentUser!.displayName : currentUser!.email}</div>
+            </div>
+            
             {openAccountManager && (
               <AccountManager>
                 <General
@@ -210,15 +211,9 @@ const Header = () => {
                 >
                   <Link to="/TestForm">Bill</Link>
                 </DropDownMenuItem>
-                {/*
+                
                 {userLoggedIn ? (
                   <>
-                    <div>
-                      Hello
-                      {currentUser.displayName
-                        ? currentUser.displayName
-                        : currentUser.email}
-                    </div>  
                     <Team
                       active={location.pathname === "/Login"}
                       feature={location.pathname === "/Team"}
@@ -243,10 +238,7 @@ const Header = () => {
                   >
                     Login
                   </Team>
-                )} */}
-                <Team active={location.pathname === "/Login"} feature={location.pathname === "/Team"}>
-                    <Link to="/Login">Login</Link>
-                  </Team>
+                )}
               </AccountManager>
             )}
           </div>
