@@ -196,7 +196,7 @@ const Header = () => {
           <div tw="-top-4 relative right-[2rem]">
             <div tw='absolute flex items-center gap-4'>
               <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
-              <div tw='text-xs text-light_pink font-bold'>{currentUser!.displayName ? currentUser!.displayName : currentUser!.email}</div>
+              <div tw='text-xs text-light_pink font-bold text-nowrap'>{currentUser!.displayName ? currentUser!.displayName : currentUser!.email}</div>
             </div>
             
             {openAccountManager && (
@@ -207,12 +207,12 @@ const Header = () => {
                 >
                   <Link to="/Profile">Profile</Link>
                 </Profile>
-                <DropDownMenuItem
+                <Bill
                   active={location.pathname === "/Profile"}
                   feature={location.pathname === "/Profile"}
                 >
-                  <Link to="/TestForm">Bill</Link>
-                </DropDownMenuItem>
+                  <Link to="/Login">Bill</Link>
+                </Bill>
                 
                 {userLoggedIn ? (
                   <>

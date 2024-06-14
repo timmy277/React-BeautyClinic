@@ -7,7 +7,7 @@ import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 interface AuthContextType {
     currentUser: User | null;
     userLoggedIn: boolean;
-    loading: boolean;   
+    loading: boolean;
 }
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 interface AuthProviderProps {
@@ -26,6 +26,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children })=>{
         if (user) {
             setCurrentUser(user);
             setUserLoggedIn(true);
+
         } else {
             setCurrentUser(null);
             setUserLoggedIn(false);
@@ -37,7 +38,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children })=>{
 
     return(
         <AuthContext.Provider value={{currentUser , userLoggedIn, loading}}>
-            {!loading && children}
+            {!loading && children}  
         </AuthContext.Provider>
     )
 }

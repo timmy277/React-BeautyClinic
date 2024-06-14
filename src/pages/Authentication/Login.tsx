@@ -5,7 +5,7 @@ import { GrayP, TwButton, TwTitle_LG } from "../../components/Material";
 import { Link, useNavigate } from "react-router-dom";
 import { fetchSignInMethodsForEmail, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation } from 'react-router-dom';
 const Login = () => {
@@ -16,7 +16,6 @@ const Login = () => {
     const navigate = useNavigate();
     const [authing, setAuthing] = useState(false);
     const [errors, setErrors] = useState<{ email?: string, password?: string }>({});
-    const [isLoginSuccessful, setIsLoginSuccessful] = useState(false);
     const location = useLocation();
 
     const LoginTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
@@ -71,14 +70,12 @@ const Login = () => {
 
         if (Object.keys(formErrors).length === 0) {
             try {
+                toast.success('Logged in successfully!');
                 await signInWithEmailAndPassword(auth, email, password);
-                setIsLoginSuccessful(true);
-                // alert('Logged in successfully!');
                 navigate('/');
             } catch (error) {
                 console.error(error);
-                // alert('Email or password is incorrect');
-                setIsLoginSuccessful(false);
+                toast.error('Email or password is incorrect');
             }
         }
     };
@@ -88,10 +85,12 @@ const Login = () => {
         signInWithPopup(auth, new GoogleAuthProvider()).then(response =>{
             console.log(response.user.uid);
             navigate('/');
+            toast.success('Logged in successfully!');
         })
         .catch(error => {
             console.log(error);
             setAuthing(false);
+            toast.error('Email or password is incorrect');
         });
     }
     // console.log(isLoginSuccessful);
@@ -104,12 +103,14 @@ const Login = () => {
                     <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink'>Email</label>
                     <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] 
                     pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full    w-full mb-[2. 395rem] items-center'
+                    autoComplete="email"
                     type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                     name="" id="" placeholder="Please enter your email" />
                     {errors.email && <ErrorP>{errors.email}</ErrorP>}
                     <div tw='relative mt-8'>
                         <label tw='ml-[1.5rem] text-light_pink' htmlFor="pass">Password</label>
                         <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem]   pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm    sm:text-xs max-w-full items-center'
+                        autoComplete="current-password"
                         id="pass" type={showPassword ? "text" : "password"} placeholder="Please enter your password" 
                         value={password} onChange={(e) => setPassword(e.target.value)}/>
                         {errors.password && <ErrorP>{errors.password}</ErrorP>}
@@ -123,14 +124,14 @@ const Login = () => {
                         </LoginSpan>
                     </LoginP>
                     <div tw= 'w-full'>  
-                        <LoginButton type="submit" onClick={() => toast(isLoginSuccessful? 'Logged in successfully!' : 'Email or password is incorrect')}>
+                        <LoginButton type="submit" >
                             Login
                         </LoginButton>
                         <LoginGoogle type="submit" disabled={authing} onClick={() => signInWithGoogle()}>
                             <FcGoogle tw='w-8 h-8' />  Login with Google
                         </LoginGoogle>
                     </div>
-                    <ToastContainer />
+                    {/* <ToastContainer /> */}
                 </form>
             </div>
         </div>  

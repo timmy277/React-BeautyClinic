@@ -3,10 +3,11 @@ import { GrayP, TwButton, TwTitle_LG } from "../../components/Material"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import {useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { fetchSignInMethodsForEmail } from 'firebase/auth';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -77,14 +78,20 @@ const Register = () => {
                 const signInMethods = await fetchSignInMethodsForEmail(auth, email);
                 if (signInMethods.length > 0) {
                     formErrors.email = 'This email is already registered';
+                    setErrors(formErrors);
+                    return;
                 }
-                await createUserWithEmailAndPassword(auth, email, password);
-                alert('User created successfully!');
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                await updateProfile(user, { displayName: username });
+                // await createUserWithEmailAndPassword(auth, email, password);
+                toast.success('Registered successfully!');
                 navigate('/Login', { state: { email, password } });
 
             } catch (error) {
                 console.error(error);
-                alert('Error creating user');
+                toast.error('Registration failed');
             }
     }
     };
@@ -92,18 +99,18 @@ const Register = () => {
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  
             <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
-                <form onSubmit={handleSignUp}  autoComplete="off">
+                <form onSubmit={handleSignUp}  >
                     <RegisterTitle>Register</RegisterTitle>
                     
                     <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink'>Username</label>
-                    <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' autoComplete="off"
+                    <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' 
                     type="text" value={username} onChange={(e) => setUsername(e.target.value)}
                     name="" id="" placeholder="Please enter your name" />
                     {errors.username && <ErrorP>{errors.username}</ErrorP>}
 
                     <div tw='mt-8'>
                         <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink'>Email</label>
-                        <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' autoComplete="off"
+                        <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' 
                         type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                         name="" id="" placeholder="Please enter your email" />
                         {errors.email && <ErrorP>{errors.email}</ErrorP>}

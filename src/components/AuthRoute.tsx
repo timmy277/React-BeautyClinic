@@ -1,5 +1,5 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 
@@ -15,7 +15,7 @@ const AuthRoute: React.FunctionComponent<IAuthRouteProps> = ({children}) => {
 
     useEffect(() => {
         if (!loading && !currentUser) {
-            navigate('/login');
+            navigate('/Login');
         }
     }, [currentUser, loading, navigate]);
     
