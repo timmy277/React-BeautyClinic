@@ -2,7 +2,7 @@ import tw from "twin.macro"
 import BlogHomeBG from '../image/background/unsplash_QA9fRIi6sFw.png'
 import { GrayP, TwTitle_MD } from "../../../components/Material";
 const BlogHome = () => {
-    const HomeBackground = tw.div`relative mt-[2.4rem]`
+    const HomeBackground = tw.div`relative mt-[2rem]`
     const Overlay = tw.div`top-0 bottom-0 left-0 right-0 absolute z-0 bg-[#09115699] opacity-[1.6]`;
 
     const HomeContainer = tw.div`max-w-[71.575rem] flex items-center justify-between mx-auto z-10 absolute inset-0 2lg:px-[10%] 2lg:max-w-full lg:px-[10%] lg:max-w-full md:px-[10%] md:max-w-full sm:px-[10%] sm:max-w-full`    

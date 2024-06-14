@@ -20,7 +20,6 @@ const Register = () => {
     const navigate = useNavigate();
     const RegisterTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
     const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
-
     const RegisterP = tw(GrayP)`text-center mb-4`
     const RegisterSpan = tw.span`text-dark_blue`
     const RegisterButton = tw(TwButton)`block mx-auto w-full mb-8 h-[4rem]`
@@ -29,6 +28,7 @@ const Register = () => {
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
         const formErrors: { username?: string, email?: string, password?: string,  cfPassword?: string } = {};
+
         if (!username) {
             formErrors.username = 'Username is required';
         } 
@@ -83,9 +83,7 @@ const Register = () => {
                 }
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
-
                 await updateProfile(user, { displayName: username });
-                // await createUserWithEmailAndPassword(auth, email, password);
                 toast.success('Registered successfully!');
                 navigate('/Login', { state: { email, password } });
 
@@ -137,7 +135,7 @@ const Register = () => {
                     </div>
                     <RegisterP>Already have an account?
                         <RegisterSpan>
-                            <Link to="/Login">Login</Link>
+                            <Link to="/Login"> Login</Link>
                         </RegisterSpan>
                     </RegisterP>
                     <div tw= 'w-full'>

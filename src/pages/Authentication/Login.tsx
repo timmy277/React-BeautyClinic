@@ -41,10 +41,7 @@ const Login = () => {
         e.preventDefault();
         const formErrors: { email?: string, password?: string } = {};
 
-        const signInMethods = await fetchSignInMethodsForEmail(auth, email);
-        if (signInMethods.length < 0) {
-            formErrors.email = 'This email is not exist';
-        }
+        
         if (!email) {
             formErrors.email = 'Email is required';
         }
@@ -63,16 +60,20 @@ const Login = () => {
         else if (!/[A-Z]/.test(password)){
             formErrors.password = 'Password must contain at least one uppercase letter';
         }
-        // else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
-        //     formErrors.password = 'Password must contain at least one special character';
-        // }
+        else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+            formErrors.password = 'Password must contain at least one special character';
+        }
         setErrors(formErrors);
 
         if (Object.keys(formErrors).length === 0) {
             try {
-                toast.success('Logged in successfully!');
+                const signInMethods = await fetchSignInMethodsForEmail(auth, email);
+                if (signInMethods.length < 0) {
+                    formErrors.email = 'This email is not exist';
+                }
                 await signInWithEmailAndPassword(auth, email, password);
                 navigate('/');
+                toast.success('Logged in successfully!');
             } catch (error) {
                 console.error(error);
                 toast.error('Email or password is incorrect');

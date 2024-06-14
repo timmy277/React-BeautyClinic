@@ -47,7 +47,7 @@ const BlogContent = () => {
     return (
         <>
             <BlogContainer>
-                <div tw='absolute top-8 right-8 hidden md:block sm:block cursor-pointer' onClick={openSidebar}>
+                <div tw='absolute top-[2rem] right-[9rem] hidden md:block sm:block cursor-pointer' onClick={openSidebar}>
                     <FaSearch tw='scale-150' />
                 </div>
                 <div id='overlay2' tw=" cursor-pointer fixed top-0 right-0 bottom-0 left-0 hidden z-10 bg-transparent " onClick={closeSidebar}></div>
