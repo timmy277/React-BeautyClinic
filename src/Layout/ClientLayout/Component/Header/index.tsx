@@ -125,7 +125,6 @@ const Header = () => {
   };
 
   const logo = location.pathname === "/Feature" ? "./FeatureLogo.png" : "./MainLogo.png";
-  console.log(currentUser?.displayName);
 
   return (
     <header>
