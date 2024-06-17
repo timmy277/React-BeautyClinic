@@ -125,7 +125,7 @@ const Header = () => {
   };
 
   const logo = location.pathname === "/Feature" ? "./FeatureLogo.png" : "./MainLogo.png";
-
+  console.log(currentUser?.displayName);
   // useEffect(() => {
   //   const userName = localStorage.getItem("username");
   //   if(userName==='' || userName===null){
@@ -213,9 +213,7 @@ const Header = () => {
           <div tw="absolute flex items-center gap-4">
             <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
             <div tw="text-xs text-light_pink font-bold text-nowrap">
-              {currentUser!.displayName!
-                ? currentUser!.displayName!
-                : currentUser!.email}
+              {currentUser!.displayName || currentUser!.email}
             </div>
           </div>
 
