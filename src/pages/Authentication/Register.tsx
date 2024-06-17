@@ -20,13 +20,15 @@ const Register = () => {
     const navigate = useNavigate();
     const RegisterTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
     const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
-    const RegisterP = tw(GrayP)`text-center mb-4`
+    const RegisterP = tw(GrayP)`text-center mb-4 mt-8`
     const RegisterSpan = tw.span`text-dark_blue`
     const RegisterButton = tw(TwButton)`block mx-auto w-full mb-8 h-[4rem]`
     const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem] mb-4`
 
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
+        const regobj = {username, email, password};
+        console.log(regobj);
         const formErrors: { username?: string, email?: string, password?: string,  cfPassword?: string } = {};
 
         if (!username) {
@@ -85,14 +87,29 @@ const Register = () => {
                 const user = userCredential.user;
                 await updateProfile(user, { displayName: username });
                 toast.success('Registered successfully!');
-                navigate('/Login', { state: { email, password } });
 
+                await fetch(" http://localhost:3000/register", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(regobj),
+                    }).then(function (data) {
+                        console.log(data);
+                        return data.json();
+
+                    })
+                    .catch((error) => {
+                        toast.error('Registration failed: '+ error.message);
+                    }
+                );
+                navigate('/Login', { state: { email, password } });
             } catch (error) {
                 console.error(error);
                 toast.error('Registration failed');
             }
-    }
+        }
     };
+
+
 
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  

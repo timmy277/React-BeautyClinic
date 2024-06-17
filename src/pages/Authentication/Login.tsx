@@ -18,6 +18,9 @@ const Login = () => {
     const [errors, setErrors] = useState<{ email?: string, password?: string }>({});
     const location = useLocation();
 
+    // useEffect(() => {
+    //     localStorage.clear();
+    // },[])
     const LoginTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
     const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
 
@@ -39,6 +42,7 @@ const Login = () => {
     
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
+        const regobj = { email, password};
         const formErrors: { email?: string, password?: string } = {};
 
         
@@ -72,8 +76,18 @@ const Login = () => {
                     formErrors.email = 'This email is not exist';
                 }
                 await signInWithEmailAndPassword(auth, email, password);
-                navigate('/');
+                await fetch(" http://localhost:3000/login", {method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(regobj)
+                    }).then((response) => {
+                        
+                        return response.json();
+                    }).then((response) => {
+                        localStorage.setItem('response', JSON.stringify(response));
+                        console.log(response);
+                    })
                 toast.success('Logged in successfully!');
+                navigate('/');
             } catch (error) {
                 console.error(error);
                 toast.error('Email or password is incorrect');
@@ -94,7 +108,6 @@ const Login = () => {
             toast.error('Email or password is incorrect');
         });
     }
-    // console.log(isLoginSuccessful);
 
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  
