@@ -14,7 +14,7 @@ import { RiGalleryFill } from "react-icons/ri";
 import { GoPersonFill } from "react-icons/go";
 import styled from "styled-components";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../../../../Context/AuthContext";
 import { getAuth } from "firebase/auth";
 import { BsPersonVcard } from "react-icons/bs";
