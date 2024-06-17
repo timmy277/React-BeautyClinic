@@ -213,8 +213,8 @@ const Header = () => {
           <div tw="absolute flex items-center gap-4">
             <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
             <div tw="text-xs text-light_pink font-bold text-nowrap">
-              {currentUser!.displayName
-                ? currentUser!.displayName
+              {currentUser!.displayName!
+                ? currentUser!.displayName!
                 : currentUser!.email}
             </div>
           </div>
