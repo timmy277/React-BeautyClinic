@@ -3,11 +3,20 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import tw from "twin.macro";
 import { GrayP, TwButton, TwTitle_LG } from "../../components/Material";
 import { Link, useNavigate } from "react-router-dom";
-import { fetchSignInMethodsForEmail, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation } from 'react-router-dom';
+import { useForm } from "react-hook-form"
+// import {DevTool} from '@hookform/devtools'
+
+interface IFormLogin {
+    email: string;
+    password: string;
+}
+
+
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState("");
@@ -15,12 +24,16 @@ const Login = () => {
     const auth = getAuth();
     const navigate = useNavigate();
     const [authing, setAuthing] = useState(false);
-    const [errors, setErrors] = useState<{ email?: string, password?: string }>({});
     const location = useLocation();
 
-    // useEffect(() => {
-    //     localStorage.clear();
-    // },[])
+    const {register, formState: {errors} } = useForm<IFormLogin>({
+        defaultValues: {
+            email: '',
+            password: '',
+        },
+        mode: "onBlur",
+    });
+    
     const LoginTitle = tw(TwTitle_LG)`text-center text-light_pink mb-[4rem]`
     const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
 
@@ -43,44 +56,12 @@ const Login = () => {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         const regobj = { email, password};
-        const formErrors: { email?: string, password?: string } = {};
-
-        
-        if (!email) {
-            formErrors.email = 'Email is required';
-        }
-        else if (!/^\S+@\S+$/i.test(email)) {
-            formErrors.email = 'Entered value does not match email format';
-        }
-        else if (email.length > 20) {
-            formErrors.email = 'Email must be less than 20 characters';
-        }
-        if (!password) {
-            formErrors.password = 'Password is required';
-        }
-        else if (password.length < 8) {
-            formErrors.password = 'Password must be at least 8 characters';
-        }
-        else if (!/[A-Z]/.test(password)){
-            formErrors.password = 'Password must contain at least one uppercase letter';
-        }
-        else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
-            formErrors.password = 'Password must contain at least one special character';
-        }
-        setErrors(formErrors);
-
-        if (Object.keys(formErrors).length === 0) {
             try {
-                const signInMethods = await fetchSignInMethodsForEmail(auth, email);
-                if (signInMethods.length < 0) {
-                    formErrors.email = 'This email is not exist';
-                }
                 await signInWithEmailAndPassword(auth, email, password);
-                await fetch(" http://localhost:3000/login", {method: "POST",
+                await fetch(`http://localhost:3000/login`, {method: "POST",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify(regobj)
                     }).then((response) => {
-                        
                         return response.json();
                     }).then((response) => {
                         localStorage.setItem('response', JSON.stringify(response));
@@ -92,7 +73,6 @@ const Login = () => {
                 console.error(error);
                 toast.error('Email or password is incorrect');
             }
-        }
     };
 
     const signInWithGoogle = async () => {
@@ -109,25 +89,70 @@ const Login = () => {
         });
     }
 
+    // const watchEmail = watch('email');
+
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  
             <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
-                <form onSubmit={handleLogin}>
+                <form onSubmit={ handleLogin} noValidate>
                     <LoginTitle >Login</LoginTitle>
-                    <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink'>Email</label>
+
+                    <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink' htmlFor="email">Email</label>
                     <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] 
                     pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full    w-full mb-[2. 395rem] items-center'
                     autoComplete="email"
+                    {...register("email",
+                        {
+                            required: {
+                                value: true,
+                                message: 'Email is required'
+                            },
+                            pattern: { 
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 
+                                message: 'Invalid email format'
+                            },
+                            validate:{
+                                emailAvailable: async (fieldValue) => {
+                                    const response = await fetch(`http://localhost:3000/users?email=${fieldValue}`);
+                                    const data = await response.json();
+                                    return data.length > 0 || 'This email is not existed';
+                                },
+                                notAdmin: (fieldValue)=> {
+                                    return (fieldValue!=='admin@gmail.com' || 'Enter a different email address');
+                                }, 
+                                notBlackListed: (fieldValue)=> {
+                                    return (!fieldValue.endsWith('@hack.com') || 'This domain is not allowed');
+                                },
+                            }
+                        }
+                    )}
                     type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                    name="" id="" placeholder="Please enter your email" />
-                    {errors.email && <ErrorP>{errors.email}</ErrorP>}
+                    id="email" placeholder="Please enter your email" />
+                    <ErrorP>{errors.email?.message}</ErrorP>
+
                     <div tw='relative mt-8'>
-                        <label tw='ml-[1.5rem] text-light_pink' htmlFor="pass">Password</label>
+                        <label tw='ml-[1.5rem] text-light_pink' htmlFor="password">Password</label>
                         <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem]   pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm    sm:text-xs max-w-full items-center'
                         autoComplete="current-password"
-                        id="pass" type={showPassword ? "text" : "password"} placeholder="Please enter your password" 
+                        {...register("password", 
+                            {
+                                required: {
+                                    value: true,
+                                    message: 'Password is required'
+                                },
+                                minLength: {
+                                    value: 8,
+                                    message: 'Password must be at least 8 characters' 
+                                },
+                                pattern: { 
+                                    value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/, 
+                                    message: 'Password must contain at least one special character'
+                                },
+                            }
+                        )}
+                        id="password" type={showPassword ? "text" : "password"} placeholder="Please enter your password" 
                         value={password} onChange={(e) => setPassword(e.target.value)}/>
-                        {errors.password && <ErrorP>{errors.password}</ErrorP>}
+                        <ErrorP>{errors.password?.message}</ErrorP>
                         <Icon onClick={() => setShowPassword((prev) => !prev) }>
                             {showPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
                         </Icon>
@@ -145,8 +170,8 @@ const Login = () => {
                             <FcGoogle tw='w-8 h-8' />  Login with Google
                         </LoginGoogle>
                     </div>
-                    {/* <ToastContainer /> */}
                 </form>
+                {/* <DevTool control={control} /> */}
             </div>
         </div>  
     )
