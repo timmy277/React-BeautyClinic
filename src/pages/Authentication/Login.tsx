@@ -32,7 +32,6 @@ const Login = () => {
         return data.length > 0;
     };
 
-
     const validationLoginSchema = Yup.object().shape({
         email: Yup.string()
             .required('Email is required')
@@ -78,21 +77,21 @@ const Login = () => {
         }
     }, [location, setValue]);
 
-    
+
     const handleLogin = async (data: IFormLogin) => {
             try {
                 const { email, password } = data;
                 const loginobj = {email, password};
                 await signInWithEmailAndPassword(auth, email, password);
-                await fetch(`http://localhost:3000/login`, {method: "POST",
+                const response = await fetch(`http://localhost:3000/login`, {method: "POST",
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify(loginobj)
-                    }).then((response) => {
-                        return response.json();
-                    }).then((response) => {
-                        localStorage.setItem('response', JSON.stringify(response));
-                        console.log(response);
                     })
+
+                const userData = await response.json();
+                const { accessToken } = userData;
+                console.log(accessToken);
+                localStorage.setItem('accessToken', accessToken);
                 toast.success('Logged in successfully!');
                 navigate('/');
             } catch (error) {

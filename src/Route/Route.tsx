@@ -11,8 +11,9 @@ import Contact from "../pages/Contact/Contact";
 import Team from "../pages/Team/Team";
 import Register from "../pages/Authentication/Register";
 import Login from "../pages/Authentication/Login";
-import AuthRoute from '../components/AuthRoute';
+import AuthRoute from './AuthRoute';
 import { AuthProvider } from "../Context/AuthContext";
+import PublicRoute from "./PublicRoute";
 
 const RouteCustom  = () => {
     return (
@@ -31,8 +32,8 @@ const RouteCustom  = () => {
                 <Route path="/Contact" element={<Contact />} />
                 <Route path="/Team" element={<Team />} />
             </Route>
-                <Route path="/Login" element={<Login />} />
-                <Route path="/Register" element={<Register />} />
+                <Route path="/Login" element={<PublicRoute><Login /></PublicRoute>} />
+                <Route path="/Register" element={<PublicRoute><Register /></PublicRoute>} />
         </Routes>
     </AuthProvider>
     </>

@@ -19,7 +19,7 @@ import { useAuth } from "../../../../Context/AuthContext";
 import { getAuth } from "firebase/auth";
 import { BsPersonVcard } from "react-icons/bs";
 import { LuShoppingBasket } from "react-icons/lu";
-import { AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineLogin, AiOutlineLogout } from "react-icons/ai";
 
 const Header = () => {
   const location = useLocation();
@@ -121,6 +121,7 @@ const Header = () => {
 
   const auth = getAuth();
   const doSignOut = () => {
+    localStorage.removeItem('accessToken'); 
     return auth.signOut();
   };
 
@@ -245,17 +246,32 @@ const Header = () => {
                     Logout
                   </Logout>
                 </>
-              ) : (
+              ) 
+              : (
                 <Logout
-                  active={location.pathname === "/Login"}
-                  feature={location.pathname === "/Login"}
-                  onClick={() => {
-                    navigate("/Login");
-                  }}
-                >
-                  Login
-                </Logout>
-              )}
+                    active={location.pathname === "/Logout"}
+                    feature={location.pathname === "/Logout"}
+                    onClick={() => {
+                      doSignOut().then(() => {
+                        navigate("/Login");
+                      });
+                    }}
+                  >
+                    <AiOutlineLogout tw="mr-2" />
+                    Logout
+                  </Logout>
+                // <Logout
+                //   active={location.pathname === "/Login"}
+                //   feature={location.pathname === "/Login"}
+                //   onClick={() => {
+                //     navigate("/Login");
+                //   }}
+                // >
+                //   <AiOutlineLogin tw="mr-2" />
+                //   Login
+                // </Logout>
+              )
+              }
             </AccountManager>
           )}
         </div>
