@@ -66,7 +66,7 @@ const Login = () => {
     const LoginSpan = tw.span`text-dark_blue`
     const LoginButton = tw(TwButton)`block mx-auto w-full mb-8 h-[4rem]`
     // const LoginGoogle = tw(LoginButton)`text-nowrap w-full flex items-center justify-center gap-4 text-center`
-    // const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem]`
+    const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem]`
 
     useEffect(() => {
         if (location.state) {
