@@ -256,6 +256,48 @@
       "password": "$2a$10$o7esKFxyOSYNEKWkiESaZewp.KAkd/Y6qVNe1PteQgWJnHUvvYUUm",
       "username": "aa",
       "id": 39
+    },
+    {
+      "email": "121@gmail.com",
+      "password": "$2a$10$Z0WTdQL8wnRi0D/ePOWpY.sL5BpZizoz7NQP5ty65Al2hRqVbrG3K",
+      "username": "121",
+      "id": 40
+    },
+    {
+      "email": "ww@gmail.com",
+      "password": "$2a$10$Py4YN7LGcITOQhUs5JMgYOR.b8L0P9Xl9pqkCqzOMgenTTUgQ7uFW",
+      "username": "tuan",
+      "id": 41
+    },
+    {
+      "email": "212a@gmail.com",
+      "password": "$2a$10$ZldBu.YbTozMoOhHbREmf.uQkcna2p9Ya8uHv4ctvlYhGpq0rNFVC",
+      "username": "aa",
+      "id": 42
+    },
+    {
+      "email": "t1@gmail.com",
+      "password": "$2a$10$PUd7Kb2g9/wsEXX1Dq/13eoZwaGSVFUlFVDRMoxcZtoDETw2RNI7m",
+      "username": "timmy",
+      "id": 43
+    },
+    {
+      "email": "te@gmail.com",
+      "password": "$2a$10$.mCRTZdlAxRKlJNhQtD.g.04K4iXOdDcurDwQOF60mL/RAhbPBPJe",
+      "username": "te",
+      "id": 44
+    },
+    {
+      "email": "ws@gmail.com",
+      "password": "$2a$10$8iuJSTBXs8d/.jX2mdmsDOqOPq6/s4GSiu4.mxmKxLj0PWe9fXb3.",
+      "username": "ws",
+      "id": 45
+    },
+    {
+      "email": "tuan1@gmail.com",
+      "password": "$2a$10$PrDm9Md/9zVHNGoH1UhzvOx9t76Fcy1NoR8/2dp01AM3pMTsh9WcG",
+      "username": "tuan1",
+      "id": 46
     }
   ],
   "posts": [
