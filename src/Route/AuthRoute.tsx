@@ -1,7 +1,7 @@
 // import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext";
+
+import { Navigate } from "react-router-dom";
+
 
 export interface IAuthRouteProps {}
 
