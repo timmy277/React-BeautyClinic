@@ -3,8 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import tw from "twin.macro";
 import { GrayP, TwButton, TwTitle_LG } from "../../components/Material";
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { FcGoogle } from "react-icons/fc";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation } from 'react-router-dom';
@@ -23,7 +22,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const auth = getAuth();
     const navigate = useNavigate();
-    const [authing, setAuthing] = useState(false);
+    // const [authing, setAuthing] = useState(false);
     const location = useLocation();
 
     const checkEmailExistence = async (email: string) => {
@@ -66,8 +65,8 @@ const Login = () => {
     const LoginP = tw(GrayP)`text-center mb-4 mt-8`
     const LoginSpan = tw.span`text-dark_blue`
     const LoginButton = tw(TwButton)`block mx-auto w-full mb-8 h-[4rem]`
-    const LoginGoogle = tw(LoginButton)`text-nowrap w-full flex items-center justify-center gap-4 text-center`
-    const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem]`
+    // const LoginGoogle = tw(LoginButton)`text-nowrap w-full flex items-center justify-center gap-4 text-center`
+    // const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem]`
 
     useEffect(() => {
         if (location.state) {
