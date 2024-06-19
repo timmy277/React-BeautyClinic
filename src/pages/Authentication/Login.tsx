@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { RiseLoader } from 'react-spinners';
+import { FadeLoader } from 'react-spinners';
 // import {DevTool} from '@hookform/devtools'
 
 interface IFormLogin {
@@ -70,7 +70,7 @@ const Login = () => {
         tw`block mx-auto w-full mb-8 h-[4rem]`,
         isLoading && tw`opacity-50 cursor-not-allowed`,
     ]);
-    const LoadingSpinner = tw(RiseLoader)`mx-auto text-white`;
+    const LoadingSpinner = tw(FadeLoader)`mx-auto -mt-[0.75rem]`;
 
     // const LoginGoogle = tw(LoginButton)`text-nowrap w-full flex items-center justify-center gap-4 text-center`
     const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem]`
@@ -153,7 +153,7 @@ const Login = () => {
                     </LoginP>
                     <div tw= 'w-full'>  
                         <LoginButton type="submit" disabled={isLoading}>
-                            {isLoading ? <LoadingSpinner /> : 'Login'}
+                            {isLoading ? <LoadingSpinner size={30} color="white"  /> : 'Login'}
                         </LoginButton>
                         {/* <LoginGoogle type="submit" disabled={authing} onClick={() => signInWithGoogle()}>
                             <FcGoogle tw='w-8 h-8' />  Login with Google
