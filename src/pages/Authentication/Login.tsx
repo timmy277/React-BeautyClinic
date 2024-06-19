@@ -152,9 +152,9 @@ const Login = () => {
                         </LoginSpan>
                     </LoginP>
                     <div tw= 'w-full'>  
-                        <LoginButton type="submit" disabled={isLoading}>
-                            {isLoading ? <LoadingSpinner size={30} color="white"  /> : 'Login'}
-                        </LoginButton>
+                        <LoginButton type="submit" disabled={isLoading} isLoading={isLoading}>
+                            {isLoading ? <LoadingSpinner color="white"  /> : 'Login'}
+                        </LoginButton>  
                         {/* <LoginGoogle type="submit" disabled={authing} onClick={() => signInWithGoogle()}>
                             <FcGoogle tw='w-8 h-8' />  Login with Google
                         </LoginGoogle> */}
