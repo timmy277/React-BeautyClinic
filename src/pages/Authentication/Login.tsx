@@ -79,40 +79,40 @@ const Login = () => {
 
 
     const handleLogin = async (data: IFormLogin) => {
-            try {
-                const { email, password } = data;
-                const loginobj = {email, password};
-                await signInWithEmailAndPassword(auth, email, password);
-                const response = await fetch(`http://localhost:3000/login`, {method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify(loginobj)
-                    })
-
-                const userData = await response.json();
-                const { accessToken } = userData;
-                console.log(accessToken);
-                localStorage.setItem('accessToken', accessToken);
-                toast.success('Logged in successfully!');
-                navigate('/');
-            } catch (error) {
-                console.error(error);
-                toast.error('Email or password is incorrect');
-            }
+        try {
+            const { email, password } = data;
+            const loginobj = {email, password};
+            await signInWithEmailAndPassword(auth, email, password);
+            const response = await fetch(`http://localhost:3000/login`, {method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(loginobj)
+            })
+            const userData = await response.json();
+            const { accessToken } = userData;
+            console.log(accessToken);
+            localStorage.setItem('accessToken', accessToken);
+            toast.success('Logged in successfully!');
+            navigate('/');
+        }
+        catch (error) {
+            console.error(error);
+            toast.error('Email or password is incorrect');
+        }
     };
 
-    const signInWithGoogle = async () => {
-        setAuthing(true);   
-        signInWithPopup(auth, new GoogleAuthProvider()).then(response =>{
-            console.log(response.user.uid);
-            navigate('/');
-            toast.success('Logged in successfully!');
-        })
-        .catch(error => {
-            console.log(error);
-            setAuthing(false);
-            toast.error('Email or password is incorrect');
-        });
-    }
+    // const signInWithGoogle = async () => {
+    //     setAuthing(true);   
+    //     signInWithPopup(auth, new GoogleAuthProvider()).then(response =>{
+    //         console.log(response.user.uid);
+    //         navigate('/');
+    //         toast.success('Logged in successfully!');
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //         setAuthing(false);
+    //         toast.error('Email or password is incorrect');
+    //     });
+    // }
 
     // const watchEmail = watch('email');
 
@@ -145,9 +145,9 @@ const Login = () => {
                         <LoginButton type="submit" >
                             Login
                         </LoginButton>
-                        <LoginGoogle type="submit" disabled={authing} onClick={() => signInWithGoogle()}>
+                        {/* <LoginGoogle type="submit" disabled={authing} onClick={() => signInWithGoogle()}>
                             <FcGoogle tw='w-8 h-8' />  Login with Google
-                        </LoginGoogle>
+                        </LoginGoogle> */}
                     </div>
                 </form>
                 {/* <DevTool control={control} /> */}
