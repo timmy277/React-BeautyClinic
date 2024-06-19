@@ -19,7 +19,7 @@ import { useAuth } from "../../../../Context/AuthContext";
 import { getAuth } from "firebase/auth";
 import { BsPersonVcard } from "react-icons/bs";
 import { LuShoppingBasket } from "react-icons/lu";
-import { AiOutlineLogin, AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const Header = () => {
   const location = useLocation();
