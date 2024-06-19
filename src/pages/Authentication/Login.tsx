@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import tw from "twin.macro";
+import tw, { styled } from "twin.macro";
 import { GrayP, TwButton, TwTitle_LG } from "../../components/Material";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { RiseLoader } from 'react-spinners';
 // import {DevTool} from '@hookform/devtools'
 
 interface IFormLogin {
@@ -22,6 +23,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const auth = getAuth();
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
     // const [authing, setAuthing] = useState(false);
     const location = useLocation();
 
@@ -64,7 +66,12 @@ const Login = () => {
     const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
     const LoginP = tw(GrayP)`text-center mb-4 mt-8`
     const LoginSpan = tw.span`text-dark_blue`
-    const LoginButton = tw(TwButton)`block mx-auto w-full mb-8 h-[4rem]`
+    const LoginButton =  styled(TwButton)<{ isLoading: boolean }>(({ isLoading }) => [
+        tw`block mx-auto w-full mb-8 h-[4rem]`,
+        isLoading && tw`opacity-50 cursor-not-allowed`,
+    ]);
+    const LoadingSpinner = tw(RiseLoader)`mx-auto text-white`;
+
     // const LoginGoogle = tw(LoginButton)`text-nowrap w-full flex items-center justify-center gap-4 text-center`
     const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem]`
 
@@ -78,6 +85,7 @@ const Login = () => {
 
 
     const handleLogin = async (data: IFormLogin) => {
+        setIsLoading(true);
         try {
             const { email, password } = data;
             const loginobj = {email, password};
@@ -96,6 +104,9 @@ const Login = () => {
         catch (error) {
             console.error(error);
             toast.error('Email or password is incorrect');
+        }
+        finally {
+            setIsLoading(false);
         }
     };
 
@@ -141,8 +152,8 @@ const Login = () => {
                         </LoginSpan>
                     </LoginP>
                     <div tw= 'w-full'>  
-                        <LoginButton type="submit" >
-                            Login
+                        <LoginButton type="submit" disabled={isLoading}>
+                            {isLoading ? <LoadingSpinner /> : 'Login'}
                         </LoginButton>
                         {/* <LoginGoogle type="submit" disabled={authing} onClick={() => signInWithGoogle()}>
                             <FcGoogle tw='w-8 h-8' />  Login with Google
