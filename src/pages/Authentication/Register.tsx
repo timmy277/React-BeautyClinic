@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { FadeLoader } from 'react-spinners';
+import { ClipLoader } from 'react-spinners';
 import { styled } from "twin.macro";
 import { DebounceInput } from 'react-debounce-input';
 interface IFormRegister {
@@ -37,7 +37,7 @@ const Register = () => {
             .required('Email is required')
             .matches(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, 
             'Invalid email format')
-            .test('email', 'Email already existed', async (value) => {
+            .test('email', ' Invalid email address', async (value) => {
                 const isAvailable = await checkEmailAvailability(value);
                 return isAvailable;
             }
@@ -67,7 +67,7 @@ const Register = () => {
         isLoading && tw`cursor-not-allowed`,
     ]);
     const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem] mb-4`
-    const LoadingSpinner = tw(FadeLoader)`mx-auto -mt-[0.75rem]`;
+    const LoadingSpinner = tw(ClipLoader)`mx-auto`;
 
     const form = useForm<IFormRegister>({
         resolver: yupResolver(validationSchema),
@@ -116,7 +116,7 @@ const Register = () => {
 
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  
-            <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[5%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
+            <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[8%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
                 <form onSubmit= {handleSubmit(handleSignUp)} noValidate >
                     <RegisterTitle>Register</RegisterTitle>
                     <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink' htmlFor="username">Username</label>

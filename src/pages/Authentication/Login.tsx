@@ -10,8 +10,9 @@ import { useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { FadeLoader } from 'react-spinners';
 import { DebounceInput } from 'react-debounce-input';
+import { ClipLoader } from "react-spinners";
+
 interface IFormLogin {
     email: string;
     password: string;
@@ -24,6 +25,7 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
     // const [authing, setAuthing] = useState(false);
     const location = useLocation();
+    
     
 
     // const checkEmailExistence = async (email: string) => {
@@ -66,6 +68,7 @@ const Login = () => {
     const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
     const LoginP = tw(GrayP)`text-center mb-4 mt-8`
     const LoginSpan = tw.span`text-dark_blue`
+    const LoadingSpinner = tw(ClipLoader)`mx-auto`;
     const LoginButton =  styled(TwButton)<{ isLoading: boolean }>(({ isLoading }) => [
         tw`block mx-auto w-full mb-8 h-[4rem] rounded-2xl`,
         isLoading && tw`cursor-not-allowed`,
@@ -124,7 +127,7 @@ const Login = () => {
     // }
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  
-            <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[5%] pt-[5%] pb-[5%] rounded-2xl md:mt-[5%] sm:mt-[5%]'>
+            <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[8%] pt-[5%] pb-[5%] rounded-2xl md:mt-[5%] sm:mt-[5%]'>
                 <form onSubmit={ handleSubmit(handleLogin)} noValidate>
                     <LoginTitle >Login</LoginTitle>
                     <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink' htmlFor="email">Email</label>
@@ -160,7 +163,7 @@ const Login = () => {
                     </LoginP>
                     <div tw= 'w-full'>  
                         <LoginButton type="submit" disabled={isLoading} isLoading={isLoading}>
-                            {isLoading ? <FadeLoader color="#f0f0f0" tw='mx-auto -mt-[0.75rem]'  /> : 'Login'}
+                            {isLoading ?<LoadingSpinner color="white"  /> : 'Login'}
                         </LoginButton>      
                         {/* <LoginGoogle type="submit" disabled={authing} onClick={() => signInWithGoogle()}>
                             <FcGoogle tw='w-8 h-8' />  Login with Google
