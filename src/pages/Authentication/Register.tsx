@@ -10,6 +10,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { FadeLoader } from 'react-spinners';
+import { styled } from "twin.macro";
+
 interface IFormRegister {
     username: string;
     email: string;
@@ -19,6 +22,7 @@ interface IFormRegister {
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showCfPassword, setShowCfPassword] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const checkEmailAvailability = async (email: string) => {
         const response = await fetch(`http://localhost:3000/users?email=${email}`);
@@ -58,8 +62,12 @@ const Register = () => {
     const Icon = tw.div`absolute right-[3.6rem] top-[3.6rem] transform -translate-y-1/2 cursor-pointer`;
     const RegisterP = tw(GrayP)`text-center mb-4 mt-8`
     const RegisterSpan = tw.span`text-dark_blue`
-    const RegisterButton = tw(TwButton)`block mx-auto w-full mb-8 h-[4rem]`
+    const RegisterButton =  styled(TwButton)<{ isLoading: boolean }>(({ isLoading }) => [
+        tw`block mx-auto w-full mb-8 h-[4rem]`,
+        isLoading && tw`cursor-not-allowed`,
+    ]);
     const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem] mb-4`
+    const LoadingSpinner = tw(FadeLoader)`mx-auto -mt-[0.75rem]`;
 
     const form = useForm<IFormRegister>({
         resolver: yupResolver(validationSchema),
@@ -76,30 +84,34 @@ const Register = () => {
 
 
     const handleSignUp = async (data: IFormRegister) => {
-            try {
-                const { username, email, password } = data;
-                const regobj = {username, email, password};
-                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                const user = userCredential.user;
-                await updateProfile(user, { displayName: username });
-                toast.success('Registered successfully!');
-                await fetch(" http://localhost:3000/users", {
-                    method: "POST",
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify(regobj),
-                    }).then(function (data) {
-                        console.log(data);
-                        return data.json();
-                    })
-                    .catch((error) => {
-                        toast.error('Registration failed: '+ error.message);
-                    }
-                );
-                navigate('/Login', { state: { email, password } });
-            } catch (error) {
-                console.error(error);
-                toast.error('Registration failed');
-            }
+        setIsLoading(true);
+        try {
+            const { username, email, password } = data;
+            const regobj = {username, email, password};
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            await updateProfile(user, { displayName: username });
+            toast.success('Registered successfully!');
+            await fetch(" http://localhost:3000/users", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(regobj),
+                }).then(function (data) {
+                    console.log(data);
+                    return data.json();
+                })
+                .catch((error) => {
+                    toast.error('Registration failed: '+ error.message);
+                }
+            );
+            navigate('/Login', { state: { email, password } });
+        } catch (error) {
+            console.error(error);
+            toast.error('Registration failed');
+        }
+        finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -107,8 +119,8 @@ const Register = () => {
             <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
                 <form onSubmit= {handleSubmit(handleSignUp)} noValidate >
                     <RegisterTitle>Register</RegisterTitle>
-                    <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink'>Username</label>
-                    <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' 
+                    <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink' htmlFor="username">Username</label>
+                    <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' autoComplete="username"
                     {...register("username")} type="text"
                     name="username" id="username" placeholder="Please enter your name" />
                     <ErrorP>{errors.username?.message}</ErrorP>
@@ -122,7 +134,7 @@ const Register = () => {
                     <div tw='relative mt-8'>
                         <label tw='ml-[1.5rem] text-light_pink' htmlFor="password" >Password</label>
                         <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem]   pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm    sm:text-xs max-w-full items-center' 
-                        {...register("password")} name="password"
+                        {...register("password")} name="password" autoComplete="password"
                         id="password" type={showPassword ? "text" : "password"} placeholder="Please enter your password" 
                         />
                         <ErrorP>{errors.password?.message}</ErrorP>
@@ -133,7 +145,7 @@ const Register = () => {
                     <div tw='relative mt-8'>
                         <label tw='ml-[1.5rem] text-light_pink' htmlFor="confirmPass">ConfirmPassword</label>
                         <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full items-center'
-                        {...register("cfPassword")}
+                        {...register("cfPassword")} autoComplete="cfPassword"
                         id="cfPassword " type={showCfPassword ? "text" : "password"} placeholder="Please confirm your password" 
                         name="cfPassword" 
                         />
@@ -148,7 +160,9 @@ const Register = () => {
                         </RegisterSpan>
                     </RegisterP>
                     <div tw= 'w-full'>
-                        <RegisterButton type="submit">Register</RegisterButton>
+                        <RegisterButton type="submit" disabled={isLoading} isLoading={isLoading}>
+                            {isLoading ? <LoadingSpinner color="white"  /> : 'Register'}
+                        </RegisterButton>
                     </div>
                 </form>
             </div>

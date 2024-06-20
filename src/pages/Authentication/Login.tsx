@@ -68,7 +68,7 @@ const Login = () => {
     const LoginSpan = tw.span`text-dark_blue`
     const LoginButton =  styled(TwButton)<{ isLoading: boolean }>(({ isLoading }) => [
         tw`block mx-auto w-full mb-8 h-[4rem]`,
-        isLoading && tw`opacity-50 cursor-not-allowed`,
+        isLoading && tw`cursor-not-allowed`,
     ]);
     const LoadingSpinner = tw(FadeLoader)`mx-auto -mt-[0.75rem]`;
 
@@ -123,9 +123,6 @@ const Login = () => {
     //         toast.error('Email or password is incorrect');
     //     });
     // }
-
-    // const watchEmail = watch('email');
-
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  
             <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
@@ -139,12 +136,12 @@ const Login = () => {
                     <div tw='relative mt-8'>
                         <label tw='ml-[1.5rem] text-light_pink' htmlFor="password">Password</label>
                         <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem]   pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full items-center'
-                        autoComplete="current-password" {...register("password")}
+                        autoComplete="password" {...register("password")}
                         id="password" type={showPassword ? "text" : "password"} placeholder="Please enter your password" />
                         <ErrorP>{errors.password?.message}</ErrorP>
                         <Icon onClick={() => setShowPassword((prev) => !prev) }>
                             {showPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
-                        </Icon>
+                        </Icon> 
                     </div>
                     <LoginP>You don't have an account?
                         <LoginSpan>

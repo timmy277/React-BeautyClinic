@@ -346,6 +346,18 @@
       "password": "$2a$10$7WXTsNJX7LM9MHWs73Sqf.nZvJ4x3fNpaJ8i/BFVX/Ua7gamc2jhO",
       "username": "911",
       "id": 54
+    },
+    {
+      "email": "t2@gmail.com",
+      "password": "$2a$10$6MVcTVs5yEu3BkfRxfR4C.63bm/r7msp13gxAFE/OVpSGgh6zVSYC",
+      "username": "4",
+      "id": 55
+    },
+    {
+      "email": "t3@gmail.com",
+      "password": "$2a$10$YzrB4KHfYfDY4Ybb2F4kxeKMCtDPWUNVPB5T7mexpm0JoljGMiim2",
+      "username": "t3",
+      "id": 56
     }
   ],
   "posts": [

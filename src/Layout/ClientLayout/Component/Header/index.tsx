@@ -69,10 +69,8 @@ const Header = () => {
     feature && tw`pl-[0.2rem]`,
   ]);
   const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[-1rem] 2lg:left-[-4.8rem] lg:left-[-4.8rem] bg-light_white z-50 rounded-xl`;
-  const AccountManager = tw(
-    DropDownMenu
-  )`left-[-3rem] border border-light_pink bg-white  `;
-  // const DropDownMenuItem = tw(NavItem)` pb-2 pl-4 pt-2 text-light_pink pr-4 hover:bg-light_pink hover:text-light_white`
+  const AccountManager = tw(DropDownMenu)`left-[-3rem] border border-light_pink bg-white  `;
+
   const DropDownMenuItem = styled.li<{ active: boolean; feature: boolean }>(
     ({ active, feature }) => [
       tw`pt-2 pb-2 pl-4 pr-4 text-light_pink hover:bg-light_pink hover:text-light_white`,
@@ -85,7 +83,7 @@ const Header = () => {
   const Team = tw(DropDownMenuItem)`rounded-b-xl`;
   const Profile = tw(DropDownMenuItem)`rounded-t-xl`;
   const Bill = tw(DropDownMenuItem)``;
-  const Logout = tw(DropDownMenuItem)`rounded-b-xl flex items-center`;
+  const Logout = tw(DropDownMenuItem)`rounded-b-xl flex items-center cursor-pointer`;
   const NavDropDown = tw.ul`ml-[3.2rem] pr-6`;
   const NavGeneral = tw(
     General
