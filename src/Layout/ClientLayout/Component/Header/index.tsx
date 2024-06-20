@@ -2,16 +2,10 @@ import "twin.macro";
 import tw from "twin.macro";
 import { TwButton } from "../../../../components/Material";
 import MainLogo from "../../../../assets/website/MainLogo.png";
-import {
-  FaTimes,
-  FaHome,
-  FaAddressBook,
-  FaAddressCard,
-  FaBlogger,
+import {FaTimes,FaHome,FaAddressBook,FaAddressCard,FaBlogger,
 } from "react-icons/fa";
 import { IoIosListBox, IoIosContacts } from "react-icons/io";
 import { RiGalleryFill } from "react-icons/ri";
-import { GoPersonFill } from "react-icons/go";
 import styled from "styled-components";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -20,6 +14,7 @@ import { getAuth } from "firebase/auth";
 import { BsPersonVcard } from "react-icons/bs";
 import { LuShoppingBasket } from "react-icons/lu";
 import { AiOutlineLogout } from "react-icons/ai";
+import { BsPersonCircle } from "react-icons/bs";
 
 const Header = () => {
   const location = useLocation();
@@ -38,9 +33,7 @@ const Header = () => {
   const LogoContainer = tw.div`object-cover my-auto mx-0`;
   const LogoImg = tw.img`m-auto ml-[-0.275rem] max-w-none`;
   const ListNavItem = tw.ul`flex justify-center items-center max-w-[30.063rem] relative mr-[11rem] lg:mr-[8rem]`;
-  const HomeItem = tw(
-    NavItem
-  )`2lg:ml-[5%] lg:ml-[5%] ml-[8.8rem] relative after:absolute after:content-[""] after:w-40 after:h-10 after:right-[-2.5rem] after:top-5 after:cursor-pointer`;
+  const HomeItem = tw(NavItem)`2lg:ml-[5%] lg:ml-[5%] ml-[8.8rem] relative after:absolute after:content-[""] after:w-40 after:h-10 after:right-[-2.5rem] after:top-5 after:cursor-pointer`;
   const NavAbout = tw(NavItem)`ml-[2.675rem] 2lg:ml-[7%] lg:ml-[7%]`;
   const NavService = tw(NavItem)`ml-[2.775rem] 2lg:ml-[7%] lg:ml-[7%]`;
 
@@ -68,8 +61,8 @@ const Header = () => {
     tw`flex justify-center items-center max-h-[3.738rem] [justify-content: space-between] md:hidden sm:hidden`,
     feature && tw`pl-[0.2rem]`,
   ]);
-  const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[-1rem] 2lg:left-[-4.8rem] lg:left-[-4.8rem] bg-light_white z-50 rounded-xl`;
-  const AccountManager = tw(DropDownMenu)`left-[-3rem] border border-light_pink bg-white  `;
+  const DropDownMenu = tw.ul`absolute mt-2 w-32 top-[1.5rem] left-[-1rem]  bg-light_white z-50 rounded-xl`;
+  const AccountManager = tw(DropDownMenu)`left-[-3rem] top-8 border border-light_pink bg-white  `;
 
   const DropDownMenuItem = styled.li<{ active: boolean; feature: boolean }>(
     ({ active, feature }) => [
@@ -85,15 +78,9 @@ const Header = () => {
   const Bill = tw(DropDownMenuItem)``;
   const Logout = tw(DropDownMenuItem)`rounded-b-xl flex items-center cursor-pointer`;
   const NavDropDown = tw.ul`ml-[3.2rem] pr-6`;
-  const NavGeneral = tw(
-    General
-  )` rounded-[0.5rem] text-base py-2.5 pl-3 uppercase font-poppins pb-0`;
-  const NavFeature = tw(
-    General
-  )`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
-  const NavTeam = tw(
-    Team
-  )`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavGeneral = tw(General)` rounded-[0.5rem] text-base py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavFeature = tw(General)`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
+  const NavTeam = tw(Team)`rounded-[0.5rem] text-base font-semibold py-2.5 pl-3 uppercase font-poppins pb-0`;
 
   const [isOpen, setIsOpen] = useState(false);
   const [openNavDropDown, setOpenNavDropDown] = useState(false);
@@ -202,7 +189,7 @@ const Header = () => {
         </NavBar>
         <div tw="top-[4rem] absolute right-[8rem] lg:right-[6rem] md:top-[2rem] sm:top-[2rem]">
           <div tw="absolute flex items-center gap-4">
-            <GoPersonFill tw="scale-[3]" onClick={toggleAccountManager} />
+            <BsPersonCircle tw="scale-[3] mr-2" onClick={toggleAccountManager} />
             <div tw="text-xs text-light_pink font-bold text-nowrap">
               {currentUser?.displayName}
             </div>

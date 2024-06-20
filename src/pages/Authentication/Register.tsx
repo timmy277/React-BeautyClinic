@@ -12,7 +12,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { FadeLoader } from 'react-spinners';
 import { styled } from "twin.macro";
-
+import { DebounceInput } from 'react-debounce-input';
 interface IFormRegister {
     username: string;
     email: string;
@@ -37,7 +37,7 @@ const Register = () => {
             .required('Email is required')
             .matches(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, 
             'Invalid email format')
-            .test('email', 'Email already exists', async (value) => {
+            .test('email', 'Email already existed', async (value) => {
                 const isAvailable = await checkEmailAvailability(value);
                 return isAvailable;
             }
@@ -63,7 +63,7 @@ const Register = () => {
     const RegisterP = tw(GrayP)`text-center mb-4 mt-8`
     const RegisterSpan = tw.span`text-dark_blue`
     const RegisterButton =  styled(TwButton)<{ isLoading: boolean }>(({ isLoading }) => [
-        tw`block mx-auto w-full mb-8 h-[4rem]`,
+        tw`block mx-auto w-full mb-8 h-[4rem] rounded-2xl`,
         isLoading && tw`cursor-not-allowed`,
     ]);
     const ErrorP = tw(GrayP)`text-red-500 ml-[1.5rem] mb-4`
@@ -77,9 +77,9 @@ const Register = () => {
             password:"",
             cfPassword:"",
         },
-        mode:'onChange'
+        // mode:'onChange'
     });
-    const {register, formState, handleSubmit } = form;
+    const {register, formState, handleSubmit, trigger, setValue } = form;
     const { errors } = formState;
 
 
@@ -97,7 +97,7 @@ const Register = () => {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(regobj),
                 }).then(function (data) {
-                    console.log(data);
+                    // console.log(data);
                     return data.json();
                 })
                 .catch((error) => {
@@ -116,25 +116,40 @@ const Register = () => {
 
     return (
         <div tw='w-full max-w-full 2lg:px-[20%] lg:px-[20%] md:px-[10%] sm:px-[10%]'>  
-            <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[3%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
+            <div tw='max-w-[50rem] bg-white shadow-md mx-auto mt-[2%] px-[5%] pt-[5%] pb-[5%] rounded-[3rem] md:mt-[5%] sm:mt-[5%]'>
                 <form onSubmit= {handleSubmit(handleSignUp)} noValidate >
                     <RegisterTitle>Register</RegisterTitle>
                     <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink' htmlFor="username">Username</label>
-                    <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' autoComplete="username"
+                    <DebounceInput tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center' autoComplete="username"
                     {...register("username")} type="text"
+                    minLength={0} debounceTimeout={500}
+                    onChange={(e) =>{ 
+                        setValue('username', e.target.value)
+                        trigger('username');
+                    }}
                     name="username" id="username" placeholder="Please enter your name" />
                     <ErrorP>{errors.username?.message}</ErrorP>
                     <div tw='mt-8'>
                         <label tw='mb-[-2rem] ml-[1.5rem] text-light_pink' htmlFor="email">Email</label>
-                        <input tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center'
+                        <DebounceInput tw='border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full   w-full items-center'
                         autoComplete="email" {...register("email")} type="email" 
+                        minLength={0} debounceTimeout={500}
+                        onChange={(e) =>{ 
+                            setValue('email', e.target.value)
+                            trigger('email');
+                        }}
                         name="email" id="" placeholder="Please enter your email" />
                         <ErrorP>{errors.email?.message}</ErrorP>
                     </div>
                     <div tw='relative mt-8'>
                         <label tw='ml-[1.5rem] text-light_pink' htmlFor="password" >Password</label>
-                        <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem]   pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm    sm:text-xs max-w-full items-center' 
+                        <DebounceInput tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem]   pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm    sm:text-xs max-w-full items-center' 
                         {...register("password")} name="password" autoComplete="password"
+                        minLength={0} debounceTimeout={500}
+                        onChange={(e) =>{ 
+                            setValue('password', e.target.value)
+                            trigger('password');
+                        }}
                         id="password" type={showPassword ? "text" : "password"} placeholder="Please enter your password" 
                         />
                         <ErrorP>{errors.password?.message}</ErrorP>
@@ -144,8 +159,13 @@ const Register = () => {
                     </div>
                     <div tw='relative mt-8'>
                         <label tw='ml-[1.5rem] text-light_pink' htmlFor="confirmPass">ConfirmPassword</label>
-                        <input tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full items-center'
+                        <DebounceInput tw='w-full px-4 py-2 border border-solid h-[3.849rem] border-[#D9DDFE] rounded-2xl pt-[1.063rem] pr-[0rem] pb-[1.1rem] pl-[1.5rem] text-dark_blue font-poppins text-base leading-6 tracking-widest font-normal md:text-sm sm:text-xs max-w-full items-center'
                         {...register("cfPassword")} autoComplete="cfPassword"
+                        minLength={0} debounceTimeout={500}
+                        onChange={(e) =>{ 
+                            setValue('cfPassword', e.target.value)
+                            trigger('cfPassword');
+                        }}
                         id="cfPassword " type={showCfPassword ? "text" : "password"} placeholder="Please confirm your password" 
                         name="cfPassword" 
                         />
@@ -154,7 +174,7 @@ const Register = () => {
                             {showCfPassword ? <FaEye tw='w-8 h-8' /> : <FaEyeSlash tw='w-8 h-8' />}
                         </Icon>
                     </div>
-                    <RegisterP>Already have an account?
+                    <RegisterP>You already have an account?
                         <RegisterSpan>
                             <Link to="/Login"> Login</Link>
                         </RegisterSpan>
