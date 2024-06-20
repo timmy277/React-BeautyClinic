@@ -37,7 +37,7 @@ const Register = () => {
             .required('Email is required')
             .matches(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, 
             'Invalid email format')
-            .test('email', ' Invalid email address', async (value) => {
+            .test('email', 'Email already exists', async (value) => {
                 const isAvailable = await checkEmailAvailability(value);
                 return isAvailable;
             }

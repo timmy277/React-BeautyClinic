@@ -424,6 +424,12 @@
       "password": "$2a$10$Jh1ksMxGxVNyuY91Higr2.A5RBHexw3x0S3Yla9AXm9mKnpveH3ge",
       "username": "cc",
       "id": 67
+    },
+    {
+      "email": "pp@gmail.com",
+      "password": "$2a$10$jkwxX5fi0NIUU.qG5yOiSePoM0tuYFxrVTZXinJdD/wPbHeiSk6mO",
+      "username": "pp",
+      "id": 68
     }
   ],
   "posts": [
