@@ -17,12 +17,12 @@ const MainService = () => {
   const BackGroundService = tw.div`absolute top-[40.2rem] right-0 2xl:w-full xl:w-full -z-10`;
   const BackGroundServiceImg = tw.img`2xl:w-full xl:w-full`;
   return (
-    <ServiceWrapper>
+    <ServiceWrapper >
       <ServiceContainer>
         <ServiceIntroduction>
-          <ServiceSpan>Main Services</ServiceSpan>
-          <ServiceTitle>Learn services to focus on your beauty</ServiceTitle>
-          <ServiceDescription>
+          <ServiceSpan data-aos="fade-up">Main Services</ServiceSpan>
+          <ServiceTitle data-aos="fade-up">Learn services to focus on your beauty</ServiceTitle>
+          <ServiceDescription data-aos="fade-up">
             Porta rhoncus orci condimentum vitae lobortis eu dignissim non
             massa. Non parturient amet, feugiat tellus sagittis, scelerisque
             eget nulla turpis.

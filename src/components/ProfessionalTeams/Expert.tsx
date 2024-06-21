@@ -29,19 +29,19 @@ const Expert = (props: {
   const SocialIcon = tw.img`w-[5.063rem] h-[5.063rem] max-w-none `;
 
   return (
-    <ExpertContainer special={props.special}>
-      <ExpertImage src={props.img} alt="" />
-      <ExpertJob>{props.job}</ExpertJob>
-      <ExpertName>{props.name}</ExpertName>
-      <ExpertDescription>{props.description}</ExpertDescription>
+    <ExpertContainer data-aos="zoom-in" special={props.special}>
+      <ExpertImage  src={props.img} alt="" />
+      <ExpertJob data-aos="fade-up">{props.job}</ExpertJob>
+      <ExpertName data-aos="fade-up">{props.name}</ExpertName>
+      <ExpertDescription data-aos="fade-up">{props.description}</ExpertDescription>
       <ListSocial>
-        <SocialPlatform>
+        <SocialPlatform data-aos='fade-up'>
           <SocialIcon src={TwitterImg} alt="Twitter" />
         </SocialPlatform>
-        <SocialPlatform>
+        <SocialPlatform data-aos='fade-up'>
           <SocialIcon src={FacebookImg} alt="Facebook" />
         </SocialPlatform>
-        <SocialPlatform>
+        <SocialPlatform data-aos='fade-up'>
           <SocialIcon src={InstagramImg} alt="Instagram" />
         </SocialPlatform>
       </ListSocial>

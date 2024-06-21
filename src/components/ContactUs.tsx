@@ -28,10 +28,10 @@ const ContactUs = () => {
                 <BackgroundContactImg src={BackGroundContact} alt="BackgroundContact" />
             </BackgroundContact>
             <ContactUsContainer>
-                <ContactUsBanner>
+                <ContactUsBanner data-aos='zoom-in'>
                     <BannerImg src={ContactUsImg} alt="" />
                 </ContactUsBanner>
-                <ContactUsContent>
+                <ContactUsContent data-aos="zoom-in">
                     <ContactUsSpan>Contact Us</ContactUsSpan>
                     <ContactUsTitle>Send your inquiry to our expert team</ContactUsTitle>
                     <ContactUsDescription>Lorem ipsum dolor sit amet nulla turapis tellus.</ContactUsDescription>

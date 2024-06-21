@@ -167,7 +167,7 @@ const Register = () => {
                             trigger('cfPassword');
                         }}
                         id="cfPassword " type={showCfPassword ? "text" : "password"} placeholder="Please confirm your password" 
-                        name="cfPassword" 
+                        name="cfPassword"   
                         />
                         <ErrorP>{errors.cfPassword?.message}</ErrorP>
                         <Icon onClick={() => setShowCfPassword((prev) => !prev) }>

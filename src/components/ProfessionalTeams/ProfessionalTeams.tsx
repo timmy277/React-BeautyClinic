@@ -13,9 +13,9 @@ const ProfessionalTeams = () => {
   return (
     <TeamsContainer>
       <TeamsIntroduction>
-        <TeamsSpan>Professional Teams</TeamsSpan>
-        <TeamTitle>The Professional expert</TeamTitle>
-        <TeamsDescription>
+        <TeamsSpan data-aos="fade-up">Professional Teams</TeamsSpan>
+        <TeamTitle data-aos="fade-up">The Professional expert</TeamTitle>
+        <TeamsDescription data-aos="fade-up" >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam.
         </TeamsDescription>
       </TeamsIntroduction>

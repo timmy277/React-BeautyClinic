@@ -22,7 +22,7 @@ const Slider = () => {
   return (
     <SliderContainer>
       <MainSlider>
-        <SliderContent>
+        <SliderContent data-aos="fade-right">
           <SliderTitle>Clinic & beauty consultant</SliderTitle>
           <SliderDescription>
             It is a long established fact that a reader will be by the readable
@@ -31,7 +31,7 @@ const Slider = () => {
           <DetailButton>More Details</DetailButton>
         </SliderContent>
         <WrapperSliderBN>
-          <SliderBN src={SliderBanner} alt="SliderBanner" />
+          <SliderBN data-aos="zoom-in" src={SliderBanner} alt="SliderBanner" />
         </WrapperSliderBN>
       </MainSlider>
       <div>

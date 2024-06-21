@@ -27,7 +27,7 @@ const AboutUs = () => {
   const BtnWatch = tw.button`ml-[0.4rem] text-light_gray text-base leading-6 tracking-widest font-semibold md:text-sm sm:text-xs `;
   return (
     <AboutUsContainer>
-      <AboutUsContent>
+      <AboutUsContent data-aos="fade-right">
         <AboutUsSpan>About Us</AboutUsSpan>
         <AboutUsTitle>We are the best beauty clinic</AboutUsTitle>
         <AboutUsDescription>
@@ -46,7 +46,7 @@ const AboutUs = () => {
           </ButtonWatchVideo>
         </GroupButton>
       </AboutUsContent>
-      <AboutUsImageWrapper>
+      <AboutUsImageWrapper data-aos="fade-left">
         <AboutUsImage src={AboutUsBanner} alt="AboutUsBanner" />
       </AboutUsImageWrapper>
     </AboutUsContainer>

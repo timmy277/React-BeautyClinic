@@ -16,10 +16,10 @@ const ServiceItem = (props: {
   return (
     <ServiceItemWrapper>
       <ServiceImageWrapper>
-        <ServiceImage src={props.img} alt="" />
+        <ServiceImage data-aos="zoom-in" src={props.img} alt="" />
       </ServiceImageWrapper>
-      <ServiceName>{props.name}</ServiceName>
-      <ServiceDescription>{props.description}</ServiceDescription>
+      <ServiceName data-aos="fade-up">{props.name}</ServiceName>
+      <ServiceDescription data-aos="fade-up">{props.description}</ServiceDescription>
     </ServiceItemWrapper>
   );
 };
