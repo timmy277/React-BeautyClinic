@@ -11,7 +11,7 @@ import Contact from "../pages/Contact/Contact";
 import Team from "../pages/Team/Team";
 import Register from "../pages/Authentication/Register";
 import Login from "../pages/Authentication/Login";
-import AuthRoute from './AuthRoute';
+// import AuthRoute from './AuthRoute';
 import { AuthProvider } from "../Context/AuthContext";
 import PublicRoute from "./PublicRoute";
 
@@ -22,7 +22,8 @@ const RouteCustom  = () => {
         <Routes>
             <Route path="/" element={<Layout/>}>
                 <Route index path="/" element={
-                    <AuthRoute><General /></AuthRoute>
+                    // <AuthRoute><General /></AuthRoute>
+                    <General />
                 } />
                 <Route path="/Feature" element={<Feature />} />
                 <Route path="/About" element={<About />} />
